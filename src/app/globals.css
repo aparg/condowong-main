@@ -1210,7 +1210,7 @@ label {
   padding: 1.3rem 1rem;
   border: none;
   border-radius: 7px;
-  background-color: #f1f3fa;
+  /* background-color: #f1f3fa; */
 }
 
 .fields:focus {
@@ -3554,18 +3554,6 @@ label {
   color: black !important;
 }
 
-.fields {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  border: none;
-  border-radius: 7px !important;
-  background-color: #f1f3fa !important;
-}
-
-.fields:focus {
-  outline-color: black !important;
-}
-
 .colo-mine {
   color: #443d3d;
 }
@@ -4468,7 +4456,7 @@ button:focus:not(:focus-visible) {
   top: 32px;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #000;
   z-index: 1000;
   flex-wrap: nowrap;
   padding-block: 10px;

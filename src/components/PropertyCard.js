@@ -150,7 +150,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                   )}
                 </div>
               </span>
-              <div className="border-b-neutral-700 bg-black border-1 my-2"></div>
+              <div className="border-b-neutral-700 bg-black-tint py-2 border-b-2"></div>
               <div className="bg-black-tint text-white font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
                 <img src="/logo/logo1.webp" className="w-14"></img>
                 <div className="bg-black-tint ml-2">

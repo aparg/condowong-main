@@ -148,7 +148,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
         </div> */}
 
         <div className="house-type__filter mr-4 ">
-          <IndividualFilter
+          {/* <IndividualFilter
             options={houseTypeOptions}
             defaultValue={houseTypeOptions[0]}
             name="type"
@@ -158,7 +158,10 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
             // isMulti={true}
             isMulti={false}
             isMobileView={isMobileView}
-          />
+          /> */}
+          {houseTypeOptions.map(()=>{
+            
+          })}
         </div>
 
         {/* {isMobileView ? (
@@ -258,7 +261,7 @@ const IndividualFilter = ({
       <DropdownTrigger disableAnimation={true}>
         <Button
           variant="faded"
-          className={`capitalize h-[34px] bg-color roundedPill border-medium-black ${
+          className={`capitalize h-[34px] bg-white text-black roundedPill border-medium-black ${
             isMobileView && "px-2 gap-1 min-w-unit-0"
           } ${
             getSelectedValue(selectedKeys) !== defaultValue &&
