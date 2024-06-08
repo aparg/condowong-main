@@ -125,9 +125,9 @@ const FiltersWithSalesList = ({
     <>
       {filterState && (
         <div>
-          <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
+          {/* <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
             <Filters {...{ filterState, setFilterState, fetchFilteredData }} />
-          </div>
+          </div> */}
           <h2
             className={`city-headline d-flex text-capitalize ${
               isMobileView ? "pt-3" : "pt-4"
@@ -149,7 +149,7 @@ const FiltersWithSalesList = ({
           <div
             className={`${
               isMobileView ? "pt-1" : "pt-3"
-            } row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 gap-x-0 sm:gap-y-[40px]`}
+            } row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 sm:gap-y-[40px]`}
           >
             {!loading ? (
               <SalesList

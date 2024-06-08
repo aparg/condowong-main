@@ -32,23 +32,23 @@ import Link from "next/link";
 import React from "react";
 
 const CardContent = React.forwardRef(
-  ({ imgSrc, miniTitle, title, subtitle, link }, ref) => {
+  ({ imageSrc, miniTitle, title, subtitle, link }, ref) => {
     return (
-      <div ref={ref}>
+      <div ref={ref} className="bg-black-tint">
         <Link href={link} className="hover:no-underline decoration text-white">
           <div className="flex flex-col w-full flex-wrap gap-3">
             <div className="img">
               <img
-                src={imgSrc}
+                src={imageSrc}
                 alt="Laptop"
                 className="h-[200px] w-full object-cover"
               />
             </div>
-            <div className="mini-title text-sm font-light uppercase ">
+            <div className="mini-title text-sm font-light uppercase  px-2">
               {miniTitle}
             </div>
-            <div className="title text-xl w-full playfair">{title}</div>
-            <div className="subtitle font-light text-sm text-gray-500">
+            <div className="title text-xl w-full playfair px-2">{title}</div>
+            <div className="subtitle font-light text-sm text-gray-500 px-2">
               {subtitle}
             </div>
           </div>

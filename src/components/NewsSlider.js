@@ -11,55 +11,55 @@ const NewsSlider = ({ numberOfCards = 4, city }) => {
   const cardRef = useRef(null); //used to hold card width value
   const cardData = [
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       subtitle: "Make a unique living",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       link: "/",
       title: "News Title",
     },
     {
-      imgSrc: "/image17.png",
+      imgSrc: "/maxresdefault.jpg",
       miniTitle: "UNIQUE LIVING",
       link: "/",
       title: "News Title",
@@ -112,6 +112,7 @@ const NewsSlider = ({ numberOfCards = 4, city }) => {
         {cardData?.map((card, index) => {
           return (
             <CardContent
+              key={index}
               title={card.title}
               imageSrc={card.imgSrc}
               link={card.link}

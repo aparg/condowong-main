@@ -85,7 +85,7 @@ const SalesList = ({
         <>
           {salesData.map((curElem, index) => {
             return (
-              <div className="px-1">
+              <div className="px-1" key={index}>
                 <PropertyCard curElem={curElem} />
               </div>
             );

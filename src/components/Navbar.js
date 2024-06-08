@@ -12,39 +12,70 @@ const Navbar = () => {
         </div>
         <div className="bg-black-tint">
           <div className="text-primary-color flex flex-row w-auto justify-end items-center">
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/" className="hover:text-primary-color">
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+              >
                 Home
               </Link>
             </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/market-news" className="hover:text-primary-color">
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/market-news"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+              >
                 Market News
               </Link>
             </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/" className="hover:text-primary-color">
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/pre-construction"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+              >
                 Pre-Construction
               </Link>
             </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/" className="hover:text-primary-color">
-                Resale/Assignment
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/assignment"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+              >
+                Assignment
               </Link>
             </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/" className="hover:text-primary-color">
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/resale"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+              >
+                Resale
+              </Link>
+            </div>
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/rental"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+              >
                 Rental
               </Link>
             </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-lg bg-black-tint text-[#fff]">
-              <Link href="/" className="hover:text-primary-color">
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/contact"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+              >
                 Contact
               </Link>
             </div>
-            <button className="bg-primary-color text-[#000] rounded-md py-2 px-4 font-normal hover:bg-[#fff]">
-              Schedule Call
-            </button>
+            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <Link
+                href="/contact"
+                className="flex justify-between align-center bg-primary-color text-[#000] rounded-0 py-2 px-4 font-normal hover:text-black-900 hover:bg-orange-100 no-underline hover:no-underline"
+              >
+                Schedule Call
+              </Link>
+            </div>
           </div>
         </div>
       </div>

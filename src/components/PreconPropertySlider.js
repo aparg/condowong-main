@@ -42,13 +42,13 @@ const PreconPropertySlider = ({ numberOfCards = 6, data }) => {
         </button>
       </div>
       <div
-        className={`row row-cols-lg-${numberOfCards} row-cols-md-3 row-cols-1 py-2`}
+        className={`row row-cols-lg-5 row-cols-md-3 row-cols-1 py-2`}
         id="slider"
         ref={scrollRef}
       >
         {data?.map((value, index) => {
           return (
-            <div className="px-2">
+            <div className="px-2" key={index}>
               <PreconPropertyCard
                 key={index}
                 data={value}

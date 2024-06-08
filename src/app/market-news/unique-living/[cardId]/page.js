@@ -1,8 +1,82 @@
+import CardContent from "@/components/CardContent";
+import InputComments from "@/components/InputComments";
 import Link from "next/link";
 
 export default function Page({ params }) {
+  const cards = [
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+    {
+      imgSrc:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      miniTitle: "Unique Living",
+      title:
+        "How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch This!",
+      subtitle:
+        "At the very beginning of 2023, I published this video in response to news headlines saying “Record Number of Condos to Flood Toronto...",
+      link: "/market-news/unique-living/1", // replace with your dynamic route
+    },
+  ];
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white mt-5">
       {/* <div>My Post: {params.cardId}</div> */}
       <div className="mini-title text-sm font-light uppercase text-white">
         Unique Living
@@ -14,7 +88,7 @@ export default function Page({ params }) {
         <span className="text-sm">By Jane Cooper |</span>
         <span className="text-sm">April 20, 2023</span>
       </div>
-      <div className="subtitle text-gray-300 font-light text-lg mt-4">
+      <div className="subtitle text-gray-400 font-extralight text-lg mt-4">
         At the very beginning of 2023, I published this video in response to
         news headlines saying “Record Number of Condos to Flood Toronto Market
         in 2023”.
@@ -52,10 +126,8 @@ export default function Page({ params }) {
         </a>
       </div>
 
-      <div className="subtitle text-gray-300 font-light text-lg mt-4">
-        Sure, here's the text with the `<br /> <br />` tags added where there
-        are line breaks or new paragraphs: --- This year, 2024, is going to be
-        another record year of completions.
+      <div className="subtitle text-gray-400 font-extralight text-lg mt-4">
+        This year, 2024, is going to be another record year of completions.
         <br /> <br />
         26,934 units are scheduled for occupancy this year, 33% more than last
         year.
@@ -194,6 +266,31 @@ export default function Page({ params }) {
         the link below.
         <br /> <br />
         My job is to find a perfect match for you buyers and sellers.
+      </div>
+
+      <div className="comments">
+        <div className="title text-5xl  my-2 pl-4 pt-10 playfair">
+          {" "}
+          Comments
+        </div>
+        <InputComments />
+        {/* <DisplayComment /> */}
+      </div>
+
+      {/* related blog  */}
+      <div className="related-blog">
+        <div className="title text-5xl  my-2 pl-4 pt-10 playfair">
+          {" "}
+          Related Blog
+        </div>
+
+        <div
+          className={`grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 p-4 md:p-8`}
+        >
+          {cards.map((card, index) => (
+            <CardContent {...card} />
+          ))}
+        </div>
       </div>
     </div>
   );
