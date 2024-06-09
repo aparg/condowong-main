@@ -1,6 +1,7 @@
 import AdminSidebar from "@/components/AdminSidebar";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
+import "react-quill/dist/quill.snow.css";
 
 export default function AdminLayout({ children }) {
   return (

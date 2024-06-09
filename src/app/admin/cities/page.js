@@ -156,7 +156,7 @@ export default function Cities() {
           <section className="modal-main rounded-4">
             <div className="p-3 py-4 bg-light">
               <div className="d-flex justify-content-between align-items-center">
-                <p className="fw-bold mb-0">Upload City</p>
+                <p className="fw-bold mb-0 text-dark">Upload City</p>
                 <button
                   className="btn bg-white btn-outline-danger p-1 py-0"
                   onClick={() => {
@@ -269,7 +269,7 @@ export default function Cities() {
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-8">
-            <h5 className="fw-bold mb-0">Cities</h5>
+            <h5 className="fw-bold mb-0 text-dark">Cities</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button

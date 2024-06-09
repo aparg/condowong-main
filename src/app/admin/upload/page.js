@@ -382,11 +382,11 @@ export default function Upload() {
       )}
       <div className="bg-white">
         <div className="container-fluid px-minn">
-          <div className="d-flex justify-content-between pt-5">
-            <Link href="/admin/" className="btn bg-white shadow">
+          <div className="d-flex justify-content-between align-items-center pt-5">
+            <Link href="/admin/" className="btn bg-white text-dark shadow">
               Go Back
             </Link>
-            <h4 className="fw-bold">Upload New Pre Construction</h4>
+            <h4 className="fw-bold text-dark">Upload New Pre Construction</h4>
           </div>
         </div>
         <div className="container-fluid px-minn py-5 mydetaill">

@@ -227,7 +227,10 @@ export default function UploadBlog() {
           <div className="modal-dialog modal-xl modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-header ps-5">
-                <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                <h1
+                  className="modal-title fs-5 text-dark"
+                  id="staticBackdropLabel"
+                >
                   Upload Blog
                 </h1>
                 <button
@@ -389,7 +392,7 @@ export default function UploadBlog() {
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-8">
-            <h5 className="fw-bold mb-0">Blog</h5>
+            <h5 className="fw-bold mb-0 text-dark">Blog</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
