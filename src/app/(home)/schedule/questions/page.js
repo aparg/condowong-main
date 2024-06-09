@@ -17,8 +17,12 @@ const page = () => {
   };
 
   const handleSend = () => {
-    // Now answers need to a server
-    alert("Answers are: " + JSON.stringify(answers));
+    let answersString = "";
+    for (const [question, answer] of Object.entries(answers)) {
+      answersString += `\nQuestion ${question}: ${answer}`;
+    }
+  
+    alert(`Answers are: ${answersString}`);
   };
 
   useEffect(() => {

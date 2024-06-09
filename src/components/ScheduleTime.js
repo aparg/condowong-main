@@ -10,11 +10,75 @@ const ScheduleTime = () => {
   const [selectedTime, setSelectedTime] = useState("");
   const [nextButton, setNextButton] = useState(false);
   const Router = useRouter();
+  // const [formValues, setFormValues] = useState({
+  //   fullName: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  // });
 
+  // const handleInputChange = (event) => {
+  //   setFormValues({
+  //     ...formValues,
+  //     [event.target.id]: event.target.value,
+  //   });
+  // };
+
+  // console.log(formValues, "formValues");
+
+  // const handleTimeChange = (event) => {
+  //   setSelectedTime(event.target.value);
+  // };
+
+  const [formValues, setFormValues] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+    selectedDate: null,
+    selectedTime: "",
+  });
+
+  const handleInputChange = (event) => {
+    setFormValues({
+      ...formValues,
+      [event.target.id]: event.target.value,
+    });
+  };
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
+    setFormValues({
+      ...formValues,
+      selectedTime: event.target.value,
+    });
   };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setFormValues({
+      ...formValues,
+      selectedDate: date,
+    });
+  };
+
+
+  const handleSubmit = () => {
+    alert(
+      `Full Name: ${formValues.fullName}\nEmail: ${formValues.email}\nPhone: ${
+        formValues.phone
+      }\nMessage: ${formValues.message}\nDate: ${
+        formValues.selectedDate &&
+        formValues.selectedDate.toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+        })
+      }\nTime: ${formValues.selectedTime}`
+    );
+  };
+
+  console.log(formValues, "formValues");
 
   return (
     <div className="mb-24">
@@ -104,6 +168,7 @@ const ScheduleTime = () => {
                       WebkitTextFillColor: "white",
                     }}
                     className={`border-[1px] border-gray-800 pt-3  focus:outline-none w-full , ${inputLead}`}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -120,6 +185,7 @@ const ScheduleTime = () => {
                       WebkitTextFillColor: "white",
                     }}
                     className={`border-[1px] border-gray-800 pt-3  focus:outline-none w-full , ${inputLead}`}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -129,13 +195,14 @@ const ScheduleTime = () => {
                     Phone <span className="text-red-500">*</span>{" "}
                   </label>
                   <input
-                    type="text"
-                    id="subject"
+                    type="number"
+                    id="phone"
                     style={{
                       WebkitBoxShadow: "0 0 0px 1000px #121212 inset",
                       WebkitTextFillColor: "white",
                     }}
                     className={`border-[1px] border-gray-800 bg-[#121212] pt-3  focus:outline-none w-full   , ${inputLead}`}
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -144,10 +211,12 @@ const ScheduleTime = () => {
                   <label htmlFor="message" className={labelLead}>
                     Topic To Discuss <span className="text-red-500">*</span>{" "}
                   </label>
-                  <textarea
+                  <input
+                    type="text"
                     id="message"
                     rows="2"
                     className={`border-[1px] border-gray-800 pt-6  w-full  block px-4 placeholder-gray-500 rounded-sm focus:outline-none sm:text-sm mt-1 peer  placeholder:text-gray-500 bg-[#121212] shadow-none `}
+                    onChange={handleInputChange}
                   />
                 </div>
               </div>
@@ -157,7 +226,7 @@ const ScheduleTime = () => {
               {/* data picker */}
               <div className="d-flex justify-between">
                 <Datepicker
-                  onSelectedDateChanged={setSelectedDate}
+                  onSelectedDateChanged={handleDateChange}
                   inline
                   theme={{
                     root: {
@@ -260,12 +329,6 @@ const ScheduleTime = () => {
                         day: "numeric",
                       })}
                   </div>
-                  {/* <div className="time-slot border  p-2 px-10 m-2">9:00 AM</div>
-              <div className="time-slot border px-10 p-2 m-2">10:00 AM</div>
-              <div className="time-slot border px-10 p-2 m-2">11:00 AM</div>
-              <div className="time-slot border px-10 p-2 m-2">12:00 PM</div>
-              <div className="time-slot border px-10 p-2 m-2">1:00 PM</div>
-              <div className="time-slot border px-10 p-2 m-2">1:00 PM</div> */}
 
                   <ul id="timetable" class="grid w-full grid-cols-1 gap-2 mt-5">
                     <li>
@@ -381,7 +444,10 @@ const ScheduleTime = () => {
             <>
               <button
                 className="no-underline"
-                onClick={() => Router.push("/schedule/questions")}
+                onClick={() => {
+                  handleSubmit();
+                  Router.push("/schedule/questions");
+                }}
               >
                 <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
                   <div className="title text-xl  my-1">Book Now</div>
