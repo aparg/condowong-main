@@ -2,76 +2,14 @@
 import React, { useEffect, useRef } from "react";
 //ICONS
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import NewsCard from "./NewsCard";
 // import BlogCard from "./BlogCard";
 import BlogCard from "./BlogCard";
-import BlogCard from "./BlogCard";
+import { fetchAllBlogPosts } from "../../api/blogs";
 
-const NewsSlider = ({ numberOfCards = 4, city }) => {
+const NewsSlider = ({ numberOfCards = 4 }) => {
   const scrollRef = useRef(null); //used to hold scroll value
   const cardRef = useRef(null); //used to hold card width value
-  const cardData = [
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      subtitle: "Make a unique living",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      link: "/",
-      title: "News Title",
-    },
-    {
-      imgSrc: "/maxresdefault.jpg",
-      miniTitle: "UNIQUE LIVING",
-      link: "/",
-      title: "News Title",
-    },
-  ];
-  //business is returned as Sale of business so we need to modify it to Business
-  const modifyType = (type) => {
-    if (type == "Sale Of Business") return "business";
-    if (type == "Commercial/Retail") return "retail";
-    return type;
-  };
+  const cardData = fetchAllBlogPosts();
 
   const slideLeft = () => {
     const scrollContainer = scrollRef.current;
@@ -110,7 +48,7 @@ const NewsSlider = ({ numberOfCards = 4, city }) => {
         id="slider"
         ref={scrollRef}
       >
-        {cardData?.map((card, index) => {
+        {/* {cardData.map((card, index) => {
           return (
             <BlogCard
               key={index}
@@ -121,7 +59,8 @@ const NewsSlider = ({ numberOfCards = 4, city }) => {
               ref={cardRef}
             />
           );
-        })}
+        })} */}
+        {JSON.stringify(cardData)}
       </div>
     </div>
   );
