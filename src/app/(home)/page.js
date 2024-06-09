@@ -1,13 +1,13 @@
 import PropertySlider from "@/components/PropertySlider";
-import Slider from "@/components/NewsSlider";
+// import Slider from "@/components/NewsSlider";
 import {
   getFilteredRetsData,
-  getSalesData,
+  // getSalesData,
 } from "../../../actions/getSalesData";
-import { saleLease } from "@/constant";
+// import { saleLease } from "@/constant";
 import getPreconProperties from "../../../actions/getPreconData";
 import NewsSlider from "@/components/NewsSlider";
-import NewsCard from "@/components/NewsCard";
+// import NewsCard from "@/components/NewsCard";
 import PreconPropertySlider from "@/components/PreconPropertySlider";
 import assignments from "@/constant/assignments";
 import Link from "next/link";
