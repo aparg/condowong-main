@@ -8,11 +8,11 @@ export const labelLead =
 
 const Contact = () => {
   return (
-    <div className=" m-24">
-      <div className="title text-5xl  my-10  text-start text-white playfair">
-        Contact Us
+    <div className="mx-24">
+      <div className="title text-5xl  my-10  text-center text-white playfair">
+        Contact CondoWong Now
       </div>
-      <div className="bg-black text-white flex flex-row gap-10 items-center justify-center ">
+      <div className="bg-black text-white flex flex-row gap-10 items-start justify-center ">
         {/* left part */}
         <div className="left-part w-[30%]">
           <div className="flex flex-col gap-y-6 ">
@@ -53,7 +53,7 @@ const Contact = () => {
                 <i class="bi bi-envelope-fill text-2xl text-center items-center"></i>
               </div>
               <div className="email w-4/5">
-                <div className="title text-xl  my-1 ">admin@condowong.ca</div>
+                <div className="title text-xl  my-1 ">info@condowong.ca</div>
               </div>
             </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
 
             {/* scheldule a call button  */}
-            <div className="flex flex-row items-center bg-[#CC9900] justify-center py-1  text-white">
+            <div className="flex flex-row items-center border-[#CC9900] border-2 justify-center py-1  text-white">
               <div className="title text-xl  my-1 ">Schedule a Call</div>
             </div>
           </div>
@@ -113,7 +113,7 @@ const Contact = () => {
             {/* subject input section  */}
             <div className="relative border-none">
               <label htmlFor="subject" className={labelLead}>
-                Subject <span className="text-red-500">*</span>{" "}
+                Phone <span className="text-red-500">*</span>{" "}
               </label>
               <input
                 type="text"
@@ -141,7 +141,7 @@ const Contact = () => {
 
             {/* submit button */}
             <div className="flex flex-row items-center bg-[#CC9900] justify-center py-1  text-white">
-              <div className="title text-xl  my-1 ">Send</div>
+              <div className="title text-xl  my-1 ">Send Message</div>
             </div>
           </div>
         </div>

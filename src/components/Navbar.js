@@ -33,7 +33,7 @@ const Navbar = () => {
                 href="/pre-construction"
                 className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
               >
-                Pre-Construction
+                Pre construction
               </Link>
             </div>
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
@@ -70,7 +70,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
-                href="/contact"
+                href="/schedule"
                 className="flex justify-between align-center bg-primary-color text-[#000] rounded-0 py-2 px-4 font-normal hover:text-black-900 hover:bg-orange-100 no-underline hover:no-underline"
               >
                 Schedule Call

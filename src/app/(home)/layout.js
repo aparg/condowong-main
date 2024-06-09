@@ -6,7 +6,7 @@ import NextTopLoader from "nextjs-toploader";
 export default async function RootLayout({ children }) {
   return (
     <>
-      <body className="montserrat bg-black montserrat">
+      <main className="montserrat bg-black montserrat">
         <NextTopLoader
           color="#cd922b"
           initialPosition={0.08}
@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossOrigin="anonymous"
         ></Script>
-      </body>
+      </main>
     </>
   );
 }

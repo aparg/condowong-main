@@ -6,7 +6,7 @@ import "react-quill/dist/quill.snow.css";
 export default function AdminLayout({ children }) {
   return (
     <>
-      <body className="montserrat bg-white montserrat">
+      <main className="montserrat bg-white montserrat">
         <NextTopLoader
           color="#cd922b"
           initialPosition={0.08}
@@ -27,7 +27,7 @@ export default function AdminLayout({ children }) {
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
           crossOrigin="anonymous"
         ></Script>
-      </body>
+      </main>
     </>
   );
 }
