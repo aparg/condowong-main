@@ -14,10 +14,6 @@ export default function UploadBlog() {
     news_description: "",
     news_link: "#",
     news_thumbnail: null,
-    city: {
-      name: "",
-      slug: "",
-    },
   };
 
   const [isEdit, setIsEdit] = useState(false);
@@ -25,7 +21,6 @@ export default function UploadBlog() {
   const [newsdata, setNewsData] = useState(stat);
   const [modalnews, setModalNews] = useState(false);
   const [news, setNews] = useState([]);
-  const [cities, setCities] = useState([]);
 
   const handleCreateNews = (e) => {
     e.preventDefault();
@@ -35,8 +30,7 @@ export default function UploadBlog() {
       newsdata.news_title == "" ||
       newsdata.news_description == "" ||
       newsdata.news_link == "" ||
-      newsdata.news_thumbnail == "" ||
-      newsdata.city.name == ""
+      newsdata.news_thumbnail == ""
     ) {
       swal({
         title: "Error!",
@@ -69,8 +63,7 @@ export default function UploadBlog() {
     if (
       newsdata.news_title == "" ||
       newsdata.news_description == "" ||
-      newsdata.news_link == "" ||
-      newsdata.city.name == ""
+      newsdata.news_link == ""
     ) {
       swal({
         title: "Error!",
@@ -91,7 +84,6 @@ export default function UploadBlog() {
         news_title: newsdata.news_title,
         news_description: newsdata.news_description,
         news_link: newsdata.news_link,
-        city: newsdata.city,
       };
     } else {
       updatenewsdata = {
@@ -99,7 +91,6 @@ export default function UploadBlog() {
         news_description: newsdata.news_description,
         news_link: newsdata.news_link,
         news_thumbnail: newsdata.news_thumbnail,
-        city: newsdata.city,
       };
     }
 
@@ -294,38 +285,6 @@ export default function UploadBlog() {
                       />
                     </div>
                   </div>
-
-                  <div className="col-6">
-                    <div className="w-100">
-                      <label htmlFor="city" className="form-label text-dark">
-                        City <span className="text-danger">*</span>
-                      </label>
-
-                      <select
-                        className="form-select"
-                        id="city"
-                        value={newsdata.city.name}
-                        onChange={(e) => {
-                          const { value } = e.target;
-                          setNewsData((prevState) => ({
-                            ...prevState,
-                            city: {
-                              name: value,
-                              slug: value.toLowerCase().replace(/ /g, "-"),
-                            },
-                          }));
-                        }}
-                      >
-                        <option value="">Select City</option>
-                        {cities &&
-                          cities.map((city, index) => (
-                            <option key={index} value={city.name}>
-                              {city.name}
-                            </option>
-                          ))}
-                      </select>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="w-100 thumbnail mt-4">
@@ -336,7 +295,7 @@ export default function UploadBlog() {
                       className="img-fluid"
                     />
                   )}
-                  <label htmlFor="image" className="form-label">
+                  <label htmlFor="image" className="form-label text-dark">
                     Blog Thumbnail <span className="text-danger">*</span>
                   </label>
                   <input
@@ -349,14 +308,15 @@ export default function UploadBlog() {
                   />
                 </div>
 
-                <div className="blogs-detail mt-4">
-                  <label className="form-label fw-bold">
-                    Blog Detail <span className="text-danger">*</span>{" "}
+                <div className="blogs-detail mt-4 text-dark">
+                  <label className="form-label fw-bold text-dark">
+                    Market News Detail <span className="text-danger">*</span>{" "}
                   </label>
                   <ReactQuill
                     theme="snow"
                     value={newsdata.news_description}
-                    style={{ height: "200px" }}
+                    className="text-dark"
+                    style={{ height: "200px", color: "black" }}
                     modules={{
                       toolbar: [
                         [{ header: "1" }, { header: "2" }, { font: [] }],

@@ -3888,3 +3888,6 @@ div.dynamic {
 .box-shadow-custom {
   box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
+.ql-editor{
+  color: black !important;
+}

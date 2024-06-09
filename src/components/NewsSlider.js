@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from "react";
 //ICONS
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import NewsCard from "./NewsCard";
-// import CardContent from "./CardContent";
-import CardContent from "./CardContent";
+// import BlogCard from "./BlogCard";
+import BlogCard from "./BlogCard";
+import BlogCard from "./BlogCard";
 
 const NewsSlider = ({ numberOfCards = 4, city }) => {
   const scrollRef = useRef(null); //used to hold scroll value
@@ -111,7 +112,7 @@ const NewsSlider = ({ numberOfCards = 4, city }) => {
       >
         {cardData?.map((card, index) => {
           return (
-            <CardContent
+            <BlogCard
               key={index}
               title={card.title}
               imageSrc={card.imgSrc}

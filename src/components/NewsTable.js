@@ -21,7 +21,7 @@ const NewsTable = ({ news, handleEdit, handleDelete }) => {
                 <td className="text-limit">{news.news_title}</td>
                 <td>{news.last_updated.slice(0, 10)}</td>
                 <td className="text-limit">
-                  <Link href={`/blogs/${news.slug}`}>
+                  <Link href={`/blogs/${news.slug}`} className="text-primary">
                     {`https://dolphy.ca/blogs/${news.slug}`}
                   </Link>
                 </td>

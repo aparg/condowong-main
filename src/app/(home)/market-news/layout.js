@@ -1,6 +1,4 @@
-import MarketNewsNavbar from "../../components/market-news-navbar";
-
-
+/* import MarketNewsNavbar from "../../components/market-news-navbar"; */
 
 export const metadata = {
   title: "Create Next App",
@@ -9,13 +7,9 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-<div className=" bg-black">
-        <MarketNewsNavbar />
-        <div className="mx-16">
-        {children}
-        </div>
-</div>
-          
-  
+    <div className=" bg-black">
+      {/* <MarketNewsNavbar /> */}
+      <div className="mx-16">{children}</div>
+    </div>
   );
 }
