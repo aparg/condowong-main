@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { resenditial } from "../../api/routes";
+import { resenditial } from "@/api/routes";
 import { saleLease } from "@/constant";
 import { Image } from "react-bootstrap";
 import { generateURL } from "@/helpers/generateURL";

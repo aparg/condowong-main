@@ -2,12 +2,12 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
 import Link from "next/link";
-import { resenditial } from "../../../../../api/routes";
+import { resenditial } from "@/api/routes";
 import { generateURL } from "@/helpers/generateURL";
 import { capitalizeFirstLetter } from "@/helpers/capitalizeFIrstLetter";
 import BookShowingForm from "@/components/BookShowingForm";
 // import MortgageCalculator from "@/components/reso/MortgageCalculator";
-import { getSalesData } from "../../../../../actions/getSalesData";
+import { getSalesData } from "@/actions/getSalesData";
 const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 // import AdditionalListing from "@/components/AdditionalListing";

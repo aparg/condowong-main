@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 // import BlogCard from "./BlogCard";
 import BlogCard from "./BlogCard";
-import { fetchAllBlogPosts } from "../../api/blogs";
+import { fetchAllBlogPosts } from "@/api/blogs";
 import NewsCard from "./NewsCard";
 
 const NewsSlider = ({ numberOfCards = 4 }) => {

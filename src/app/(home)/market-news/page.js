@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BlogCard from "@/components/BlogCard";
-import getNewsData from "../../../../actions/getNewsData";
-import Pagination from "@/components/Pagination";
-import Link from "next/link";
-import { fetchAllBlogPosts, fetchCities } from "../../../../api/blogs";
+import { fetchAllBlogPosts } from "@/api/blogs";
 
 const Blogs = async () => {
   const blogPosts = await fetchAllBlogPosts();

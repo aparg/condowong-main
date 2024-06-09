@@ -1,11 +1,7 @@
 import React from "react";
 
 //API
-import {
-  fetchAllBlogPosts,
-  fetchBlogPostBySlug,
-} from "../../../../../api/blogs";
-
+import { fetchAllBlogPosts } from "@/api/blogs";
 //LIB
 import Link from "next/link";
 import dayjs from "dayjs";

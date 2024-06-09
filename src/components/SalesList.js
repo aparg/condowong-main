@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { ImSpinner } from "react-icons/im";
 
 //SERVER
-import { getFilteredRetsData } from "../../actions/getSalesData";
+import { getFilteredRetsData } from "@/actions/getSalesData";
 //CONSTANT
 import { saleLease, bedCount, houseType } from "@/constant";
 import PropertyCard from "./PropertyCard";

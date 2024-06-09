@@ -1,4 +1,4 @@
-import { resenditial } from "../../api/routes";
+import { resenditial } from "@/api/routes";
 export const generateImageURLs = (id, photoCount) => {
   const images = [];
   if (!photoCount) photoCount = 10;
