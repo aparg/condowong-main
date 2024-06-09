@@ -53,11 +53,11 @@ const PreconPropertyCard = React.forwardRef(
       // </Link>
       <section className="text-white px-1" ref={ref}>
         <Link
-          href="/"
+          href="/precon"
           className="text-white hover:no-underline w-full block bg-black-tint h-[30rem]"
         >
           <div className="lg:px-0 h-full">
-            <div className="flex flex-col overflow-hidden transition-all duration-200 transform bg-white group p-0 hover:shadow-lg hover:-translate-y-1 relative">
+            <div className="flex flex-col overflow-hidden transition-all duration-200 transform group p-0 hover:shadow-lg hover:-translate-y-1 relative">
               <div
                 className={`${
                   small ? "h-44" : "h-80"

@@ -159,64 +159,13 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
             isMulti={false}
             isMobileView={isMobileView}
           /> */}
-          {houseTypeOptions.map(()=>{
-            
-          })}
-        </div>
-
-        {/* {isMobileView ? (
-          <div className="basement__filter">
-            <IndividualFilterWithCancel
-              name="hasBasement"
-              {...{ handleFilterChange }}
-              value={filterState.hasBasement}
-            />
-          </div>
-        ) : null} */}
-        {/* <div className="more__filter">
-          <MoreFilter
-            {...{ washroomCountOptions, additonalFilterChange, filterState }}
+          <IndividualFilterButton
+            options={houseTypeOptions}
+            name="type"
+            value={filterState.houseType}
+            handleFilterChange={handleFilterChange}
           />
-        </div> */}
-
-        {/* <IndividualFilterNoOptions
-          label="Price Decreased"
-          name="priceDecreased"
-          value={filterState.priceDecreased}
-          handleFilterChange={handleFilterChange}
-        /> */}
-        {!isMobileView ? (
-          <div className="price-range__filter ml-2 h-[34px] pb-14 px-10 w-[25vw]">
-            <div
-              className={
-                filterState.saleLease == "For Sale" ? "block" : "hidden"
-              }
-            >
-              <PriceRangeFilter
-                name="priceRange"
-                value={filterState.priceRange}
-                handleFilterChange={handleFilterChange}
-                minMaxPrice={{
-                  min: 40000,
-                  max: 10000000,
-                }}
-              />
-            </div>
-
-            <div
-              className={
-                filterState.saleLease == "For Lease" ? "block" : "hidden"
-              }
-            >
-              <PriceRangeFilter
-                name="priceRange"
-                value={filterState.priceRange}
-                handleFilterChange={handleFilterChange}
-                minMaxPrice={{ min: 1500, max: 8000 }}
-              />
-            </div>
-          </div>
-        ) : null}
+        </div>
       </div>
 
       {isMobileView ? (

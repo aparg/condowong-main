@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-black-tint px-12">
+    <nav className="hidden sm:block bg-black-tint px-12">
       <div className="w-full flex justify-between items-center bg-black-tint h-20">
         <div className="w-40">
           <Link href="/">

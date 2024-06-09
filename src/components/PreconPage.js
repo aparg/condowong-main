@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import Gallery from "./Gallery";
 
-const PreconPage = ({ projectName, quote, bulletpoints, link }) => {
+const PreconPage = ({ projectName, quote, bulletpoints, link, imageURLs }) => {
   const [credentials, setCredentials] = useState({ name: "", email: "" });
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -72,6 +73,9 @@ const PreconPage = ({ projectName, quote, bulletpoints, link }) => {
             </label>
           </div>
           <button className="bg-primary-color px-3 py-2">Send</button>
+          <div className="my-10">
+            <Gallery data={imageURLs} />
+          </div>
         </form>
       </div>
     </div>
