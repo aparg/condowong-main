@@ -1,11 +1,12 @@
-import AdminSidebar from "@/components/AdminSidebar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 
-export default function AdminLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <>
-      <body className="montserrat bg-white montserrat">
+      <body className="montserrat bg-black montserrat">
         <NextTopLoader
           color="#cd922b"
           initialPosition={0.08}
@@ -17,10 +18,9 @@ export default function AdminLayout({ children }) {
           shadow="0 0 10px #cd922b,0 0 5px #cd922b"
         />
 
-        <AdminSidebar></AdminSidebar>
-        <main id="main" className="bg-white">
-          {children}
-        </main>
+        <Navbar />
+        {children}
+        <Footer />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

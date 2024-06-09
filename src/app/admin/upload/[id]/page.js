@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import swal from "sweetalert";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import LexicalTextEditor from "@/components/LexicalTextEditor";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -299,15 +298,6 @@ export default function Update({ params }) {
       }
     });
   };
-  function onError(error) {
-    console.error(error);
-  }
-  const theme = {};
-  const initialConfig = {
-    namespace: "MyEditor",
-    theme,
-    onError,
-  };
 
   return (
     <>
@@ -422,16 +412,11 @@ export default function Update({ params }) {
       )}
       <div className="bg-white">
         <div className="container-fluid px-minn">
-          <div className="d-flex justify-start pt-5 items-center">
-            <Link
-              href="/admin/"
-              className="visited:text-black text-black font-normal text-[5rem]"
-            >
-              <img src="/back.svg"></img>
+          <div className="d-flex justify-content-between pt-5">
+            <Link href="/admin/" className="btn bg-white shadow">
+              Go Back
             </Link>
-            <span className="logo ml-3">
-              <span className="text-4xl">Edit Preconstruction</span>
-            </span>
+            <h4 className="fw-bold">Upload New Pre Construction</h4>
           </div>
         </div>
         <div className="container-fluid px-minn py-5 mydetaill">
@@ -694,18 +679,6 @@ export default function Update({ params }) {
               }))
             }
           />
-          {/* <div className="h-20">
-            <LexicalComposer initialConfig={initialConfig}>
-              <RichTextPlugin
-                contentEditable={<ContentEditable />}
-                placeholder={<div>Enter some text...</div>}
-                ErrorBoundary={LexicalErrorBoundary}
-              />
-              <HistoryPlugin />
-              <AutoFocusPlugin />
-            </LexicalComposer>
-          </div> */}
-          <LexicalTextEditor />
           <div className="row row-cols-2 pt-4 pb-3">
             <div className="col-6 pb-3">
               <h5 className="fw-bold">Uploaded Images</h5>
@@ -819,18 +792,12 @@ export default function Update({ params }) {
           <div className="my-3"></div>
           <div className="mt-5"></div>
           <div className="pt-5"></div>
-          <div className="py-3 d-flex justify-end align-items-center d-block bg-white w-100 posss">
-            <Link
-              href="/admin"
-              className="text-black text-md font-bold mr-10 hover:text-black visited:text-black"
-            >
-              Cancel
-            </Link>
+          <div className="py-3 d-flex justify-content-center align-items-center d-block bg-white w-100 posss">
             <button
-              className="btn bg-black text-white text-md font-bold px-10"
+              className="btn btn-success btn-lg shadow-lg"
               onClick={(e) => handleSubmit(e)}
             >
-              Update
+              Update now
             </button>
           </div>
         </div>

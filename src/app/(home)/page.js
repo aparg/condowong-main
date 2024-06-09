@@ -1,8 +1,11 @@
 import PropertySlider from "@/components/PropertySlider";
 import Slider from "@/components/NewsSlider";
-import { getFilteredRetsData, getSalesData } from "../../actions/getSalesData";
+import {
+  getFilteredRetsData,
+  getSalesData,
+} from "../../../actions/getSalesData";
 import { saleLease } from "@/constant";
-import getPreconProperties from "../../actions/getPreconData";
+import getPreconProperties from "../../../actions/getPreconData";
 import NewsSlider from "@/components/NewsSlider";
 import NewsCard from "@/components/NewsCard";
 import PreconPropertySlider from "@/components/PreconPropertySlider";

@@ -12,7 +12,7 @@ export default function UploadBlog() {
     id: 1,
     news_title: "",
     news_description: "",
-    news_link: "",
+    news_link: "#",
     news_thumbnail: null,
     city: {
       name: "",
@@ -266,20 +266,6 @@ export default function UploadBlog() {
                       />
                     </div>
                   </div>
-                  <div className="col-8">
-                    <div className=" w-100">
-                      <label htmlFor="news_title" className="form-label">
-                        Blog Link <span className="text-danger">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="news_title"
-                        value={newsdata.news_link}
-                        onChange={(e) => handleChange(e)}
-                      />
-                    </div>
-                  </div>
 
                   <div className="col-4">
                     <div className="w-100">
@@ -401,16 +387,16 @@ export default function UploadBlog() {
         </div>
       )}
       <div className="py-4 w-100 ">
-        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center justify-content-between mx-0">
-          <span className="logo">
-            <span className="text-4xl">Blogs</span>
-          </span>
+        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
+          <div className="col-md-8">
+            <h5 className="fw-bold mb-0">Blog</h5>
+          </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
+              className="btn btn-success py-3"
               onClick={() => setModalNews(true)}
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
             >
-              + Add New Blog
+              Add New Blog
             </button>
           </div>
         </div>

@@ -4,7 +4,6 @@ import CityTable from "@/components/CityTable";
 import axios from "axios";
 import swal from "sweetalert";
 import dynamic from "next/dynamic";
-import TopBar from "@/components/TopBar";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function Cities() {
@@ -267,20 +266,17 @@ export default function Cities() {
           </section>
         </div>
       )}
-      <TopBar />
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-8">
-            <div className="logo">
-              <span className="text-4xl">Cities</span>
-            </div>
+            <h5 className="fw-bold mb-0">Cities</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
+              className="btn btn-success py-3"
               onClick={() => setModalCity(true)}
             >
-              + Add New City
+              Add New City
             </button>
           </div>
         </div>

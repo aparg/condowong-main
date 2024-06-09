@@ -1,9 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
-import Footer from "../components/Footer";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 
 export const metadata = {
   title: "CondoWong - Real Estate News",
@@ -16,34 +14,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className="montserrat bg-black montserrat">
-        <NextTopLoader
-          color="#cd922b"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #cd922b,0 0 5px #cd922b"
-        />
-        <Navbar />
-        {children}
-        <Script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-          crossOrigin="anonymous"
-        ></Script>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous"
-        ></link>
-        <Footer />
-      </body>
-    </html>
-  );
+  return <html lang="en">{children}</html>;
 }
