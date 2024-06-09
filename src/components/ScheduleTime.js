@@ -1,13 +1,16 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import React from "react";
 import { Datepicker } from "flowbite-react";
 import { inputLead, labelLead } from "./Contact";
+import { useRouter } from "next/navigation";
 
 const ScheduleTime = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState("");
   const [nextButton, setNextButton] = useState(false);
+  const Router = useRouter();
+
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
@@ -19,29 +22,29 @@ const ScheduleTime = () => {
         Schedule a Call
       </div>
 
-        <div className="back text-white">
-          {/* back icons with text  */}
-          <div className="back-icon flex flex-row items-center gap-2">
-            <svg
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              width="20"
-              height="20"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
-              ></path>
-            </svg>
-            <div
-              className="flex flex-row items-center gap-2 text-lg  font-light hover:text-gray-700 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
-              onClick={() => setNextButton(false)}
-            >
-              <div>Back</div>
-            </div>
+      <div className="back text-white">
+        {/* back icons with text  */}
+        <div className="back-icon flex flex-row items-center gap-2">
+          <svg
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            width="20"
+            height="20"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
+            ></path>
+          </svg>
+          <div
+            className="flex flex-row items-center gap-2 text-lg  font-light hover:text-gray-700 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+            onClick={() => setNextButton(false)}
+          >
+            <div>Back</div>
           </div>
         </div>
+      </div>
 
       {/* main part start from here  */}
       <div className="flex flex-row gap-20 my-8 text-white">
@@ -374,14 +377,29 @@ const ScheduleTime = () => {
           <hr className=" text-white bg-white  my-4" />
 
           {/*  next button */}
-
-          <button className="no-underline" onClick={() => setNextButton(true)}>
-            <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
-              <div className="title text-xl  my-1">
-                {nextButton ? "Book Now" : "Next"}
-              </div>
-            </div>
-          </button>
+          {nextButton ? (
+            <>
+              <button
+                className="no-underline"
+                onClick={() => Router.push("/schedule/questions")}
+              >
+                <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
+                  <div className="title text-xl  my-1">Book Now</div>
+                </div>
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className="no-underline"
+                onClick={() => setNextButton(true)}
+              >
+                <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
+                  <div className="title text-xl  my-1">Next</div>
+                </div>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
