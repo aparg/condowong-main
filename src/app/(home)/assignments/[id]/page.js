@@ -26,7 +26,7 @@ const page = ({ params }) => {
         <h1 className="playfair text-[2rem] playfair">{assignment.project}</h1>
         <div className="row row-cols-md-4 gap-y-4 my-4">
           {assignment.details.map((key, idx) => (
-            <div className="flex flex-col">
+            <div className="flex flex-col" key={idx}>
               <div className="text-primary-color font-medium uppercase">
                 {getKeyValue(key)[0]}
               </div>
@@ -47,7 +47,7 @@ const page = ({ params }) => {
           </section>
           <section className="my-20 sm:mr-20">
             <h1 className="playfair mb-4 text-[2rem] playfair">
-              Buyer's Sum of Payment
+              Buyer{"'"}s Sum of Payment
             </h1>
             <div className="flex justify-between">
               <div>Seller's Profit(AP-OP)</div>

@@ -1,14 +1,10 @@
 "use client";
-
 import { inputLead } from "@/components/Contact";
 import QuestionRadio from "@/components/QuestionRadio";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
-
-
   const [answers, setAnswers] = useState({});
-
   const handleAnswer = (questionNumber, answer) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
@@ -21,7 +17,7 @@ const page = () => {
     for (const [question, answer] of Object.entries(answers)) {
       answersString += `\nQuestion ${question}: ${answer}`;
     }
-  
+
     alert(`Answers are: ${answersString}`);
   };
 
@@ -32,7 +28,7 @@ const page = () => {
   return (
     <div className="container">
       <div className="text-3xl font-medium text-white my-12 text-center">
-        Let's make our meeting productive and rewarding for you! <br />
+        Let&apos;s make our meeting productive and rewarding for you! <br />
         Please Spend 3 minutes answering the following questions now.
       </div>
 
@@ -127,14 +123,14 @@ const page = () => {
             className="block px-4 h-16   w-full placeholder-gray-500 rounded-sm focus:outline-none sm:text-sm mt-1 peer  placeholder:text-gray-500 bg-[#121212] shadow-none border-gray-800"
             placeholder=""
             onChange={(e) => handleAnswer(11, e.target.value)}
-
           />
         </div>
 
         {/* send form  */}
         <div className="flex justify-center mt-6">
-          <button className="bg-[#CC9900] w-full text-white text-lg font-bold py-3 px-6 rounded-md"
-          onClick={handleSend}
+          <button
+            className="bg-[#CC9900] w-full text-white text-lg font-bold py-3 px-6 rounded-md"
+            onClick={handleSend}
           >
             Send
           </button>

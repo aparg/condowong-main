@@ -20,12 +20,13 @@ const TimingList = ({ handleChange }) => {
   const [selected, setSelected] = useState();
   return (
     <div className="w-full flex justify-between">
-      {timings.map((timing) => (
+      {timings.map((timing, idx) => (
         <TimingOption
           selected={selected == timing.name}
           setSelected={setSelected}
           handleChange={handleChange}
           timing={timing}
+          key={idx}
         />
       ))}
     </div>

@@ -16,8 +16,8 @@ const Blogs = async () => {
             Unique Living
           </div>
           <div className="title text-3xl  my-2 playfair">
-            How to Assign a Condo Unit FAST - Don't Walk Away Until You Watch
-            This!
+            How to Assign a Condo Unit FAST - Don&apos;t Walk Away Until You
+            Watch This!
           </div>
           <div className="subtitle font-light text-sm">
             At the very beginning of 2023, I published this video in response to

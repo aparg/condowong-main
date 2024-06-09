@@ -49,7 +49,11 @@ const PropertySlider = ({ numberOfCards = 4, data }) => {
         {data?.map((curElem, index) => {
           return (
             <div className="px-2">
-              <PropertyCard curElem={curElem} ref={cardRef}></PropertyCard>
+              <PropertyCard
+                curElem={curElem}
+                ref={cardRef}
+                key={index}
+              ></PropertyCard>
             </div>
           );
         })}
