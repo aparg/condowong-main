@@ -19,7 +19,7 @@ export default async function Home() {
     <div>
       <main className="">
         <section>
-          <div className="w-full h-[500px]">
+          <div className="w-full h-[500px] relative">
             <video
               autoPlay
               width="100%"
@@ -29,6 +29,14 @@ export default async function Home() {
               className="object-cover max-h-[500px]"
               loop
             ></video>
+            <div className="absolute w-full bottom-[15rem] flex flex-col items-center">
+              <h1 className="text-[4rem] font-bold text-center playfair">
+                Build Wealth with Toronto Real Estate
+              </h1>
+              <h3 className="text-[2.5rem] font-bold  playfair">
+                <i>Every Crisis is an Opportunity</i>
+              </h3>{" "}
+            </div>
           </div>
         </section>
         <section className="mx-10">
@@ -39,17 +47,6 @@ export default async function Home() {
               </h3>
             </div>
             <NewsSlider />
-            {/* <Slider>
-              {cardData?.map((card, index) => {
-                return (
-                  <NewsCard
-                    title={card.title}
-                    imageSrc={card.imgSrc}
-                    ref={cardRef}
-                  />
-                );
-              })}
-            </Slider> */}
           </div>
           <div className="mt-40">
             <div className="flex justify-between mb-3">

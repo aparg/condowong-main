@@ -54,7 +54,11 @@ const Blogs = async () => {
       </div>
 
       <div className="flex justify-center items-center">
-        {/* <Pagination pages={[1, 2, 3, 4, 5]} currentPage={currentPage} onPageChange={handlePageChange} /> */}
+        {/* <Pagination
+          pages={[1, 2, 3, 4, 5]}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        /> */}
       </div>
     </div>
   );

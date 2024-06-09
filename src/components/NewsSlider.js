@@ -1,15 +1,20 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 //ICONS
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 // import BlogCard from "./BlogCard";
 import BlogCard from "./BlogCard";
 import { fetchAllBlogPosts } from "../../api/blogs";
+import NewsCard from "./NewsCard";
 
 const NewsSlider = ({ numberOfCards = 4 }) => {
+  const [cardData, setCardData] = useState();
   const scrollRef = useRef(null); //used to hold scroll value
   const cardRef = useRef(null); //used to hold card width value
-  const cardData = fetchAllBlogPosts();
+
+  useEffect(() => {
+    fetchAllBlogPosts().then((cardData) => setCardData(cardData));
+  }, []);
 
   const slideLeft = () => {
     const scrollContainer = scrollRef.current;
@@ -48,19 +53,15 @@ const NewsSlider = ({ numberOfCards = 4 }) => {
         id="slider"
         ref={scrollRef}
       >
-        {/* {cardData.map((card, index) => {
+        {cardData?.map((card, index) => {
           return (
             <BlogCard
-              key={index}
-              title={card.title}
-              imageSrc={card.imgSrc}
-              link={card.link}
-              miniTitle={card.miniTitle}
+              blog={card}
+              // miniTitle={card.miniTitle}
               ref={cardRef}
             />
           );
-        })} */}
-        {JSON.stringify(cardData)}
+        })}
       </div>
     </div>
   );
