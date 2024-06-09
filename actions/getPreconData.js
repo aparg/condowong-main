@@ -1,7 +1,7 @@
 const getPreconProperties = async (size = 10) => {
   const res = await fetch(
-    // "https://api.dolphy.ca/api/preconstructions-city/toronto/?project_type=Condo&page_size=20",
-    `https://api.dolphy.ca/api/preconstructions/?page_size=${size}`,
+    // "https://wong.condomonk.ca/api/preconstructions-city/toronto/?project_type=Condo&page_size=20",
+    `https://wong.condomonk.ca/api/preconstructions/?page_size=${size}`,
     {
       next: { revalidate: 10 },
     }

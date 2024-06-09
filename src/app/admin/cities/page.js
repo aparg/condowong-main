@@ -4,7 +4,6 @@ import CityTable from "@/components/CityTable";
 import axios from "axios";
 import swal from "sweetalert";
 import dynamic from "next/dynamic";
-import TopBar from "@/components/TopBar";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function Cities() {
@@ -32,7 +31,7 @@ export default function Cities() {
     }
 
     axios
-      .post("https://api.dolphy.ca/api/city/", citydata)
+      .post("https://wong.condomonk.ca/api/city/", citydata)
       .then((res) => {
         setRefetcch(!refetch);
         setCityData(stat);
@@ -57,7 +56,7 @@ export default function Cities() {
 
     let updatecitydata = citydata;
     axios
-      .put(`https://api.dolphy.ca/api/city/${citydata.id}/`, updatecitydata)
+      .put(`https://wong.condomonk.ca/api/city/${citydata.id}/`, updatecitydata)
       .then((res) => {
         setModalCity(false);
         setIsEdit(false);
@@ -107,7 +106,7 @@ export default function Cities() {
 
   function deleteEvent(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/city/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/city/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetcch(!refetch);
@@ -118,7 +117,7 @@ export default function Cities() {
   }
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/city/")
       .then((res) => {
         console.log(res.data.results);
         setCities(res.data.results);
@@ -139,7 +138,7 @@ export default function Cities() {
   const handleEdit = (e, id) => {
     e.preventDefault();
     axios
-      .get(`https://api.dolphy.ca/api/city/${id}/`)
+      .get(`https://wong.condomonk.ca/api/city/${id}/`)
       .then((res) => {
         console.log(res.data);
         setModalCity(true);
@@ -157,7 +156,7 @@ export default function Cities() {
           <section className="modal-main rounded-4">
             <div className="p-3 py-4 bg-light">
               <div className="d-flex justify-content-between align-items-center">
-                <p className="fw-bold mb-0">Upload City</p>
+                <p className="fw-bold mb-0 text-dark">Upload City</p>
                 <button
                   className="btn bg-white btn-outline-danger p-1 py-0"
                   onClick={() => {
@@ -267,20 +266,17 @@ export default function Cities() {
           </section>
         </div>
       )}
-      <TopBar />
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-8">
-            <div className="logo">
-              <span className="text-4xl">Cities</span>
-            </div>
+            <h5 className="fw-bold mb-0 text-dark">Cities</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
+              className="btn btn-success py-3"
               onClick={() => setModalCity(true)}
             >
-              + Add New City
+              Add New City
             </button>
           </div>
         </div>

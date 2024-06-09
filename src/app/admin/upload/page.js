@@ -67,7 +67,7 @@ export default function Upload() {
       return;
     }
     axios
-      .post("https://api.dolphy.ca/api/developers/", developerdata, {
+      .post("https://wong.condomonk.ca/api/developers/", developerdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -96,7 +96,7 @@ export default function Upload() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/city/")
       .then((res) => {
         console.log(res.data.results);
         setCities(res.data.results);
@@ -110,7 +110,7 @@ export default function Upload() {
       });
 
     axios
-      .get("https://api.dolphy.ca/api/developers/")
+      .get("https://wong.condomonk.ca/api/developers/")
       .then((res) => {
         console.log(res.data.results);
         setDevelopers(res.data.results);
@@ -200,7 +200,7 @@ export default function Upload() {
     };
 
     axios
-      .post("https://api.dolphy.ca/api/preconstructions/", alldata, {
+      .post("https://wong.condomonk.ca/api/preconstructions/", alldata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -382,16 +382,11 @@ export default function Upload() {
       )}
       <div className="bg-white">
         <div className="container-fluid px-minn">
-          <div className="d-flex justify-start pt-5 items-center">
-            <Link
-              href="/admin/"
-              className="visited:text-black text-black font-normal text-[5rem]"
-            >
-              <img src="/back.svg"></img>
+          <div className="d-flex justify-content-between align-items-center pt-5">
+            <Link href="/admin/" className="btn bg-white text-dark shadow">
+              Go Back
             </Link>
-            <span className="logo ml-3">
-              <span className="text-4xl">Add New Preconstruction</span>
-            </span>
+            <h4 className="fw-bold text-dark">Upload New Pre Construction</h4>
           </div>
         </div>
         <div className="container-fluid px-minn py-5 mydetaill">
@@ -731,18 +726,12 @@ export default function Upload() {
           <div className="my-3"></div>
           <div className="mt-5"></div>
           <div className="pt-5"></div>
-          <div className="py-3 d-flex justify-end align-items-center d-block bg-white w-100 posss">
-            <Link
-              href="/admin"
-              className="text-black text-md font-bold mr-10 hover:text-black visited:text-black"
-            >
-              Cancel
-            </Link>
+          <div className="py-3 d-flex justify-content-center align-items-center d-block bg-white w-100 posss">
             <button
-              className="btn bg-black text-white text-md font-bold px-10"
+              className="btn btn-success btn-lg shadow-lg"
               onClick={(e) => handleSubmit(e)}
             >
-              Add
+              Upload now
             </button>
           </div>
         </div>

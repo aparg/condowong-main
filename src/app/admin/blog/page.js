@@ -12,12 +12,8 @@ export default function UploadBlog() {
     id: 1,
     news_title: "",
     news_description: "",
-    news_link: "",
+    news_link: "#",
     news_thumbnail: null,
-    city: {
-      name: "",
-      slug: "",
-    },
   };
 
   const [isEdit, setIsEdit] = useState(false);
@@ -25,7 +21,6 @@ export default function UploadBlog() {
   const [newsdata, setNewsData] = useState(stat);
   const [modalnews, setModalNews] = useState(false);
   const [news, setNews] = useState([]);
-  const [cities, setCities] = useState([]);
 
   const handleCreateNews = (e) => {
     e.preventDefault();
@@ -35,8 +30,7 @@ export default function UploadBlog() {
       newsdata.news_title == "" ||
       newsdata.news_description == "" ||
       newsdata.news_link == "" ||
-      newsdata.news_thumbnail == "" ||
-      newsdata.city.name == ""
+      newsdata.news_thumbnail == ""
     ) {
       swal({
         title: "Error!",
@@ -48,7 +42,7 @@ export default function UploadBlog() {
     }
 
     axios
-      .post("https://api.dolphy.ca/api/news/", newsdata, {
+      .post("https://wong.condomonk.ca/api/news/", newsdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -69,8 +63,7 @@ export default function UploadBlog() {
     if (
       newsdata.news_title == "" ||
       newsdata.news_description == "" ||
-      newsdata.news_link == "" ||
-      newsdata.city.name == ""
+      newsdata.news_link == ""
     ) {
       swal({
         title: "Error!",
@@ -91,7 +84,6 @@ export default function UploadBlog() {
         news_title: newsdata.news_title,
         news_description: newsdata.news_description,
         news_link: newsdata.news_link,
-        city: newsdata.city,
       };
     } else {
       updatenewsdata = {
@@ -99,16 +91,19 @@ export default function UploadBlog() {
         news_description: newsdata.news_description,
         news_link: newsdata.news_link,
         news_thumbnail: newsdata.news_thumbnail,
-        city: newsdata.city,
       };
     }
 
     axios
-      .put(`https://api.dolphy.ca/api/news/${newsdata.id}/`, updatenewsdata, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .put(
+        `https://wong.condomonk.ca/api/news/${newsdata.id}/`,
+        updatenewsdata,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
       .then((res) => {
         setModalNews(false);
         setIsEdit(false);
@@ -156,7 +151,7 @@ export default function UploadBlog() {
 
   function deleteNews(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/news/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/news/${id}/`)
       .then((res) => {
         setRefetcch(!refetch);
       })
@@ -167,7 +162,7 @@ export default function UploadBlog() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/news/")
+      .get("https://wong.condomonk.ca/api/news/")
       .then((res) => {
         setNews(res.data);
       })
@@ -176,7 +171,7 @@ export default function UploadBlog() {
       });
 
     axios
-      .get("https://api.dolphy.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/city/")
       .then((res) => {
         setCities(res.data.results);
       })
@@ -196,7 +191,7 @@ export default function UploadBlog() {
   const handleEdit = (e, id) => {
     e.preventDefault();
     axios
-      .get(`https://api.dolphy.ca/api/news/${id}/`)
+      .get(`https://wong.condomonk.ca/api/news/${id}/`)
       .then((res) => {
         setModalNews(true);
         setIsEdit(true);
@@ -226,8 +221,11 @@ export default function UploadBlog() {
         <div className="modal" style={{ zIndex: 1000 }}>
           <div className="modal-dialog modal-xl modal-dialog-scrollable">
             <div className="modal-content">
-              <div className="modal-header ps-5">
-                <h1 className="modal-title fs-5" id="staticBackdropLabel">
+              <div className="modal-header ps-5 flex justify-between">
+                <h1
+                  className="modal-title fs-5 text-dark"
+                  id="staticBackdropLabel"
+                >
                   Upload Blog
                 </h1>
                 <button
@@ -252,9 +250,12 @@ export default function UploadBlog() {
               </div>
               <div className="modal-body px-5">
                 <div className="row row-cols-1 gy-4">
-                  <div className="col-8">
+                  <div className="col-6">
                     <div className=" w-100">
-                      <label htmlFor="news_title" className="form-label">
+                      <label
+                        htmlFor="news_title"
+                        className="form-label text-dark"
+                      >
                         Blog Title <span className="text-danger">*</span>
                       </label>
                       <input
@@ -266,50 +267,22 @@ export default function UploadBlog() {
                       />
                     </div>
                   </div>
-                  <div className="col-8">
+                  <div className="col-6">
                     <div className=" w-100">
-                      <label htmlFor="news_title" className="form-label">
-                        Blog Link <span className="text-danger">*</span>
+                      <label
+                        htmlFor="news_link"
+                        className="form-label text-dark"
+                      >
+                        Youtube Video Link{" "}
+                        <span className="text-danger">*</span>
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        id="news_title"
+                        id="news_link"
                         value={newsdata.news_link}
                         onChange={(e) => handleChange(e)}
                       />
-                    </div>
-                  </div>
-
-                  <div className="col-4">
-                    <div className="w-100">
-                      <label htmlFor="city" className="form-label">
-                        City <span className="text-danger">*</span>
-                      </label>
-
-                      <select
-                        className="form-select"
-                        id="city"
-                        value={newsdata.city.name}
-                        onChange={(e) => {
-                          const { value } = e.target;
-                          setNewsData((prevState) => ({
-                            ...prevState,
-                            city: {
-                              name: value,
-                              slug: value.toLowerCase().replace(/ /g, "-"),
-                            },
-                          }));
-                        }}
-                      >
-                        <option value="">Select City</option>
-                        {cities &&
-                          cities.map((city, index) => (
-                            <option key={index} value={city.name}>
-                              {city.name}
-                            </option>
-                          ))}
-                      </select>
                     </div>
                   </div>
                 </div>
@@ -322,12 +295,12 @@ export default function UploadBlog() {
                       className="img-fluid"
                     />
                   )}
-                  <label htmlFor="image" className="form-label">
+                  <label htmlFor="image" className="form-label text-dark">
                     Blog Thumbnail <span className="text-danger">*</span>
                   </label>
                   <input
                     type="file"
-                    className="form-control py-3"
+                    className="form-control bg-light rounded-xl py-3"
                     id="news_thumbnail"
                     onChange={(e) => {
                       handleImageChange(e);
@@ -335,14 +308,15 @@ export default function UploadBlog() {
                   />
                 </div>
 
-                <div className="blogs-detail mt-4">
-                  <label className="form-label fw-bold">
-                    Blog Detail <span className="text-danger">*</span>{" "}
+                <div className="blogs-detail mt-4 text-dark">
+                  <label className="form-label fw-bold text-dark">
+                    Market News Detail <span className="text-danger">*</span>{" "}
                   </label>
                   <ReactQuill
                     theme="snow"
                     value={newsdata.news_description}
-                    style={{ height: "200px" }}
+                    className="text-dark"
+                    style={{ height: "200px", color: "black" }}
                     modules={{
                       toolbar: [
                         [{ header: "1" }, { header: "2" }, { font: [] }],
@@ -401,16 +375,16 @@ export default function UploadBlog() {
         </div>
       )}
       <div className="py-4 w-100 ">
-        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center justify-content-between mx-0">
-          <span className="logo">
-            <span className="text-4xl">Blogs</span>
-          </span>
+        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
+          <div className="col-md-8">
+            <h5 className="fw-bold mb-0 text-dark">Blog</h5>
+          </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
+              className="btn btn-success py-3"
               onClick={() => setModalNews(true)}
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
             >
-              + Add New Blog
+              Add New Blog
             </button>
           </div>
         </div>

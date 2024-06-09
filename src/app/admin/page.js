@@ -4,8 +4,6 @@ import Link from "next/link";
 import ListingTable from "@/components/ListingTable";
 import axios from "axios";
 import swal from "sweetalert";
-import PageSelector from "@/components/PageSelector";
-import TopBar from "@/components/TopBar";
 
 export default function Home() {
   const [filters, setFilters] = useState({
@@ -17,17 +15,14 @@ export default function Home() {
   const [refetch, setRefetch] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     axios
-      .get("https://api.dolphy.ca/api/preconstructions/?page=" + page)
+      .get("https://wong.condomonk.ca/api/preconstructions/?page=" + page)
       .then((res) => {
         console.log(res.data.results);
         setPreConstructions(res.data.results);
         setTotalPages(Math.ceil(res.data.count / 10));
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err.data);
@@ -38,7 +33,7 @@ export default function Home() {
     swal({
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover this listing!",
-      // icon: "warning",
+      icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
@@ -51,20 +46,20 @@ export default function Home() {
           buttons: false,
         });
       } else {
-        // swal({
-        //   title: "Cancelled",
-        //   text: "Your listing is safe!",
-        //   icon: "error",
-        //   timer: 1000,
-        //   buttons: false,
-        // });
+        swal({
+          title: "Cancelled",
+          text: "Your listing is safe!",
+          icon: "error",
+          timer: 1000,
+          buttons: false,
+        });
       }
     });
   };
 
   function deletePreConstruction(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/preconstructions/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/preconstructions/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetch(!refetch);
@@ -89,41 +84,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full sticky">
-        <TopBar />
-        <div className="flex justify-between items-center my-2 mt-4 p-4">
-          <Link href="/admin/" className="logo">
-            <span className="text-4xl">Preconstructions</span>
-          </Link>
-          <div className="flex">
-            {/* <div className="search-bar mx-2"> */}
-            <form
-              className="search-form d-flex align-items-center mx-3 bg-gray border-2 border-[#D9DBE9] px-4 rounded-md"
-              method="POST"
-              action="#"
-            >
-              <input
-                type="text"
-                name="query"
-                placeholder="Search"
-                title="Enter search keyword"
-                className="focus-visible:outline-none"
-              />
-              <button type="submit" title="Search">
-                <i className="bi bi-search text-gray-500"></i>
-              </button>
-            </form>
-            {/* </div> */}
-            <Link
-              href="/admin/upload/"
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
-            >
-              + Add New Preconstruction
-            </Link>
-          </div>
-        </div>
-
-        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0 justify-start pl-2">
+      <div className="py-4 w-100 ">
+        <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
           <div className="col-md-3">
             <div className="form-floating">
               <select
@@ -174,36 +136,41 @@ export default function Home() {
               <label htmlFor="status">Select Status</label>
             </div>
           </div>
-          <div className="col-md-2">
-            <button
-              className="border-1 p-[1rem] rounded-md border-[#dee2e6] font-bold text-gray-500"
-              onClick={() =>
-                setFilters({
-                  city: "All",
-                  status: "All",
-                  typee: "All",
-                })
-              }
-            >
-              Clear Filters
-            </button>
+          <div className="col-md-3 d-flex justify-content-end">
+            <Link href="/admin/upload/" className="btn btn-success py-3">
+              Add New Preconstruction
+            </Link>
           </div>
         </div>
       </div>
-
-      <div className="p-4">
-        {
-          <ListingTable
-            preconstructions={preconstructions}
-            handleDelete={handleDelete}
-            filters={filters}
-            setFilters={setFilters}
-            setPage={setPage}
-            totalPages={totalPages}
-            loading={loading}
-          ></ListingTable>
-        }
+      <div className="d-flex justify-content-between align-items-center container">
+        <button
+          className="btn btn-lg btn-dark me-4"
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+        >
+          <i className="bi bi-arrow-left me-2"></i>
+          Previous Page
+        </button>
+        <span className="fw-bold">
+          Page {page} of {totalPages}
+        </span>
+        <button
+          className="btn btn-lg btn-dark"
+          onClick={() => setPage(page + 1)}
+          disabled={page === totalPages}
+        >
+          Next Page
+          <i className="bi bi-arrow-right ms-2"></i>
+        </button>
       </div>
+      <div className="mt-4"></div>
+      <ListingTable
+        preconstructions={preconstructions}
+        handleDelete={handleDelete}
+        filters={filters}
+        setFilters={setFilters}
+      ></ListingTable>
     </>
   );
 }

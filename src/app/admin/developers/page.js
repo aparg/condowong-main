@@ -4,7 +4,6 @@ import DeveloperTable from "@/components/DeveloperTable";
 import axios from "axios";
 import swal from "sweetalert";
 import dynamic from "next/dynamic";
-import TopBar from "@/components/TopBar";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
@@ -43,7 +42,7 @@ export default function Developers() {
       return;
     }
     axios
-      .post("https://api.dolphy.ca/api/developers/", developerdata, {
+      .post("https://wong.condomonk.ca/api/developers/", developerdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -96,7 +95,7 @@ export default function Developers() {
     }
     axios
       .put(
-        `https://api.dolphy.ca/api/developers/${developerdata.id}/`,
+        `https://wong.condomonk.ca/api/developers/${developerdata.id}/`,
         updatedeveloperdata,
         {
           headers: {
@@ -153,7 +152,7 @@ export default function Developers() {
 
   function deleteDeveloper(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/developers/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/developers/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetch(!refetch);
@@ -165,7 +164,7 @@ export default function Developers() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/developers/")
+      .get("https://wong.condomonk.ca/api/developers/")
       .then((res) => {
         console.log(res.data.results);
         setDevelopers(res.data.results);
@@ -186,7 +185,7 @@ export default function Developers() {
   const handleEdit = (e, id) => {
     e.preventDefault();
     axios
-      .get(`https://api.dolphy.ca/api/developers/${id}/`)
+      .get(`https://wong.condomonk.ca/api/developers/${id}/`)
       .then((res) => {
         console.log(res.data);
         setModalDeveloper(true);
@@ -206,13 +205,12 @@ export default function Developers() {
 
   return (
     <>
-      <TopBar />
       {modaldeveloper && (
         <div className="modal">
           <section className="modal-main rounded-4">
             <div className="p-3 py-4 bg-light">
               <div className="d-flex justify-content-between align-items-center">
-                <p className="fw-bold mb-0">Upload Developer</p>
+                <p className="fw-bold mb-0 text-dark">Upload Developer</p>
                 <button
                   className="btn bg-white btn-outline-danger p-1 py-0"
                   onClick={() => {
@@ -282,7 +280,7 @@ export default function Developers() {
                       {isEdit && (
                         <img
                           src={developerdata.image}
-                          alt=""
+                          alt="sdv"
                           className="img-fluid"
                         />
                       )}
@@ -387,15 +385,15 @@ export default function Developers() {
       )}
       <div className="py-4 w-100 ">
         <div className="row row-cols-1 row-cols-md-5 d-flex align-items-center mx-0">
-          <div className="col-md-8 logo">
-            <span className="text-4xl">Developers</span>
+          <div className="col-md-8">
+            <h5 className="fw-bold mb-0 text-dark">Developers</h5>
           </div>
           <div className="col-md-4 d-flex justify-content-end">
             <button
+              className="btn btn-success py-3"
               onClick={() => setModalDeveloper(true)}
-              className="btn bg-[#262338] text-white py-3 hover:text-white font-medium"
             >
-              + Add New Developer
+              Add New Developer
             </button>
           </div>
         </div>

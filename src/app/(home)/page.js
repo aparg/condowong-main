@@ -1,8 +1,11 @@
 import PropertySlider from "@/components/PropertySlider";
 import Slider from "@/components/NewsSlider";
-import { getFilteredRetsData, getSalesData } from "../../actions/getSalesData";
+import {
+  getFilteredRetsData,
+  getSalesData,
+} from "../../../actions/getSalesData";
 import { saleLease } from "@/constant";
-import getPreconProperties from "../../actions/getPreconData";
+import getPreconProperties from "../../../actions/getPreconData";
 import NewsSlider from "@/components/NewsSlider";
 import NewsCard from "@/components/NewsCard";
 import PreconPropertySlider from "@/components/PreconPropertySlider";
@@ -30,7 +33,7 @@ export default async function Home() {
         </section>
         <section className="mx-10">
           <div className="mt-16">
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
                 Market News
               </h3>
@@ -48,38 +51,46 @@ export default async function Home() {
               })}
             </Slider> */}
           </div>
-          <div className="mt-16">
-            <div className="flex justify-between">
+          <div className="mt-40">
+            <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
                 Top Resale Homes
               </h3>
               <Link
                 href="/resale"
-                className="bg-primary-color text-white font-bold px-3 rounded-md hover:no-underline flex items-center"
+                className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
               >
                 Explore All
               </Link>
             </div>
             <PropertySlider data={residentialData} />
           </div>
-          <div className="mt-16">
-            <div className="flex justify-between">
+          <div className="mt-40">
+            <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
                 Top Rental Homes
               </h3>
               <Link
                 href="/rental"
-                className="bg-primary-color text-white font-bold px-3 rounded-md hover:no-underline flex items-center"
+                className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
               >
                 Explore All
               </Link>
             </div>
             <PropertySlider data={rentalData} />
           </div>
-          <div className="mt-16">
-            <h3 className="main-title font-extrabold text-4xl text-white">
-              Top Preconstructions
-            </h3>
+          <div className="mt-40">
+            <div className="flex justify-between mb-3">
+              <h3 className="main-title font-extrabold text-4xl text-white">
+                Top Preconstructions
+              </h3>
+              <Link
+                href="/rental"
+                className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
+              >
+                Explore All
+              </Link>
+            </div>
             <PreconPropertySlider data={preconData} />
           </div>
         </section>

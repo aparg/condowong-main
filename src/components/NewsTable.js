@@ -1,39 +1,41 @@
 import Link from "next/link";
 
-const ListingTable = ({ preconstructions, handleDelete }) => {
+const NewsTable = ({ news, handleEdit, handleDelete }) => {
   return (
     <div className="container">
       <table className="table table-striped table-responsive">
         <thead>
           <tr className="bg-dark text-white">
             <th scope="col">S.N</th>
-            <th scope="col">Project Name</th>
-            <th scope="col">City</th>
-            <th scope="col">Project Status</th>
-            <th scope="col">Project Type</th>
+            <th scope="col">News Title</th>
+            <th scope="col">Last Updated</th>
+            <th scope="col">Link</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          {preconstructions &&
-            preconstructions.map((preconstruction, index) => (
+          {news &&
+            news.map((news, index) => (
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
-                <td>{preconstruction.project_name}</td>
-                <td>{preconstruction.city.name}</td>
-                <td>{preconstruction.status}</td>
-                <td>{preconstruction.project_type}</td>
+                <td className="text-limit">{news.news_title}</td>
+                <td>{news.last_updated.slice(0, 10)}</td>
+                <td className="text-limit">
+                  <Link href={`/blogs/${news.slug}`} className="text-primary">
+                    {`https://dolphy.ca/blogs/${news.slug}`}
+                  </Link>
+                </td>
                 <td>
-                  <Link
-                    href={"/admin/upload/" + preconstruction.id}
+                  <button
                     className="btn btn-sm btn-outline-dark"
+                    onClick={(e) => handleEdit(e, news.id)}
                   >
                     Edit
-                  </Link>
+                  </button>
                   <span className="mx-2"></span>
                   <button
                     className="btn btn-sm btn-outline-danger"
-                    onClick={(e) => handleDelete(e, preconstruction.id)}
+                    onClick={(e) => handleDelete(e, news.id)}
                   >
                     Delete
                   </button>
@@ -46,4 +48,4 @@ const ListingTable = ({ preconstructions, handleDelete }) => {
   );
 };
 
-export default ListingTable;
+export default NewsTable;
