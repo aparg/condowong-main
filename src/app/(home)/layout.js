@@ -8,7 +8,7 @@ export default async function RootLayout({ children }) {
     <>
       <main className="montserrat bg-black montserrat">
         <NextTopLoader
-          color="#cd922b"
+          color="#fff"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}

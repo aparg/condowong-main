@@ -38,6 +38,7 @@ module.exports = {
         "primary-color": "#cd922a",
         "black-tint": "#121212",
         "light-lime": "#e1f6b2",
+        black: "#111111",
       },
     },
   },

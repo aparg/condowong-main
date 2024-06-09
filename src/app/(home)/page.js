@@ -9,7 +9,9 @@ import getPreconProperties from "../../../actions/getPreconData";
 import NewsSlider from "@/components/NewsSlider";
 import NewsCard from "@/components/NewsCard";
 import PreconPropertySlider from "@/components/PreconPropertySlider";
+import assignments from "@/constant/assignments";
 import Link from "next/link";
+import AssignmentSlider from "@/components/AssignmentSlider";
 
 export default async function Home() {
   const residentialData = await getFilteredRetsData({ saleLease: "Sale" });
@@ -75,6 +77,20 @@ export default async function Home() {
               </Link>
             </div>
             <PropertySlider data={rentalData} />
+          </div>
+          <div className="mt-40">
+            <div className="flex justify-between mb-3">
+              <h3 className="main-title font-extrabold text-4xl text-white">
+                Top Assignments
+              </h3>
+              <Link
+                href="/assignment"
+                className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
+              >
+                Explore All
+              </Link>
+            </div>
+            <AssignmentSlider data={assignments} />
           </div>
           <div className="mt-40">
             <div className="flex justify-between mb-3">
