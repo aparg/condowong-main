@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import {  useState } from "react";
 import React from "react";
 import { Datepicker } from "flowbite-react";
 import { inputLead, labelLead } from "./Contact";
@@ -20,7 +19,6 @@ const ScheduleTime = () => {
         Schedule a Call
       </div>
 
-      <Link href="/market-news/schedule" className="no-underline">
         <div className="back text-white">
           {/* back icons with text  */}
           <div className="back-icon flex flex-row items-center gap-2">
@@ -36,10 +34,14 @@ const ScheduleTime = () => {
                 d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
               ></path>
             </svg>
-            <div className="back-text ">Back</div>
+            <div
+              className="flex flex-row items-center gap-2 text-lg  font-light hover:text-gray-700 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
+              onClick={() => setNextButton(false)}
+            >
+              <div>Back</div>
+            </div>
           </div>
         </div>
-      </Link>
 
       {/* main part start from here  */}
       <div className="flex flex-row gap-20 my-8 text-white">
@@ -47,12 +49,12 @@ const ScheduleTime = () => {
 
         <div className="left-part w-[65%]">
           {nextButton ? (
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex text-2xl flex-row font-light justify-between items-center">
               Client Details
             </div>
           ) : (
             <div className=" flex justify-between items-center">
-              <div className="title font-medium text-2xl ">
+              <div className="title font-light text-2xl ">
                 Select a Date & Time
               </div>
               <div className="subtitle text-sm  flex flex-row font-extralight items-center gap-3">
@@ -77,8 +79,16 @@ const ScheduleTime = () => {
 
           {nextButton ? (
             <>
+              <div className="textpart mb-2">
+                Already have an account?{" "}
+                <a href="http://">
+                  <span className="text-[#cc9900] ">Login</span>{" "}
+                </a>
+                faster booking.
+              </div>
               <div className="flex flex-col gap-y-6">
                 {/* full name input section */}
+
                 <div className="relative border-none">
                   <label htmlFor="fullName" className={labelLead}>
                     Full Name <span className="text-red-500">*</span>{" "}
@@ -163,7 +173,7 @@ const ScheduleTime = () => {
                         selectors: {
                           base: "mb-2 flex justify-between",
                           button: {
-                            base: " bg-white px-5 mx-2 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
+                            base: " px-5 mx-2 py-2.5 text-lg font-semibold text-white focus:outline-none ",
                             prev: "",
                             next: "",
                             view: "",
@@ -171,7 +181,7 @@ const ScheduleTime = () => {
                         },
                       },
                       view: {
-                        base: "p-1",
+                        base: "px-4",
                       },
                       footer: {
                         base: "mt-2 flex space-x-2",
@@ -194,9 +204,9 @@ const ScheduleTime = () => {
                         items: {
                           base: "grid w-96 grid-cols-7",
                           item: {
-                            base: "block flex-1 cursor-pointer  border-0 text-center text-lg leading-9 text-gray-100 hover:bg-gray-800 dark:text-gray-900 dark:hover:bg-orange-400 ",
+                            base: "block flex-1 cursor-pointer font-light border-0 text-center text-lg leading-9 text-gray-100  ",
                             selected:
-                              "bg-primary-color text-white hover:bg-primary-color",
+                              "bg-primary-color rounded-full  text-white hover:bg-primary-color",
                             disabled: "text-gray-500",
                           },
                         },
@@ -368,7 +378,8 @@ const ScheduleTime = () => {
           <button className="no-underline" onClick={() => setNextButton(true)}>
             <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
               <div className="title text-xl  my-1">
-                {nextButton ? "Book Now" : "Next"}</div>
+                {nextButton ? "Book Now" : "Next"}
+              </div>
             </div>
           </button>
         </div>
