@@ -230,7 +230,7 @@ export default function UploadBlog() {
         <div className="modal" style={{ zIndex: 1000 }}>
           <div className="modal-dialog modal-xl modal-dialog-scrollable">
             <div className="modal-content">
-              <div className="modal-header ps-5">
+              <div className="modal-header ps-5 flex justify-between">
                 <h1
                   className="modal-title fs-5 text-dark"
                   id="staticBackdropLabel"
@@ -259,9 +259,12 @@ export default function UploadBlog() {
               </div>
               <div className="modal-body px-5">
                 <div className="row row-cols-1 gy-4">
-                  <div className="col-8">
+                  <div className="col-6">
                     <div className=" w-100">
-                      <label htmlFor="news_title" className="form-label">
+                      <label
+                        htmlFor="news_title"
+                        className="form-label text-dark"
+                      >
                         Blog Title <span className="text-danger">*</span>
                       </label>
                       <input
@@ -273,10 +276,28 @@ export default function UploadBlog() {
                       />
                     </div>
                   </div>
+                  <div className="col-6">
+                    <div className=" w-100">
+                      <label
+                        htmlFor="news_link"
+                        className="form-label text-dark"
+                      >
+                        Youtube Video Link{" "}
+                        <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="news_link"
+                        value={newsdata.news_link}
+                        onChange={(e) => handleChange(e)}
+                      />
+                    </div>
+                  </div>
 
-                  <div className="col-4">
+                  <div className="col-6">
                     <div className="w-100">
-                      <label htmlFor="city" className="form-label">
+                      <label htmlFor="city" className="form-label text-dark">
                         City <span className="text-danger">*</span>
                       </label>
 
@@ -320,7 +341,7 @@ export default function UploadBlog() {
                   </label>
                   <input
                     type="file"
-                    className="form-control py-3"
+                    className="form-control bg-light rounded-xl py-3"
                     id="news_thumbnail"
                     onChange={(e) => {
                       handleImageChange(e);
