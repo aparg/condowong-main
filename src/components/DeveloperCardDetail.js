@@ -8,7 +8,7 @@ export default function DeveloperCardDetail(props) {
           {props.image ? (
             <img
               loading="lazy"
-              src={`https://api.dolphy.ca${props.image}`}
+              src={`https://wong.condomonk.ca${props.image}`}
               layout="responsive"
               className="img-fluid"
               alt={`${props.name} builders logo`}

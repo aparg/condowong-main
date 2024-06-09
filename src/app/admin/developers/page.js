@@ -42,7 +42,7 @@ export default function Developers() {
       return;
     }
     axios
-      .post("https://api.dolphy.ca/api/developers/", developerdata, {
+      .post("https://wong.condomonk.ca/api/developers/", developerdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -95,7 +95,7 @@ export default function Developers() {
     }
     axios
       .put(
-        `https://api.dolphy.ca/api/developers/${developerdata.id}/`,
+        `https://wong.condomonk.ca/api/developers/${developerdata.id}/`,
         updatedeveloperdata,
         {
           headers: {
@@ -152,7 +152,7 @@ export default function Developers() {
 
   function deleteDeveloper(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/developers/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/developers/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetch(!refetch);
@@ -164,7 +164,7 @@ export default function Developers() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/developers/")
+      .get("https://wong.condomonk.ca/api/developers/")
       .then((res) => {
         console.log(res.data.results);
         setDevelopers(res.data.results);
@@ -185,7 +185,7 @@ export default function Developers() {
   const handleEdit = (e, id) => {
     e.preventDefault();
     axios
-      .get(`https://api.dolphy.ca/api/developers/${id}/`)
+      .get(`https://wong.condomonk.ca/api/developers/${id}/`)
       .then((res) => {
         console.log(res.data);
         setModalDeveloper(true);

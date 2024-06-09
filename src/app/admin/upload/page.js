@@ -67,7 +67,7 @@ export default function Upload() {
       return;
     }
     axios
-      .post("https://api.dolphy.ca/api/developers/", developerdata, {
+      .post("https://wong.condomonk.ca/api/developers/", developerdata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -96,7 +96,7 @@ export default function Upload() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/city/")
       .then((res) => {
         console.log(res.data.results);
         setCities(res.data.results);
@@ -110,7 +110,7 @@ export default function Upload() {
       });
 
     axios
-      .get("https://api.dolphy.ca/api/developers/")
+      .get("https://wong.condomonk.ca/api/developers/")
       .then((res) => {
         console.log(res.data.results);
         setDevelopers(res.data.results);
@@ -200,7 +200,7 @@ export default function Upload() {
     };
 
     axios
-      .post("https://api.dolphy.ca/api/preconstructions/", alldata, {
+      .post("https://wong.condomonk.ca/api/preconstructions/", alldata, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

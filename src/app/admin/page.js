@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://api.dolphy.ca/api/preconstructions/?page=" + page)
+      .get("https://wong.condomonk.ca/api/preconstructions/?page=" + page)
       .then((res) => {
         console.log(res.data.results);
         setPreConstructions(res.data.results);
@@ -59,7 +59,7 @@ export default function Home() {
 
   function deletePreConstruction(id) {
     axios
-      .delete(`https://api.dolphy.ca/api/preconstructions/${id}/`)
+      .delete(`https://wong.condomonk.ca/api/preconstructions/${id}/`)
       .then((res) => {
         console.log(res);
         setRefetch(!refetch);
