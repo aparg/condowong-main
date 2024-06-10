@@ -7,7 +7,7 @@ const page = () => {
     <>
       <div className="container-fluid mt-7">
         <h2 className="city-headline d-flex text-capitalize">
-          Assigments For Sale in Canada
+          Check out Assignments for Sale in Canada
         </h2>
         <p className="fw-light mb-5">
           Find your best assignment deals in Canada. We have a wide range of new

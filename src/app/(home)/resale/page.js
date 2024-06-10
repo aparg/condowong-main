@@ -44,11 +44,7 @@ const page = async ({ params }) => {
       </div> */}
 
       <div className="container-fluid">
-        <FiltersWithSalesList
-          {...{
-            INITIAL_LIMIT,
-          }}
-        />
+        <FiltersWithSalesList saleLeaseVal={"sale"} />
       </div>
     </>
   );
