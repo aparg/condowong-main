@@ -2525,6 +2525,8 @@ label {
 .cardd-subtitle_bg-black {
   font-size: 0.9rem;
   font-weight: 400;
+  color: #cacaca !important;
+
 }
 
 .card-address {

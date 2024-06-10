@@ -115,7 +115,7 @@ const BookingDate = ({ bannerImage }) => {
             Schedule a viewing
           </h1>
           <div className="flex justify-center">
-            <span className="tour-type rounded-pill bg-light-lime px-1 py-1">
+            <span className="tour-type rounded-sm bg-light-lime px-1 py-1">
               <BookingType handleChange={handleChange} />
             </span>
           </div>
@@ -170,7 +170,7 @@ const BookingDate = ({ bannerImage }) => {
                 value={timing.phone}
                 onChange={(e) => handleChange(e)}
                 required={true}
-                className="text-black rounded-pill bg-white mt-4 fff w-full px-4 pb-1 border-b-2 focus:outline-none peer/phone placeholder:translate-y-1/2 placeholder:scale-100"
+                className="text-black rounded-sm bg-white mt-4 fff w-full px-4 pb-1 border-b-2 focus:outline-none peer/phone placeholder:translate-y-1/2 placeholder:scale-100"
               />
               <label
                 htmlFor="phone"
@@ -182,7 +182,7 @@ const BookingDate = ({ bannerImage }) => {
             <input
               type="submit"
               value="Schedule Tour"
-              className="btn bg-primary-color text-white btn-md w-100 mb-3 rounded-pill"
+              className="btn bg-primary-color text-white btn-md w-100 mb-3 rounded-sm"
               id="subbtn"
               onClick={submitData}
             />

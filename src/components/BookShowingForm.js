@@ -53,7 +53,7 @@ export default function BookShowingForm(props) {
       className="fixed-title pe-0 top-30 sticky pl-4 mt-24 sm:mt-0"
       id="contact"
     >
-      <div className="p-2 pb-0 box-shadow-custom rounded-mine bordt border-[#e8e9ea] flex-col items-center bg-black-tint">
+      <div className="p-5 pb-0 box-shadow-custom rounded-mine bordt border-[#e8e9ea] flex-col items-center bg-black-tint">
         <h5 className="font-extrabold text-center linem fs-3 mb-0 font-bold text-white">
           Book a Showing!
         </h5>
@@ -167,7 +167,7 @@ export default function BookShowingForm(props) {
                 className="d-flex"
                 style={{ alignItems: "flex-start !important" }}
               ></Checkbox> */}
-              <p className="showing-info showing-info__cb leading-tight text-center text-white">
+              <p className="showing-info showing-info__cb leading-tight text-center text-gray-500">
                 I would like to receive marketing and promotional messages by
                 telephone, text message, and email from Condowong, including
                 information and updates about properties of interest and the
@@ -180,13 +180,16 @@ export default function BookShowingForm(props) {
           <input
             type="submit"
             value={submitbtn}
-            className="btn bg-primary-color text-white btn-md w-75 mb-3 rounded-pill text-lg fw-bold"
+            className="btn bg-primary-color text-white btn-md w-75 mb-3 rounded-0 text-lg fw-bold"
             id="subbtn"
           />
           <div className="border-b border-gray-300 my-4 w-full"></div>
           <div className="pb-4 pt-2 flex flex-col justify-center items-center">
             <span className="text-md block">Not a good time?</span>
-            <Link href={"#"} className="text-red-700 font-bold text-lg block">
+            <Link
+              href={"#"}
+              className="text-primary-color font-bold text-lg block"
+            >
               Schedule a call
             </Link>
           </div>

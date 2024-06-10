@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Gallery from "@/components/Gallery";
+import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { resenditial } from "@/api/routes";
 import { generateURL } from "@/helpers/generateURL";
@@ -65,7 +66,7 @@ const page = async ({ params }) => {
     .filter(Boolean)
     .join(" ");
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center ">
       <div className="sm:max-w-[90%] w-full">
         {/* <div className="fixed w-100 bottom-0 sm:bottom-5 sm:hidden px-3 pb-4 pt-2 z-[999] bg-white border-top">
           <Link
@@ -102,34 +103,29 @@ const page = async ({ params }) => {
           </div>
         </div>
         <div className="container-fluid pt-md-3 pt-0">
-          <div className="fixed-breadcrumbs ">
-            <div className="">
-              <nav
-                style={{
-                  "--bs-breadcrumb-divider":
-                    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E\")",
-                }}
-                aria-label="breadcrumb"
-                className="bg-black"
-              >
-                <ol className={`breadcrumb`}>
-                  <li className="breadcrumb-item ">
-                    <Link href="/">Dolphy</Link>
-                  </li>
-                  <li className="breadcrumb-item ">
-                    <Link href="/ontario">ON</Link>
-                  </li>
-                  <li className="breadcrumb-item ">
-                    <Link href={generateURL({ cityVal: city })}>
-                      {main_data.Municipality}
-                    </Link>
-                  </li>
-                  <li className="breadcrumb-item active" aria-current="page">
-                    {address}
-                  </li>
-                </ol>
-              </nav>
-            </div>
+          <div className="mb-2">
+            <Breadcrumb
+              homeElement={"Home"}
+              separator={
+                <span>
+                  {" "}
+                  <svg
+                    className="svg minearr"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                      fill={"#869099"}
+                    ></path>
+                  </svg>{" "}
+                </span>
+              }
+              activeClasses="text-dark "
+              containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+              listClasses="mx-1"
+              capitalizeLinks
+            />
           </div>
           {/* <div className="pt-1">
           <Gallery data={imageURLs} />

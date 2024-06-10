@@ -124,7 +124,7 @@ const FiltersWithSalesList = ({
   return (
     <>
       {filterState && (
-        <div>
+        <div className="mt-5">
           {/* <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
             <Filters {...{ filterState, setFilterState, fetchFilteredData }} />
           </div> */}
@@ -137,7 +137,7 @@ const FiltersWithSalesList = ({
             Listings
           </h2>
           <p
-            className="fw-light"
+            className="fw-light mb-5"
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
             Refine your <span className="text-capitalize">{city}</span> real

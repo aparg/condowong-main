@@ -29,7 +29,7 @@ const Footer = () => {
                 </h2>
               </div>
               <Link
-                href="tel: 6475274970"
+                href="/schedule"
                 className="flex justify-center hover:no-underline"
               >
                 <button className="bg-white py-2 px-4 self-center mt-3 text-primary-color hover:no-underline shadow-xl">

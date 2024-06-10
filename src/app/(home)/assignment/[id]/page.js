@@ -3,6 +3,7 @@ import assignments from "@/constant/assignments";
 import PreconPropertyCard from "@/components/PreconPropertyCard";
 import BookShowingForm from "@/components/BookShowingForm";
 import Gallery from "@/components/Gallery";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const page = ({ params }) => {
   console.log(params.id);
@@ -19,8 +20,32 @@ const page = ({ params }) => {
   }
 
   return (
-    <div className="row bg-black mx-20">
+    <div className="row bg-[#000] mx-20">
       <div className="col-md-8">
+        <div className="my-3">
+          <Breadcrumb
+            homeElement={"Home"}
+            separator={
+              <span>
+                {" "}
+                <svg
+                  className="svg minearr"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                    fill={"#869099"}
+                  ></path>
+                </svg>{" "}
+              </span>
+            }
+            activeClasses="text-dark "
+            containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+            listClasses="mx-1"
+            capitalizeLinks
+          />
+        </div>
         <Gallery data={assignment.imgURLs} />
         <h1 className="text-[4rem] playfair">{assignment.price}</h1>
         <h1 className="playfair text-[2rem] playfair">{assignment.project}</h1>
@@ -97,7 +122,7 @@ const page = ({ params }) => {
           </section>
         </section>
       </div>
-      <div className="col-md-3">
+      <div className="col-md-4 mt-4">
         <BookShowingForm
           defaultmessage={`Please book a showing for this property "${assignment.project}"`}
           city=""

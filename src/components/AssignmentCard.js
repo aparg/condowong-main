@@ -9,7 +9,7 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
   return (
     <section className="text-black" ref={ref}>
       <Link
-        href={`/assignments/${elem.project.replace(" ", "-")}`}
+        href={`/assignment/${elem.project.replace(" ", "-")}`}
         className="text-black hover:no-underline w-full"
       >
         <div className="lg:px-0 h-full">

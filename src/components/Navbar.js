@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-black-tint px-12 sticky top-0 z-[999999]">
+    <nav className="bg-black-tint px-12 sticky top-0 z-[99]">
       <div className="w-full flex justify-between items-center bg-black-tint h-20">
         <div className="w-40">
           <Link href="/">
