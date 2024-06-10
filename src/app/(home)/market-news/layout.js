@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-    <div className=" bg-black">
+    <div className=" bg-[#000]">
       {/* <MarketNewsNavbar /> */}
       <div className="mx-16">{children}</div>
     </div>

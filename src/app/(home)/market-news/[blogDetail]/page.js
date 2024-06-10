@@ -41,7 +41,7 @@ const BlogDetails = async ({ params }) => {
   );
 
   return (
-    <div className="blog__details ">
+    <div className="blog__details">
       <div className="container mt-3">
         <div className="row">
           <div className="col-md-8 col-10 bg-black-tint rounded-lg p-5 mx-auto">
