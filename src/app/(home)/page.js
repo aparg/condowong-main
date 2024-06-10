@@ -50,7 +50,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
-                Top Resale Homes
+                Top Homes For Sale from across GTA
               </h3>
               <Link
                 href="/resale"
@@ -64,7 +64,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Top Rental Homes
+                Top Rental Homes - Check out Leases from across GTA
               </h3>
               <Link
                 href="/rental"
@@ -78,7 +78,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Top Assignments
+                Check out Assignments for Sale
               </h3>
               <Link
                 href="/assignment"
@@ -92,7 +92,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Top Preconstructions
+                Upcoming and Hot Preconstruction Projects
               </h3>
               <Link
                 href="/rental"
