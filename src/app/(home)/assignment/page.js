@@ -21,9 +21,6 @@ const page = () => {
           return <AssignmentCard elem={elem} />;
         })}
       </div>
-      <section className="my-14">
-        <Contact showAddress={false} />
-      </section>
     </>
   );
 };

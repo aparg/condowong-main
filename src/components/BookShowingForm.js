@@ -50,11 +50,11 @@ export default function BookShowingForm(props) {
   }, []);
   return (
     <div
-      className="fixed-title pe-0 top-30 sticky pl-4 mt-24 sm:mt-0"
+      className="fixed-title pe-0 top-30 sticky pl-4 mt-24 sm:mt-0 "
       id="contact"
     >
-      <div className="p-5 pb-0 box-shadow-custom rounded-mine bordt border-[#e8e9ea] flex-col items-center bg-black-tint">
-        <h5 className="font-extrabold text-center linem fs-3 mb-0 font-bold text-white">
+      <div className="p-5 pb-0 box-shadow-custom rounded-mine bordt border-[#e8e9ea] flex-col items-center">
+        <h5 className="font-extrabold text-center linem fs-3 mb-0  text-white">
           Book a Showing!
         </h5>
         <p className="text-center pt-0 cardd-subtitle_bg-black text-[1.1rem] text-white">

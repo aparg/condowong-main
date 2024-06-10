@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 export default async function RootLayout({ children }) {
   return (
     <>
-      <main className="montserrat bg-black montserrat">
+      <main className="montserrat bg-[#000] montserrat">
         <NextTopLoader
           color="#fff"
           initialPosition={0.08}
