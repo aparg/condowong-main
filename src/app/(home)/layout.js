@@ -21,7 +21,9 @@ export default async function RootLayout({ children }) {
 
         <Navbar />
         {children}
-        <Contact showAddress={false} />
+        <section className="my-14">
+          <Contact showAddress={false} />
+        </section>
         <Footer />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

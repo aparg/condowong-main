@@ -102,7 +102,7 @@ export default async function Home() {
             </div>
             <AssignmentSlider data={assignments} />
           </div>
-          <div className="mt-40">
+          <div className="mt-40 mb-14">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
                 Upcoming and Hot Preconstruction Projects

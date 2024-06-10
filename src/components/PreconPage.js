@@ -91,11 +91,11 @@ const PreconPage = () => {
                         <p>AFFORDABLE HOUSING OPPORTUNITIES</p>
                       </li>
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
-                        <img className="w-6" src="agriculture-black.svg"></img>
+                        <img className="w-6" src="/agriculture-black.svg"></img>
                         <p>URBAN AGRICULTURE</p>
                       </li>
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
-                        <img className="w-6" src="location-black.svg"></img>
+                        <img className="w-6" src="/location-black.svg"></img>
                         <p>IN VIBRANT DOWNTOWN EAST</p>
                       </li>
                     </ul>
@@ -308,9 +308,6 @@ const PreconPage = () => {
           loading="lazy"
           title="PDF-file"
         ></iframe>
-      </section>
-      <section className="my-14">
-        <Contact showAddress={false} />
       </section>
       {/* <section id="contact">
         <div className="pt-5" id="Contact">

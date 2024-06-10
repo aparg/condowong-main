@@ -9,8 +9,9 @@ import Contact from "@/components/Contact";
 const page = ({ params }) => {
   console.log(params.id);
   const assignment = assignments.find(
-    (obj) => obj.project === params.id.replace("-", " ")
+    (obj) => obj.project === decodeURIComponent(params.id).replaceAll("-", " ")
   );
+  console.log(assignment);
 
   const getKeyValue = (val) => {
     return val.split("-");
