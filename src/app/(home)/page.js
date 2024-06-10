@@ -32,9 +32,15 @@ export default async function Home() {
               <h1 className="text-[4rem] font-bold text-center playfair">
                 Build Wealth with Toronto Real Estate
               </h1>
-              <h3 className="text-[2.5rem] font-bold  playfair">
-                <i>Every Crisis is an Opportunity</i>
+              <h3 className="text-[2.5rem] font-bold playfair text-primary-color text-shadow">
+                Every Crisis is an Opportunity
               </h3>{" "}
+              <Link
+                href="/resale"
+                className="bg-primary-color text-black px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg"
+              >
+                Schedule a Call
+              </Link>
             </div>
           </div>
         </section>

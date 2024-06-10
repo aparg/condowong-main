@@ -28,7 +28,7 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
   });
   return (
     <div
-      className="card border-0  bg-black-tint   my-3 my-md-0 blog-container shadow-lg position-relative"
+      className="card border-0  bg-black-tint my-3 my-md-0 blog-container shadow-lg position-relative"
       ref={ref}
     >
       {/* Wrap the card in the Link component */}

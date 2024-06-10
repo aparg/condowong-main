@@ -3901,3 +3901,6 @@ div.dynamic {
 .ql-editor{
   color: black !important;
 }
+.text-shadow{
+  text-shadow: 2px 3px #000000;
+}
