@@ -12,7 +12,7 @@ const Contact = ({ showAddress = true }) => {
       <div className="title text-5xl  my-10  text-center text-white playfair">
         Contact CondoWong Now
       </div>
-      <div className="bg-black text-white flex flex-row gap-10 items-start justify-center p-3">
+      <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">
         {/* left part */}
         <div className={`left-part w-[30%] ${!showAddress ? "hidden" : ""}`}>
           <div className="flex flex-col gap-y-6 ">

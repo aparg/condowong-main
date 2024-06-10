@@ -49,31 +49,31 @@ const page = ({ params }) => {
           />
         </div>
         <Gallery data={assignment.imgURLs} />
-        <h1 className="text-[4rem] playfair">{assignment.price}</h1>
-        <h1 className="playfair text-[2rem] playfair">{assignment.project}</h1>
-        <div className="row row-cols-md-4 gap-y-4 my-4">
+        <h1 className="text-[4rem] playfair mt-5">{assignment.price}</h1>
+        <h1 className="text-[2rem]">{assignment.project}</h1>
+        <div className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4">
           {assignment.details.map((key, idx) => (
             <div className="flex flex-col" key={idx}>
-              <div className="text-primary-color font-medium uppercase">
+              <div className="text-primary-color font-bold">
                 {getKeyValue(key)[0]}
               </div>
-              <div className="text-white font-medium playfair">
+              <div className="text-white font-medium">
                 {getKeyValue(key)[1]}
               </div>
             </div>
           ))}
         </div>
-        <section className="my-20">
+        <section className="my-12">
           <section className="my-8">
             <h1 className="playfair mb-1 text-[2rem]">Pricing Information</h1>
             <ul className="list-disc ml-4 text-white font-medium">
               {assignment.pricingInformation.map((point) => (
-                <li>{point}</li>
+                <li className="my-2">{point}</li>
               ))}
             </ul>
           </section>
-          <section className="my-20 sm:mr-20">
-            <h1 className="playfair mb-4 text-[2rem] playfair">
+          <section className="my-20 sm:mr-20 p-4 bg-black-tint">
+            <h1 className="playfair mb-4 text-[2rem] text-primary-color">
               Buyer{"'"}s Sum of Payment
             </h1>
             <div className="flex justify-between">
@@ -101,21 +101,21 @@ const page = ({ params }) => {
               </div>
             </div>
           </section>
-          <section className="my-20 sm:mr-20">
-            <h1 className="playfair mb-4 text-[2rem] playfair">
+          <section className="my-20 sm:mr-20 p-4 bg-black-tint">
+            <h1 className="playfair mb-4 text-[2rem] text-primary-color">
               Payment Structure
             </h1>
             <div className="flex justify-between my-2">
               <div className="flex flex-col">
-                <div>Deposit</div>
-                <div className="text-xs">Due Upon Offer Acceptance</div>
+                <div className="fs-5">Deposit</div>
+                <div className="text-md">Due Upon Offer Acceptance</div>
               </div>
               <div>{assignment.deposit}</div>
             </div>
             <div className="flex justify-between my-2">
               <div className="flex flex-col">
-                <div>Remaining Balance</div>
-                <div className="text-xs">
+                <div className="fs-5">Remaining Balance</div>
+                <div className="text-md">
                   Due Upon Developer's Consent on Assignment
                 </div>
               </div>
@@ -130,9 +130,6 @@ const page = ({ params }) => {
           city=""
         ></BookShowingForm>
       </div>
-      <section className="my-14">
-        <Contact showAddress={false} />
-      </section>
     </div>
   );
 };
