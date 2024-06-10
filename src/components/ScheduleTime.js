@@ -260,9 +260,9 @@ const ScheduleTime = () => {
                         button: {
                           base: "w-full  px-5 py-2 text-center text-sm font-medium ",
                           today:
-                            "bg-primary-color text-white dark:bg-cyan-600 ",
+                            "hidden bg-primary-color text-white dark:bg-cyan-600 ",
                           clear:
-                            "border border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
+                            "hidden border border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600",
                         },
                       },
                     },
