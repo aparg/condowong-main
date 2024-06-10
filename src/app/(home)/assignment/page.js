@@ -2,6 +2,7 @@ import React from "react";
 import assignments from "@/constant/assignments";
 import PropertyCard from "@/components/PropertyCard";
 import AssignmentCard from "@/components/AssignmentCard";
+import Contact from "@/components/Contact";
 const page = () => {
   return (
     <>
@@ -20,6 +21,9 @@ const page = () => {
           return <AssignmentCard elem={elem} />;
         })}
       </div>
+      <section className="my-14">
+        <Contact showAddress={false} />
+      </section>
     </>
   );
 };

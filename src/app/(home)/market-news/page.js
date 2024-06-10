@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import BlogCard from "@/components/BlogCard";
 import { fetchAllBlogPosts } from "@/api/blogs";
+import Contact from "@/components/Contact";
 
 const Blogs = async () => {
   const blogPosts = await fetchAllBlogPosts();

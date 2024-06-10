@@ -77,7 +77,7 @@ const BlogDetails = async ({ params }) => {
                   width="60px"
                   height="60px"
                   className="rounded-circle"
-                  src="https://api.homebaba.ca/media/agent_UGllzo7.jpg"
+                  src="/logo/logo1.webp"
                   alt="blog-author"
                 />
               </div>
@@ -87,11 +87,6 @@ const BlogDetails = async ({ params }) => {
                   <div className="text-secondary">
                     Posted {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
                   </div>
-                </div>
-
-                <div className="blog-read__time text-secondary text-start col-sm-12 col-md-3">
-                  <div className="blog-read__time-name">Blog</div>
-                  <div>5 min read</div>
                 </div>
               </div>
             </section>
@@ -105,7 +100,7 @@ const BlogDetails = async ({ params }) => {
             <section className="blog__desc mt-4">
               <div className="banner-image">
                 <img
-                  src={"https://wong.condowong.ca" + blog.news_thumbnail}
+                  src={"https://wong.condomonk.ca" + blog.news_thumbnail}
                   alt={blog.news_title.slice(0, 10)}
                   loading="lazy"
                   width="100%"
@@ -126,7 +121,9 @@ const BlogDetails = async ({ params }) => {
             {filteredBlogPostsBasedOnCity.length > 0 ? (
               <>
                 <section className="blogs__related mt-5">
-                  <h3 className="main-title">You might be interested in</h3>
+                  <h3 className="main-title text-white">
+                    You might be interested in
+                  </h3>
                   <article>
                     <div className="row mt-4">
                       {filteredBlogPostsBasedOnCity.map((blog, index) => {
@@ -148,11 +145,11 @@ const BlogDetails = async ({ params }) => {
         </div>
       </div>
 
-      <div className="py-5 my-3 d-none d-md-block mt-40">
+      {/* <div className="py-5 my-3 d-none d-md-block mt-40">
         <div className="container-fluid">
           <Contact />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

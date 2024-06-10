@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
+import Contact from "@/components/Contact";
 
 export const metadata = {
   title: "CondoWong - Real Estate News",
@@ -16,7 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* <section className="my-14">
+          <Contact showAddress={false} />
+        </section> */}
+      </body>
     </html>
   );
 }

@@ -4,6 +4,7 @@ import PreconPropertyCard from "@/components/PreconPropertyCard";
 import BookShowingForm from "@/components/BookShowingForm";
 import Gallery from "@/components/Gallery";
 import Breadcrumb from "@/components/Breadcrumb";
+import Contact from "@/components/Contact";
 
 const page = ({ params }) => {
   console.log(params.id);
@@ -128,6 +129,9 @@ const page = ({ params }) => {
           city=""
         ></BookShowingForm>
       </div>
+      <section className="my-14">
+        <Contact showAddress={false} />
+      </section>
     </div>
   );
 };

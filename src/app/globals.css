@@ -26,8 +26,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0px 1000px #121212 inset !important;
-    -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #121212 inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
@@ -921,7 +921,7 @@ label {
   font-size: 34px;
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  color: black;
+  /* color: black; */
 }
 
 .text-mine {
@@ -2361,7 +2361,6 @@ button:focus:not(:focus-visible) {
   transform: rotate(180deg);
 }
 
-
 .sidebar-nav .nav-content {
   padding: 5px 0 0 0;
   margin: 0;
@@ -2526,7 +2525,6 @@ label {
   font-size: 0.9rem;
   font-weight: 400;
   color: #cacaca !important;
-
 }
 
 .card-address {
@@ -3898,9 +3896,92 @@ div.dynamic {
 .box-shadow-custom {
   box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
-.ql-editor{
+.ql-editor {
   color: black !important;
 }
-.text-shadow{
+.text-shadow {
   text-shadow: 2px 3px #000000;
+}
+
+.fs-large {
+  font-size: 4rem;
+}
+.offer1 img {
+  width: 150px;
+}
+
+.offer2 img {
+  width: 150px;
+}
+.imghei {
+  height: 320px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 15px;
+}
+.afte {
+  position: relative;
+  display: block;
+  transition: all 0.3s;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.icon.Home {
+  background-image: url("/icons-columns/homes-64.png");
+}
+
+.icon.Bathrooms {
+  background-image: url("/icons-columns/bath-64.png");
+}
+
+.icon.Bedrooms {
+  background-image: url("/icons-columns/bed-64.png");
+}
+.icon.Size {
+  background-image: url("/icons-columns/sq.ft-64.png");
+}
+.icon.Storeys {
+  background-image: url("/icons-columns/storeys-64.png");
+}
+
+.icon.Location {
+  background-image: url("/icons-columns/city-64.png");
+}
+.utility__phone-msg {
+  font-size: 0.9rem !important;
+}
+.fs-vsmall {
+  font-size: 0.85rem;
+}
+
+.btn-register {
+  background-color: #f26522 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+.btn-register:hover {
+  background-color: #f26522 !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+.rarr {
+  color: white !important;
+  margin-left: 10px;
+}
+.b-patt {
+  background-image: url("/patt.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100%;
+  width: 100%;
+  background-size: 50%;
+}
+.bg-lighter {
+  background-color: #f0f0f0 !important;
 }

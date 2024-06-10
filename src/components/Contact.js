@@ -6,7 +6,7 @@ export const inputLead =
 export const labelLead =
   "absolute left-0 right-0 top-6 -translate-y-3 bg-transparent ml-1 px-3 text-xs duration-100 ease-linear peer-placeholder-shown:text-gray-500 peer-placeholder-shown:-translate-y-3 peer-placeholder-shown:text-base  peer-focus:ml-4 peer-focus:bb-10 peer-focus:-translate-y-3 peer-focus:px-1  peer-focus:text-xs whitespace-nowrap ";
 
-const Contact = () => {
+const Contact = ({ showAddress = true }) => {
   return (
     <div className="mx-24">
       <div className="title text-5xl  my-10  text-center text-white playfair">
@@ -14,7 +14,7 @@ const Contact = () => {
       </div>
       <div className="bg-black text-white flex flex-row gap-10 items-start justify-center p-3">
         {/* left part */}
-        <div className="left-part w-[30%]">
+        <div className={`left-part w-[30%] ${!showAddress ? "hidden" : ""}`}>
           <div className="flex flex-col gap-y-6 ">
             <div className="flex flex-row bg-[#121212] py-4">
               <div className="home-icon w-1/5 text-center items-center mt-2 pl-4">

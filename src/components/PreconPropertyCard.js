@@ -8,12 +8,12 @@ const PreconPropertyCard = React.forwardRef(
       e.target.src = `/noimage.webp`;
     };
     return (
-      <section className="text-white px-1" ref={ref}>
+      <section className="text-white px-1 bg-black-tint" ref={ref}>
         <Link
           href="/precon"
-          className="text-white hover:no-underline w-full block bg-black-tint h-[30rem]"
+          className="text-white hover:no-underline w-full block bg-black-tint "
         >
-          <div className="lg:px-0 h-full">
+          {/* <div className="lg:px-0 h-full">
             <div className="flex flex-col overflow-hidden transition-all duration-200 transform bg-white group p-0 relative">
               <div
                 className={`${
@@ -43,6 +43,24 @@ const PreconPropertyCard = React.forwardRef(
                   </div>
                 </div>
               </div>
+            </div>
+          </div> */}
+          <div className="flex flex-row w-full h-[20rem]">
+            <div className="min-w-[30%] h-full">
+              <img src={data.imgSrc} className="object-cover"></img>
+            </div>
+            <div className="px-6 bg-black-tint">
+              <h1 className="text-4xl text-gray-300 font-bold leading-[1.2em]">
+                DANIELS ON PARLIAMENT
+              </h1>
+              <p>
+                Located where Regent Park meets Cabbagetown, Daniels on
+                Parliament South Tower offers the epitome of high-rise urban
+                living. This spectacular 25 storey tower not only boasts
+                stunning views of downtown Toronto – it’s also connected to the
+                North Tower of Daniels on Parliament, sharing incredible amenity
+                spaces for residents to enjoy.
+              </p>
             </div>
           </div>
         </Link>

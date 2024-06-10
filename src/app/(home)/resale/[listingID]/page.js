@@ -20,6 +20,7 @@ import { Image } from "react-bootstrap";
 import PropertySlider from "@/components/PropertySlider";
 // import { Button } from "@nextui-org/react";
 import { generateImageURLs } from "@/helpers/generateImageURLs";
+import Contact from "@/components/Contact";
 
 const INITIAL_OFFSET = 0;
 const INITIAL_LIMIT = 10;

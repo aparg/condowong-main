@@ -34,7 +34,6 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
       {/* Wrap the card in the Link component */}
       <Link href={`/market-news/${blog.slug}`} passHref className="h-100">
         <div className="image-container w-100 position-relative">
-          {console.log(blog)}
           <img
             loading="lazy"
             className="card-img-top"

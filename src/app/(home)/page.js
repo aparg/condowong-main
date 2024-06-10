@@ -9,11 +9,18 @@ import PreconPropertySlider from "@/components/PreconPropertySlider";
 import assignments from "@/constant/assignments";
 import Link from "next/link";
 import AssignmentSlider from "@/components/AssignmentSlider";
+import Contact from "@/components/Contact";
 
 export default async function Home() {
   const residentialData = await getFilteredRetsData({ saleLease: "Sale" });
   const rentalData = await getFilteredRetsData({ saleLease: "Lease" });
-  const preconData = await getPreconProperties();
+  const preconData = [
+    {
+      name: "Daniels on Parliament",
+      location: "365 Parliament St, Toronto, ON",
+      imgSrc: "/pre-constructions/daniel-on-parliament/1.png",
+    },
+  ];
   return (
     <div>
       <main className="">
@@ -56,7 +63,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
-                Top Homes For Sale from across GTA
+                Check out Homes For Sale from across GTA
               </h3>
               <Link
                 href="/resale"
@@ -70,7 +77,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Top Rental Homes - Check out Leases from across GTA
+                Check out Leases from across GTA
               </h3>
               <Link
                 href="/rental"
@@ -84,7 +91,7 @@ export default async function Home() {
           <div className="mt-40">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Check out Assignments for Sale
+                Check out Assignments for Sale from across GTA
               </h3>
               <Link
                 href="/assignment"
@@ -100,12 +107,12 @@ export default async function Home() {
               <h3 className="main-title font-extrabold text-4xl text-white">
                 Upcoming and Hot Preconstruction Projects
               </h3>
-              <Link
+              {/* <Link
                 href="/rental"
                 className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
               >
                 Explore All
-              </Link>
+              </Link> */}
             </div>
             <PreconPropertySlider data={preconData} />
           </div>

@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 
 import Link from "next/link";
 import { ImSpinner } from "react-icons/im";
+import Contact from "@/components/Contact";
 
 const FiltersWithSalesList = dynamic(
   () => import("@/components/FiltersWithSalesList"),

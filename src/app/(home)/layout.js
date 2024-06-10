@@ -2,11 +2,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
+import Contact from "@/components/Contact";
 
 export default async function RootLayout({ children }) {
   return (
     <>
-      <main className="montserrat bg-[#000] montserrat">
+      <main className="montserrat bg-black montserrat">
         <NextTopLoader
           color="#fff"
           initialPosition={0.08}
@@ -20,6 +21,7 @@ export default async function RootLayout({ children }) {
 
         <Navbar />
         {children}
+        <Contact showAddress={false} />
         <Footer />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
