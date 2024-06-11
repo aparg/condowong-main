@@ -124,26 +124,26 @@ const FiltersWithSalesList = ({
   return (
     <>
       {filterState && (
-        <div className="mt-5">
+        <div className="mt-8">
           {/* <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
             <Filters {...{ filterState, setFilterState, fetchFilteredData }} />
           </div> */}
           <h2
-            className={`city-headline d-flex text-capitalize ${
+            className={`fs-3 font-bold d-flex text-capitalize ${
               isMobileView ? "pt-3" : "pt-4"
             }`}
           >
-            {city} Homes {filterState.saleLease} | Real Estate Updated Daily
-            Listings
+            {city} Homes {filterState.saleLease} by CondoWong | Real Estate
+            Updated Daily Listings
           </h2>
           <p
             className="fw-light mb-5"
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
-            Refine your <span className="text-capitalize">{city}</span> real
-            estate search by price, bedroom, or type (house, townhouse, or
-            condo). View up-to-date MLS® listings in{" "}
-            <span className="text-capitalize">{city}</span> .
+            Refine your <span className="text-capitalize">Canada's</span> real
+            estate search with top properties selected for you. View up-to-date
+            MLS® listings in <span className="text-capitalize">CondoWong</span>{" "}
+            .
           </p>
 
           <div
