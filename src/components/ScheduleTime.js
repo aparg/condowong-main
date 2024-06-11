@@ -4,6 +4,7 @@ import React from "react";
 import { Datepicker } from "flowbite-react";
 import { inputLead, labelLead } from "./Contact";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const ScheduleTime = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -62,7 +63,6 @@ const ScheduleTime = () => {
     });
   };
 
-
   const handleSubmit = () => {
     alert(
       `Full Name: ${formValues.fullName}\nEmail: ${formValues.email}\nPhone: ${
@@ -89,24 +89,24 @@ const ScheduleTime = () => {
       <div className="back text-white">
         {/* back icons with text  */}
         <div className="back-icon flex flex-row items-center gap-2">
-          <svg
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            width="20"
-            height="20"
-            aria-hidden="true"
+          <Link
+            href="/schedule"
+            className="flex flex-row items-center gap-2 text-lg  font-light hover:text-gray-100 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
           >
-            <path
-              fill-rule="evenodd"
-              d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
-            ></path>
-          </svg>
-          <div
-            className="flex flex-row items-center gap-2 text-lg  font-light hover:text-gray-700 cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"
-            onClick={() => setNextButton(false)}
-          >
-            <div>Back</div>
-          </div>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              width="20"
+              height="20"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
+              ></path>
+            </svg>
+            Back
+          </Link>
         </div>
       </div>
 

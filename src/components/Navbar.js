@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
               >
                 Home
               </Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/market-news"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
               >
                 Market News
               </Link>
@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/pre-construction/daniels-on-parliament"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
               >
                 Pre construction
               </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/assignment"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
               >
                 Assignment
               </Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/resale"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
               >
                 Resale
               </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/rental"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
               >
                 Rental
               </Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/contact"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
+                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
               >
                 Contact
               </Link>
