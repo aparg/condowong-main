@@ -248,6 +248,20 @@ const Footer = () => {
             <p className="text-sm font-normal text-white text-center">
               © Copyright 2023, All Rights Reserved by CondoWong
             </p>
+            <Link
+              href="https://sixdesign.ca"
+              target="_blank"
+              className="flex justify-center"
+            >
+              <p className="text-sm font-normal text-white text-center mb-3 border-t-[1px] border-primary-color mt-4 pt-2">
+                Website designed by SixDesign
+                <img
+                  src="/sixdesign-logo.svg"
+                  alt=""
+                  className="w-6 img-fluid inline ms-2"
+                />
+              </p>
+            </Link>
           </div>
         </div>
       </footer>
