@@ -1,10 +1,12 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [hidden, setHidden] = useState(true);
   return (
     <nav className="bg-black-tint px-12 sticky top-0 z-[99] shadow-m">
-      <div className="w-full flex justify-between items-center bg-black-tint h-20">
+      <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
         <div className="w-40">
           <Link href="/">
             <img src="/logo/logo1.webp" className="w-full"></img>
@@ -71,7 +73,7 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/schedule"
-                className="flex justify-between align-center bg-primary-color text-[#000] rounded-0 py-2 px-4 font-normal hover:text-black-900 hover:bg-orange-100 no-underline hover:no-underline"
+                className="flex justify-between align-center bg-primary-color text-[#000] rounded-0 py-2 px-4 font-normal hover:text-white hover:text-primary-color-900 hover:bg-orange-100 no-underline hover:no-underline"
               >
                 Schedule Call
               </Link>
@@ -79,6 +81,95 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <button
+        type="button"
+        className="inline-flex p-2 text-black transition-all duration-200 rounded-md sm:hidden sm:flex-end"
+        onClick={() => setHidden(!hidden)}
+      >
+        <svg
+          className="block w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="white"
+        >
+          <path
+            strokeLinecap="round"
+            stroke-linejoin="round"
+            strokeWidth="2"
+            d="M4 8h16M4 16h16"
+          />
+        </svg>
+
+        <svg
+          className="hidden w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <nav
+        className={`py-4 bg-black-tint border border-gray-200 rounded-md shadow-md ${
+          hidden && "hidden"
+        } lg:hidden`}
+      >
+        <div className="flow-root">
+          <div className="flex flex-col px-6 -my-2 space-y-1">
+            <Link
+              href="/"
+              title=""
+              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color`}
+            >
+              {" "}
+              Home
+            </Link>
+            <Link
+              href={`/market-news`}
+              title=""
+              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color `}
+            >
+              {" "}
+              Market News
+            </Link>
+            <Link
+              href="/pre-construction/daniels-on-parliament"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+            >
+              Pre-constructions
+            </Link>
+            <Link
+              href="/rental"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+            >
+              Rental
+            </Link>
+            <Link
+              href="/contact"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+            >
+              Contact
+            </Link>
+            <Link
+              href="/schedule"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+            >
+              Schedule a Call
+            </Link>
+          </div>
+        </div>
+      </nav>
     </nav>
   );
 };
