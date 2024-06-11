@@ -3992,3 +3992,6 @@ div.dynamic {
 .bg-primary-bg{
   background-image: url("/bg.svg");
 }
+.icont header{
+  display: none !important;
+}

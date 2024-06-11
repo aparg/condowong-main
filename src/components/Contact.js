@@ -16,10 +16,26 @@ const Contact = ({ showAddress = true }) => {
     pathname == "/contact"
   )
     return null;
+
+  const titlegenerate = () => {
+    /* {pathname == "/pre-construction/daniels-on-parliament" &&
+      "Request For More Info"} */
+    if (pathname.startsWith("/pre-construction")) {
+      return "Request For More Info";
+    } else if (pathname.startsWith("/assignment")) {
+      return "Send me more information";
+    } else if (pathname.startsWith("/resale")) {
+      return "Request for the showing";
+    } else if (pathname.startsWith("/rental")) {
+      return "Request for the showing";
+    } else {
+      return "Contact CondoWong Now";
+    }
+  };
   return (
     <div className="mx-24">
       <div className="title text-5xl  my-10  text-center text-white playfair">
-        Contact CondoWong Now
+        {titlegenerate()}
       </div>
       <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">
         {/* left part */}
