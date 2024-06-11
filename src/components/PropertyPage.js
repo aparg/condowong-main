@@ -210,7 +210,7 @@ const PropertyPage = ({ main_data }) => {
         <div
           className={`${isMobileView ? "pt-4 mt-8" : "mt-8 pt-4"} text-black`}
         >
-          <div className="border border-0 rounded-0 bg-black-tint p-3 sm:p-4">
+          <div className="border-0 rounded-0 bg-black-tint p-3 sm:p-4">
             <h2 className="font-extrabold text-2xl sm:text-4xl text-white">
               Description
             </h2>
@@ -218,24 +218,24 @@ const PropertyPage = ({ main_data }) => {
               {main_data.RemarksForClients}
             </p>
             <div
-              className={`row row-cols-2  row-cols-md-4 w-100 ${
+              className={`row row-cols-2 row-cols-md-4 w-100 ${
                 isMobileView ? "flex-wrap" : "flex-nowrap prp-gap"
               }`}
             >
-              <div className="col-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
+              <div className="col-6 col-md-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
                 <p className="cardd-subtitle_bg-black fw-bold">
                   Last check for updates
                 </p>
               </div>
-              <div className="col-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
+              <div className="col-6 col-md-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
                 <p className="cardd-subtitle_bg-black">
                   <TimeAgo modificationTimestamp={main_data.TimestampSql} />
                 </p>
               </div>
-              <div className="col-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
+              <div className="col-6 col-md-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
                 <p className="cardd-subtitle_bg-black fw-bold">Property type</p>
               </div>
-              <div className="col-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
+              <div className="col-6 col-md-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
                 <p className="cardd-subtitle_bg-black">
                   {main_data.TypeOwn1Out}
                 </p>

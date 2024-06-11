@@ -3902,6 +3902,9 @@ div.dynamic {
 .text-shadow {
   text-shadow: 2px 3px #000000;
 }
+.text-shadow-sm{
+  text-shadow: 1px 1px #000000;
+}
 
 .fs-large {
   font-size: 4rem;

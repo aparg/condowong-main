@@ -49,7 +49,7 @@ const Footer = () => {
             }`}
           >
             <div className="grid grid-cols-2 gap-x-4 md:gap-x-10 mt-12 sm:grid-cols-3 lg:grid-cols-4 sm:mt-16 lg:mt-20 gap-y-6 justify-content-center justify-content-md-start">
-              <div className="col-span-2 sm:col-span-1 lg:pl-12 max-w-[80%]">
+              <div className="col-span-1 sm:col-span-1 lg:pl-12 max-w-[80%]">
                 <p className="text-md font-bold tracking-widest text-black-600 uppercase">
                   Company
                 </p>
@@ -101,7 +101,7 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
+              <div className="col-span-1 sm:col-span-1">
                 <p className="text-md font-bold tracking-widest text-black-600 uppercase">
                   Help
                 </p>
@@ -153,7 +153,7 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
+              <div className="col-span-1 sm:col-span-1">
                 <p className="text-md font-bold tracking-widest text-black-600 uppercase">
                   Company
                 </p>
@@ -204,7 +204,7 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div className="col-span-2 md:col-span-3 lg:col-span-1">
+              <div className="col-span-1 md:col-span-3 lg:col-span-1">
                 <p className="text-md font-bold tracking-widest text-black-600 uppercase"></p>
 
                 <ul className=" flex flex-col justify-start">

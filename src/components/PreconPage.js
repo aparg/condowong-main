@@ -28,7 +28,7 @@ import Contact from "./Contact";
 // };
 const PreconPage = () => {
   return (
-    <main className="px-12">
+    <main className="px-4 md:px-12">
       {/* <div className="floating fixxcont2">
         <Link
           href="#contact"

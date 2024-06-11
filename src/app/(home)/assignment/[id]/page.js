@@ -22,7 +22,7 @@ const page = ({ params }) => {
   }
 
   return (
-    <div className="row bg-[#000] mx-20">
+    <div className="row bg-[#000] mx-2 md:mx-20">
       <div className="col-md-8">
         <div className="my-3">
           <Breadcrumb

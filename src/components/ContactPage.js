@@ -182,7 +182,9 @@ const ContactPage = ({ showAddress = true }) => {
 
             {/* submit button */}
             <div className="flex flex-row items-center bg-[#CC9900] justify-center py-1  text-white">
-              <div className="title text-xl  my-1 ">Send Message</div>
+              <div className="title text-xl  my-1 text-shadow-sm">
+                Send Message
+              </div>
             </div>
           </div>
         </div>

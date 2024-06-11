@@ -27,7 +27,7 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
                 />
               </div>
             </div>
-            <div className="flex-1 sm:px-5 py-3 bg-black-tint">
+            <div className="flex-1 px-3 sm:px-5 py-3 bg-black-tint">
               <div className="flex flex-row justify-between bg-black-tint">
                 <div className=" truncate text-ellipsis bg-black-tint">
                   <span className="text-white font-medium text-lg bva">

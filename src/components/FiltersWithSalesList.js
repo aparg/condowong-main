@@ -136,7 +136,7 @@ const FiltersWithSalesList = ({
             Check out Homes For {filterState.saleLease} across GTA
           </h2>
           <p
-            className="fw-light mb-5"
+            className="fw-light mb-5 text-gray-400 mt-2"
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
             Check out Detached, Semi-detached, Townhomes and 1 Bedroom 2
@@ -146,7 +146,7 @@ const FiltersWithSalesList = ({
           <div
             className={`${
               isMobileView ? "pt-1" : "pt-3"
-            } row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 sm:gap-y-[40px]`}
+            } row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 gy-5 sm:gap-y-[40px] px-3`}
           >
             {!loading ? (
               <SalesList

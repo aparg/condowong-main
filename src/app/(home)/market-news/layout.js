@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <div className=" bg-[#000]">
       {/* <MarketNewsNavbar /> */}
-      <div className="mx-16">{children}</div>
+      <div className="mx-1 md:mx-16">{children}</div>
     </div>
   );
 }

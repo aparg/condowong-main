@@ -33,7 +33,7 @@ const Contact = ({ showAddress = true }) => {
     }
   };
   return (
-    <div className="mx-24">
+    <div className="mx-4 md:mx-24">
       <div className="title text-5xl  my-10  text-center text-white playfair">
         {titlegenerate()}
       </div>
@@ -138,7 +138,7 @@ const Contact = ({ showAddress = true }) => {
         </div>
 
         {/* right part */}
-        <div className="right-part w-[60%]">
+        <div className="right-part w-[100%] md:w-[60%]">
           <div className="flex flex-col gap-y-6">
             {/* full name input section */}
             <div className="relative border-none">
@@ -203,7 +203,9 @@ const Contact = ({ showAddress = true }) => {
 
             {/* submit button */}
             <div className="flex flex-row items-center bg-[#CC9900] justify-center py-1  text-white">
-              <div className="title text-xl  my-1 ">Send Message</div>
+              <div className="title text-xl my-1 text-shadow-sm">
+                Send Message
+              </div>
             </div>
           </div>
         </div>

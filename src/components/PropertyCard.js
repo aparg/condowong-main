@@ -78,7 +78,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 </div>
               </div> */}
             </div>
-            <div className="flex-1 sm:px-5 py-3 bg-black-tint">
+            <div className="flex-1 px-3 sm:px-5 py-3 bg-black-tint">
               {/* {showDecreasedPrice && (
                 <span className="text-gray-600">
                   <s>${curElem.MaxListPrice}</s>
@@ -107,7 +107,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 </span>
               </h2>
               <span className={`text-black text-xs ${small && "hidden"}`}>
-                <div className="flex flex-row justify-start card-feature bg-black-tint">
+                <div className="flex flex-row justify-start card-feature bg-black-tint mt-3 md:mt-1">
                   {curElem.Bedrooms && (
                     <div className="flex items-center mr-2">
                       {/* <Image

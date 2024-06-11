@@ -42,7 +42,7 @@ const BlogDetails = async ({ params }) => {
 
   return (
     <div className="blog__details">
-      <div className="container mt-3">
+      <div className="mt-5">
         <div className="row">
           <div className="col-md-8 col-10 bg-black-tint rounded-lg p-5 mx-auto">
             <Breadcrumb
@@ -117,34 +117,34 @@ const BlogDetails = async ({ params }) => {
                 }}
               />
             </section>
-
-            {filteredBlogPostsBasedOnCity.length > 0 ? (
-              <>
-                <section className="blogs__related mt-5">
-                  <h3 className="main-title text-white">
-                    You might be interested in
-                  </h3>
-                  <article>
-                    <div className="row mt-4">
-                      {filteredBlogPostsBasedOnCity.map((blog, index) => {
-                        return (
-                          <div
-                            className="col-sm-12 col-md-6 col-lg-4 mb-4"
-                            key={index}
-                          >
-                            <BlogCard blog={blog} />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </article>
-                </section>
-              </>
-            ) : null}
           </div>
         </div>
       </div>
-
+      <div className="container">
+        {filteredBlogPostsBasedOnCity.length > 0 ? (
+          <>
+            <section className="blogs__related mt-20">
+              <h3 className="main-title text-white">
+                You might be interested in
+              </h3>
+              <article>
+                <div className="row mt-4">
+                  {filteredBlogPostsBasedOnCity.map((blog, index) => {
+                    return (
+                      <div
+                        className="col-sm-12 col-md-6 col-lg-4 mb-4"
+                        key={index}
+                      >
+                        <BlogCard blog={blog} />
+                      </div>
+                    );
+                  })}
+                </div>
+              </article>
+            </section>
+          </>
+        ) : null}
+      </div>
       {/* <div className="py-5 my-3 d-none d-md-block mt-40">
         <div className="container-fluid">
           <Contact />

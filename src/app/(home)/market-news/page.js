@@ -23,7 +23,7 @@ const Blogs = async () => {
     }
   };
   return (
-    <div className="w-full h-full  text-white mt-10">
+    <div className="w-full h-full  text-white mt-10 px-5 md:px-0">
       {/* {blogPosts.length > 0 ? (
         <div className="flex flex-col md:flex-row gap-0 items-center justify-between bg-[#121212] lg:h-[600px] border-1 border-primary-color">
           <div className="textpart w-full md:w-[45%] flex flex-col items-start justify-center px-20 min-h-[216px]">
@@ -52,16 +52,16 @@ const Blogs = async () => {
         </div>
       )} */}
 
-      <h2 className={`d-flex text-capitalize pt-4 fs-3 font-extrabold`}>
+      <h2 className={`d-flex text-capitalize pt-4 fs-3 mb-2 font-extrabold`}>
         Make an informed decision with the help of CondoWong's latest market
         news
       </h2>
-      <p className="fw-light mb-5">
+      <p className="fw-light mb-5 text-sm text-gray-400">
         Stay up to date with the latest news and trends in the Canadian Real
         Estate Market.
       </p>
 
-      <div className={`row`}>
+      <div className={`row gy-3`}>
         {blogPosts.length > 0 ? (
           <>
             {blogPosts.map((blog, index) => {
