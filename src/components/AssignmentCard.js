@@ -21,7 +21,7 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
               <div className="h-80 relative">
                 <img
                   className="object-cover w-full h-full transition-all duration-200 transform group-hover:scale-110"
-                  src={`/assignments/${elem.imgSrc}`}
+                  src={`${elem.imgSrc}`}
                   alt="property image"
                   // onError={handleImageError}
                 />
