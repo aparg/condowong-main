@@ -8,14 +8,9 @@ export const inputLead =
 export const labelLead =
   "absolute left-0 right-0 top-6 -translate-y-3 bg-transparent ml-1 px-3 text-xs duration-100 ease-linear peer-placeholder-shown:text-gray-500 peer-placeholder-shown:-translate-y-3 peer-placeholder-shown:text-base  peer-focus:ml-4 peer-focus:bb-10 peer-focus:-translate-y-3 peer-focus:px-1  peer-focus:text-xs whitespace-nowrap ";
 
-const Contact = ({ showAddress = true }) => {
+const ContactPage = ({ showAddress = true }) => {
   const pathname = usePathname();
-  if (
-    pathname == "/schedule" ||
-    pathname == "/schedule/time" ||
-    pathname == "/contact"
-  )
-    return null;
+  if (pathname == "/schedule" || pathname == "/schedule/time") return null;
   return (
     <div className="mx-24">
       <div className="title text-5xl  my-10  text-center text-white playfair">
@@ -196,4 +191,4 @@ const Contact = ({ showAddress = true }) => {
   );
 };
 
-export default Contact;
+export default ContactPage;
