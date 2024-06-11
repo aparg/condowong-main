@@ -133,17 +133,14 @@ const FiltersWithSalesList = ({
               isMobileView ? "pt-3" : "pt-4"
             }`}
           >
-            {city} Homes {filterState.saleLease} by CondoWong | Real Estate
-            Updated Daily Listings
+            Check out Homes For {filterState.saleLease} across GTA
           </h2>
           <p
             className="fw-light mb-5"
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
-            Refine your <span className="text-capitalize">Canada's</span> real
-            estate search with top properties selected for you. View up-to-date
-            MLS® listings in <span className="text-capitalize">CondoWong</span>{" "}
-            .
+            Check out Detached, Semi-detached, Townhomes and 1 Bedroom 2
+            Bedrooms & 3 Bedrooms+ Condo units for sale across GTA
           </p>
 
           <div
