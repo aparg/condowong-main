@@ -25,7 +25,7 @@ const page = () => {
   //   ],
   // };
   return (
-    <div className="sm:mx-44 mx-6">
+    <div>
       <PreconPage
       // quote={preconData.quote}
       // projectName={preconData.projectName}

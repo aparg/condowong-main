@@ -28,7 +28,7 @@ import Contact from "./Contact";
 // };
 const PreconPage = () => {
   return (
-    <main>
+    <main className="px-12">
       {/* <div className="floating fixxcont2">
         <Link
           href="#contact"
@@ -57,8 +57,8 @@ const PreconPage = () => {
         }}
       /> */}
       <div className="b-patt py-md-5 mb-14">
-        <div className="container">
-          <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white  my-14">
+        <div className="shadow-m">
+          <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white  my-14 mx-0">
             <div className="col p-6">
               <div className="position-relative">
                 <div className="text-start"></div>
@@ -80,7 +80,7 @@ const PreconPage = () => {
                       </li> */}
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/clock-black.svg"></img>
-                        <p>OVER 39 YEARS</p>
+                        <p>Over 39 Years Building Expertise</p>
                       </li>
                       {/* <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/location-black.svg"></img>
@@ -88,15 +88,15 @@ const PreconPage = () => {
                       </li> */}
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/money-black.svg"></img>
-                        <p>AFFORDABLE HOUSING OPPORTUNITIES</p>
+                        <p>Innovation in Master-Planning</p>
                       </li>
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/agriculture-black.svg"></img>
-                        <p>URBAN AGRICULTURE</p>
+                        <p>Urban Agriculture</p>
                       </li>
                       <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/location-black.svg"></img>
-                        <p>IN VIBRANT DOWNTOWN EAST</p>
+                        <p>In Vibrant Downtown East</p>
                       </li>
                     </ul>
                   </div>
@@ -282,7 +282,6 @@ const PreconPage = () => {
                   width="100%"
                   height="370"
                   frameborder="0"
-                  scrolling="no"
                   marginheight="0"
                   marginwidth="0"
                   src="https://maps.google.it/maps?q=365%20Parliament%20St,%20Toronto,%20ON&amp;output=embed"
@@ -297,14 +296,15 @@ const PreconPage = () => {
         </div>
       </section>
       <div className="py-5"></div>
-      <section className="my-14">
-        <h2 className="fw-bold fs-1 mb-0 text-center justify-content-center brand-color mb-2">
+      <section className="my-14 d-flex flex-column align-items-center">
+        <h2 className="fw-bold fs-1 text-center justify-content-center brand-color mb-2">
           Brochure
         </h2>
         <iframe
           src="/brochure.pdf"
           width="100%"
           height="600px"
+          typeof="application/pdf"
           loading="lazy"
           title="PDF-file"
         ></iframe>

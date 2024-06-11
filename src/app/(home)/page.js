@@ -35,7 +35,7 @@ export default async function Home() {
               className="object-cover max-h-[500px]"
               loop
             ></video>
-            <div className="absolute w-full bottom-[15rem] flex flex-col items-center">
+            <div className="absolute w-full bottom-[2rem] flex flex-col items-center">
               <h1 className="text-[4rem] font-bold text-center playfair">
                 Build Wealth with Toronto Real Estate
               </h1>
@@ -105,7 +105,7 @@ export default async function Home() {
           <div className="mt-40 mb-14">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white">
-                Upcoming and Hot Preconstruction Projects
+                Upcoming and Hot Preconstruction Project
               </h3>
               {/* <Link
                 href="/rental"

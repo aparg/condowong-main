@@ -25,7 +25,7 @@ const PreconPropertySlider = ({ numberOfCards = 6, data }) => {
   };
 
   return (
-    <div className="relative mb-8">
+    <div className="relative mb-8 shadow-m">
       {/* <div className="btns flex justify-between">
         <button
           className="scroll-left absolute start-0"

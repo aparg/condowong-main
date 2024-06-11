@@ -113,7 +113,7 @@ const Contact = ({ showAddress = true }) => {
         </div>
 
         {/* right part */}
-        <div className="right-part w-[70%] ">
+        <div className="right-part w-[60%]">
           <div className="flex flex-col gap-y-6">
             {/* full name input section */}
             <div className="relative border-none">

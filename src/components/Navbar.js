@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-black-tint px-12 sticky top-0 z-[99]">
+    <nav className="bg-black-tint px-12 sticky top-0 z-[99] shadow-m">
       <div className="w-full flex justify-between items-center bg-black-tint h-20">
         <div className="w-40">
           <Link href="/">
@@ -30,7 +30,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
-                href="/pre-construction"
+                href="/pre-construction/daniels-on-parliament"
                 className="hover:text-primary-color hover:no-underline	hover:border-b-orange-400 hover:border-b-2 text-white"
               >
                 Pre construction

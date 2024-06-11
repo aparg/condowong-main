@@ -10,29 +10,14 @@ const PreconPropertyCard = React.forwardRef(
     return (
       <Link href="/pre-construction/daniels-on-parliament">
         <div className="b-patt">
-          <div className="container">
-            <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white">
+          <div>
+            <div className="row row-cols-1 row-cols-md-2 d-flex align-items-center bg-white">
               <div className="col px-0">
-                {/* <video
-                src="/empire_canals_desktop.mp4"
-                type="video/mp4"
-                autoPlay={true}
-                loop={true}
-                playsInline={true}
-                muted={true}
-                className="img-fluid hero-video"
-              ></video> */}
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/DAKjOGJe1vQ?si=9fVCUoj-EqtySK1m"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                  className="h-full"
-                ></iframe>
+                <img
+                  src="/Daniels-on-Parliament-South-Tower-Streetscape-View-of-Exteriors-3-v15.jpg"
+                  alt="Daniels-on-Parliament-South-Tower-Streetscape-View-of-Exteriors-3-v15"
+                  className="img-fluid"
+                />
               </div>
               <div className="col p-6">
                 <div className="position-relative">
@@ -55,7 +40,7 @@ const PreconPropertyCard = React.forwardRef(
                       </li> */}
                         <li className="col d-flex gap-2 justify-content-start align-items-center">
                           <img className="w-6" src="/clock-black.svg"></img>
-                          <p>OVER 39 YEARS</p>
+                          <p>Over 39 Years Building Expertise</p>
                         </li>
                         {/* <li className="col d-flex gap-2 justify-content-start align-items-center">
                         <img className="w-6" src="/location-black.svg"></img>
@@ -63,18 +48,18 @@ const PreconPropertyCard = React.forwardRef(
                       </li> */}
                         <li className="col d-flex gap-2 justify-content-start align-items-center">
                           <img className="w-6" src="/money-black.svg"></img>
-                          <p>AFFORDABLE HOUSING OPPORTUNITIES</p>
+                          <p>Innovation in Master-Planning</p>
                         </li>
                         <li className="col d-flex gap-2 justify-content-start align-items-center">
                           <img
                             className="w-6"
                             src="/agriculture-black.svg"
                           ></img>
-                          <p>URBAN AGRICULTURE</p>
+                          <p>Urban Agriculture</p>
                         </li>
                         <li className="col d-flex gap-2 justify-content-start align-items-center">
                           <img className="w-6" src="/location-black.svg"></img>
-                          <p>IN VIBRANT DOWNTOWN EAST</p>
+                          <p>In Vibrant Downtown East</p>
                         </li>
                       </ul>
                     </div>
@@ -84,7 +69,7 @@ const PreconPropertyCard = React.forwardRef(
                       className="btn btn-lg btn-register shadow"
                       href="/pre-construction/daniels-on-parliament"
                     >
-                      Learn More
+                      Register Now For Daniels on Parliament South Tower
                       <img
                         src="/arrow-right.svg"
                         alt="right arrow"

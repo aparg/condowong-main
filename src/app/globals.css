@@ -3985,3 +3985,10 @@ div.dynamic {
 .bg-lighter {
   background-color: #f0f0f0 !important;
 }
+
+.shadow-m{
+  box-shadow: 0px 20px 500px 0px #cc990058;
+}
+.bg-primary-bg{
+  background-image: url("/bg.svg");
+}
