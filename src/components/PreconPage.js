@@ -43,9 +43,9 @@ const PreconPage = () => {
   };
   return (
     <main className="px-4 md:px-12">
-      <div className="b-patt py-md-5 mb-14">
+      <div className="b-patt">
         <div className="shadow-m">
-          <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white  my-14 mx-0">
+          <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white  sm:my-20 my-10 mx-0">
             <div className="col p-6">
               <div className="position-relative">
                 <div className="text-start"></div>
@@ -129,11 +129,10 @@ const PreconPage = () => {
         </div>
       </div>
 
-      <section className="container" id="renderings">
+      <section className="container my-10 sm:pb-0" id="renderings">
         <div>
           <div className="container pt-3 " id="gallery">
-            <div className="my-md-5 my-3"></div>
-            <div className="pt-md-5 pt-5">
+            <div className="">
               <h2 className="fw-bold fs-1 pb-3  ps-3 ps-md-0 d-flex justify-content-center brand-color">
                 Daniels on Parliament : Models and Renderings
               </h2>
@@ -208,13 +207,13 @@ const PreconPage = () => {
         </div>
       </section>
 
-      <section className="my-14">
+      <section className="sm:my-20 my-10">
         <h2 className="fw-bold fs-1 mb-0 text-center justify-content-center text-primary-color">
           Get Floor Plans and Pricing
         </h2>
         <form
           method="POST"
-          className="mb-3 mt-10 flex flex-col items-center"
+          className="mb-3 sm:mt-6 mt-4 flex flex-col items-center"
           onSubmit={(e) => handleFormSubmit(e)}
           id="contactForm"
         >
@@ -276,15 +275,14 @@ const PreconPage = () => {
           <input
             type="submit"
             value={"Send Now!"}
-            className="btn bg-primary-color text-white btn-md mb-3 rounded-0 text-lg fw-bold"
+            className="btn bg-primary-color text-white btn-md mb-3 mt-2 rounded-0 text-lg fw-bold"
             id="subbtn"
           />
         </form>
       </section>
-      <section id="location" className="my-14">
-        <div className="container pt-md-5 pt-5" id="location">
-          <div className="pt-md-5 pt-5"></div>
-          <div className="py-5">
+      <section id="location" className="sm:my-20 my-10">
+        <div className="container" id="location">
+          <div className="py-0">
             <h2 className="fw-bold fs-1 mb-0 text-center justify-content-center brand-color">
               Daniels on Parliament
             </h2>
@@ -311,8 +309,7 @@ const PreconPage = () => {
           </div>
         </div>
       </section>
-      <div className="py-5"></div>
-      <section className="my-14 d-flex flex-column align-items-center">
+      <section className="sm:my-20 my-10 d-flex flex-column align-items-center">
         <h2 className="fw-bold fs-1 text-center justify-content-center brand-color mb-2">
           Brochure
         </h2>

@@ -140,7 +140,8 @@ const Navbar = () => {
             <Link
               href="/"
               title=""
-              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color`}
+              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               {" "}
               Home
@@ -149,6 +150,7 @@ const Navbar = () => {
               href={`/market-news`}
               title=""
               className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               {" "}
               Market News
@@ -157,6 +159,7 @@ const Navbar = () => {
               href="/pre-construction/daniels-on-parliament"
               title=""
               className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               Pre-constructions
             </Link>
@@ -164,6 +167,7 @@ const Navbar = () => {
               href="/rental"
               title=""
               className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               Rental
             </Link>
@@ -171,6 +175,7 @@ const Navbar = () => {
               href="/contact"
               title=""
               className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               Contact
             </Link>
@@ -178,6 +183,7 @@ const Navbar = () => {
               href="/schedule"
               title=""
               className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
             >
               Schedule a Call
             </Link>

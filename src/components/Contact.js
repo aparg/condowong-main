@@ -29,12 +29,16 @@ const Contact = ({ showAddress = true }) => {
     } else if (pathname.startsWith("/rental")) {
       return "Request for the showing";
     } else {
-      return "Contact CondoWong Now";
+      return (
+        <>
+          Contact <br /> CondoWong Now
+        </>
+      );
     }
   };
   return (
     <div className="mx-4 md:mx-24">
-      <div className="title text-5xl font-extrabold my-10 text-white playfair">
+      <div className="title text-4xl font-extrabold my-10 text-white playfair text-center">
         {titlegenerate()}
       </div>
       <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">

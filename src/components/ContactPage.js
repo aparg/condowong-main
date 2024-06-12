@@ -12,13 +12,13 @@ const ContactPage = ({ showAddress = true }) => {
   const pathname = usePathname();
   if (pathname == "/schedule" || pathname == "/schedule/time") return null;
   return (
-    <div className="mx-24">
+    <div className="sm:mx-24">
       <div className="title text-5xl font-extrabold my-10 text-center text-white playfair">
         Contact CondoWong Now
       </div>
-      <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">
+      <div className="bg-[#000] text-white flex flex-col sm:flex-row gap-10 items-start justify-center p-3">
         {/* left part */}
-        <div className={`left-part w-[30%] ${!showAddress ? "hidden" : ""}`}>
+        <div className={`left-part sm:w-[30%] ${!showAddress ? "hidden" : ""}`}>
           <div className="flex flex-col gap-y-6 ">
             <div className="flex flex-row bg-[#121212] py-4">
               <div className="home-icon w-1/5 text-center items-center mt-2 pl-4">
@@ -117,7 +117,7 @@ const ContactPage = ({ showAddress = true }) => {
         </div>
 
         {/* right part */}
-        <div className="right-part w-[60%]">
+        <div className="right-part w-[100%]  sm:w-[60%]">
           <div className="flex flex-col gap-y-6">
             {/* full name input section */}
             <div className="relative border-none">

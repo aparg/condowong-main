@@ -44,7 +44,7 @@ export default async function Home() {
               </h3>{" "}
               <Link
                 href="/resale"
-                className="bg-primary-color text-black px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg"
+                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg"
               >
                 Schedule a Call
               </Link>
@@ -105,7 +105,7 @@ export default async function Home() {
           </div>
           <div className="mt-40 mb-14">
             <div className="flex justify-between mb-3">
-              <h3 className="main-title font-extrabold text-4xl text-white mb-4">
+              <h3 className="main-title font-extrabold text-center text-4xl text-white mb-4">
                 Upcoming and Hot Preconstruction Project
               </h3>
               {/* <Link
