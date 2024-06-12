@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="relative overflow-hidden bg-primary-bg w-full ">
             <div className="relative px-8 py-12 md:p-16 xl:p-24 flex flex-col justify-center">
               <div className="max-w-3xl mx-auto">
-                <div className="w-40 bg-black-tint p-3 mx-auto mb-2">
+                <div className="w-40 bg-black-tint p-3 mx-auto mb-4">
                   <Link href="/">
                     <img src="/logo/logo1.webp" className="w-full"></img>
                   </Link>
@@ -248,20 +248,17 @@ const Footer = () => {
             <p className="text-sm font-normal text-white text-center">
               © Copyright 2023, All Rights Reserved by CondoWong
             </p>
-            <Link
-              href="https://sixdesign.ca"
-              target="_blank"
-              className="flex justify-center"
-            >
-              <p className="text-sm font-normal text-white text-center mb-3 border-t-[1px] border-primary-color mt-4 pt-2">
-                Website designed by SixDesign
-                <img
-                  src="/sixdesign-logo.svg"
-                  alt=""
-                  className="w-6 img-fluid inline ms-2"
-                />
-              </p>
-            </Link>
+
+            <p className="text-sm text-white text-center mb-3 mt-4 pt-2 font-normal">
+              Website designed by{" "}
+              <Link
+                href="https://sixdesign.ca"
+                target="_blank"
+                className="font-extrabold inline"
+              >
+                SixDesign
+              </Link>
+            </p>
           </div>
         </div>
       </footer>

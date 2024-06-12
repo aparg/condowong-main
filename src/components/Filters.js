@@ -25,12 +25,12 @@ import { bedCount, saleLease, houseType, washroomCount } from "@/constant";
 import useDeviceView from "@/helpers/useDeviceView";
 
 const bgColor = {
-  saleLease: "bg-white",
-  priceDecreased: "bg-primary-red",
-  time: "bg-primary-red",
-  type: "bg-white",
-  minTimestampSql: "bg-[#eb7e6c]/1",
-  bed: "bg-primary-red",
+  saleLease: "bg-color-primary",
+  priceDecreased: "bg-color-primary",
+  time: "bg-color-primary",
+  type: "bg-color-primary",
+  minTimestampSql: "bg-color-primary",
+  bed: "bg-color-primary",
 };
 
 const textColor = {
