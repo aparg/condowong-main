@@ -60,7 +60,7 @@ export default async function Home() {
             </div>
             <NewsSlider />
           </div>
-          <div className="mt-40">
+          <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
                 Check out Homes For Sale from across GTA
@@ -74,7 +74,7 @@ export default async function Home() {
             </div>
             <PropertySlider data={residentialData} />
           </div>
-          <div className="mt-40">
+          <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
                 Check out Leases from across GTA
@@ -88,7 +88,7 @@ export default async function Home() {
             </div>
             <PropertySlider data={rentalData} />
           </div>
-          <div className="mt-40">
+          <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
                 Check out Assignments for Sale from across GTA
@@ -103,7 +103,7 @@ export default async function Home() {
 
             <AssignmentSlider data={assignments} />
           </div>
-          <div className="mt-40 mb-14">
+          <div className="sm:mt-40 mt-24 mb-14">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-center text-4xl text-white mb-4">
                 Upcoming and Hot Preconstruction Project
