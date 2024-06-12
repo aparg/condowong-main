@@ -218,30 +218,29 @@ const PropertyPage = ({ main_data }) => {
               {main_data.RemarksForClients}
             </p>
             <div
-              className={`row row-cols-2 row-cols-md-4 w-100 ${
+              className={`row row-cols-2  row-cols-md-4 w-100 ${
                 isMobileView ? "flex-wrap" : "flex-nowrap prp-gap"
               }`}
             >
-              <div className="col-6 col-md-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
+              <div className="col-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
                 <p className="cardd-subtitle_bg-black fw-bold">
-                  Last check for updates
+                  Last Check for Updates
                 </p>
               </div>
-              <div className="col-6 col-md-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
+              <div className="col-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
                 <p className="cardd-subtitle_bg-black">
                   <TimeAgo modificationTimestamp={main_data.TimestampSql} />
                 </p>
               </div>
-              <div className="col-6 col-md-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
-                <p className="cardd-subtitle_bg-black fw-bold">Property type</p>
+              <div className="col-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
+                <p className="cardd-subtitle_bg-black fw-bold">Property Type</p>
               </div>
-              <div className="col-6 col-md-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
+              <div className="col-5 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pl-0">
                 <p className="cardd-subtitle_bg-black">
                   {main_data.TypeOwn1Out}
                 </p>
               </div>
             </div>
-
             <div
               className={`row row-cols-2  row-cols-md-4 w-100 ${
                 isMobileView ? "flex-wrap" : "flex-nowrap prp-gap"
@@ -265,7 +264,7 @@ const PropertyPage = ({ main_data }) => {
                 isMobileView ? "flex-wrap" : "flex-nowrap prp-gap"
               }`}
             >
-              <div className="col-7 col-md border-b-[0.1px] border-gray-600 border-sm py-2 py-md-3 pr-0">
+              <div className="col-7 col-md border-b-[0.1px] border-gray-600 py-2 py-md-3 pr-0">
                 <p className="cardd-subtitle_bg-black fw-bold">Lot size</p>
               </div>
               <div className="col-5 col-md border-b-[0.1px] border-gray-600 border-sm py-2 py-md-3 pl-0">

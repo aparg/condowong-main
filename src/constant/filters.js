@@ -13,7 +13,7 @@ export const bedCount = {
 };
 
 export const houseType = {
-  all: { name: "House Type", value: null },
+  all: { name: "All", value: null },
   condo: { name: "Condo", value: "CondoProperty" },
   semiDetached: { name: "Semi Detached", value: ".S." },
   detached: { name: "Detached", value: ".D." },

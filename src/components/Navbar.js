@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [hidden, setHidden] = useState(true);
   return (
-    <nav className="bg-black-tint px-12 sticky top-0 z-[99] shadow-m">
+    <nav className="bg-black-tint sm:px-12 px-4 sticky top-0 z-[99] shadow-m">
       <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
         <div className="w-40">
           <Link href="/">

@@ -125,7 +125,7 @@ const Filters = ({ filterState, setFilterState, fetchFilteredData }) => {
     <>
       <div
         className={`filters d-flex gap-2 gap-md-3 items-center flex-wrap sticky top-0 z-[998] ${
-          navbar ? "filter__scrolled" : ""
+          navbar ? "filter__scrolled sm:py-8" : ""
         } `}
       >
         {/* <IndividualFilterButton
@@ -715,11 +715,11 @@ const IndividualFilterButton = ({
         return (
           <div
             key={index}
-            className={`mx-[2px] px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center rounded-pill border-2
+            className={`mx-[2px] px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center rounded-pill
             ${
               isActive(option)
-                ? `border-primary-red text-white ${bgColor[name]}`
-                : "border-medium-black"
+                ? `border-primary-red text-white bg-primary-color border-0`
+                : "border-medium-black  border-2"
             }`}
             onClick={() => handleClick(name, option)}
             style={{ border: "2px solid #e5e7eb" }}
