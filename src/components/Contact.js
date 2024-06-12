@@ -34,7 +34,7 @@ const Contact = ({ showAddress = true }) => {
   };
   return (
     <div className="mx-4 md:mx-24">
-      <div className="title text-5xl  my-10  text-center text-white playfair">
+      <div className="title text-5xl font-extrabold my-10 text-white playfair">
         {titlegenerate()}
       </div>
       <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">

@@ -1,11 +1,23 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(true);
+  const [hideCallBtn, setHideCallBtn] = useState(false);
+  const pathname = usePathname();
+  useEffect(() => {
+    //remove call btn in homepage
+    if (pathname.endsWith("/")) {
+      console.log("has /");
+      setHideCallBtn(true);
+    } else {
+      setHideCallBtn(false);
+    }
+  }, [pathname]);
   return (
-    <nav className="bg-black-tint sm:px-12 px-4 sticky top-0 z-[99] shadow-m">
+    <nav className="bg-black-tint sm:px-12 px-4 sticky top-0 z-[999] shadow-m">
       <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
         <div className="w-40">
           <Link href="/">
@@ -73,7 +85,9 @@ const Navbar = () => {
             <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
               <Link
                 href="/schedule"
-                className="flex justify-between align-center bg-primary-color text-[#000] rounded-0 py-2 px-4 font-normal hover:text-white hover:text-primary-color-900 hover:bg-orange-100 no-underline hover:no-underline"
+                className={`justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline ${
+                  hideCallBtn ? "hidden" : "flex "
+                }`}
               >
                 Schedule Call
               </Link>

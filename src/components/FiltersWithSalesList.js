@@ -125,9 +125,9 @@ const FiltersWithSalesList = ({
     <>
       {filterState && (
         <div className="mt-8">
-          <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
+          {/* <div className="filter-container flex-wrap w-full z-[999] sticky top-0 ">
             <Filters {...{ filterState, setFilterState, fetchFilteredData }} />
-          </div>
+          </div> */}
           <h2
             className={`fs-3 font-bold d-flex text-capitalize ${
               isMobileView ? "pt-3" : "pt-4"

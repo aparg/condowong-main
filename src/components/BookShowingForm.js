@@ -35,6 +35,16 @@ export default function BookShowingForm(props) {
     ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
   };
 
+  const getSchedulePage = () => {
+    if (pathname.includes("/resale")) {
+      return "/schedule/time";
+    }
+    if (pathname.includes("/rental")) {
+      return "/schedule/time";
+    }
+    return "/schedule/time";
+  };
+
   const getEmail = async () => {
     const hostname = new URL(document.referrer).hostname;
     const email = await fetchHostEmail(hostname);
@@ -187,7 +197,7 @@ export default function BookShowingForm(props) {
           <div className="pb-4 pt-2 flex flex-col justify-center items-center">
             <span className="text-md block">Not a good time?</span>
             <Link
-              href={"#"}
+              href={getSchedulePage()}
               className="text-primary-color font-bold text-lg block"
             >
               Schedule a call

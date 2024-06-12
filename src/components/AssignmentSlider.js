@@ -4,24 +4,35 @@ import React, { useEffect, useRef } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import PropertyCard from "./PropertyCard";
 import AssignmentCard from "./AssignmentCard";
+import useDeviceView from "@/helpers/useDeviceView";
 
 const AssignmentSlider = ({ numberOfCards = 4, data }) => {
   const scrollRef = useRef(null); //used to hold scroll value
   const cardRef = useRef(null); //used to hold card width value
+  const { isMobileView } = useDeviceView();
   //business is returned as Sale of business so we need to modify it to Business
-
   const slideLeft = () => {
+    let scrollAmount;
     const scrollContainer = scrollRef.current;
     const cardWidth = cardRef.current.offsetWidth;
-    const scrollAmount = cardWidth * 3; // Adjust the scroll amount as needed
+    if (!isMobileView) {
+      scrollAmount = cardWidth * 3;
+    } else {
+      scrollAmount = cardWidth * 1;
+    } // Adjust the scroll amount as needed
     scrollContainer.scrollLeft -= scrollAmount;
   };
 
   const slideRight = () => {
     const scrollContainer = scrollRef.current;
     const cardWidth = cardRef.current.offsetWidth;
-    const scrollAmount = cardWidth * 3; // Adjust the scroll amount as needed
-    scrollContainer.scrollLeft += scrollAmount;
+    let scrollAmount; // Adjust the scroll amount as needed
+    if (!isMobileView) {
+      scrollAmount = cardWidth * 3;
+    } else {
+      scrollAmount = cardWidth * 1;
+    }
+    scrollContainer.scrollLeft += scrollAmount + 10;
   };
 
   return (
@@ -49,8 +60,8 @@ const AssignmentSlider = ({ numberOfCards = 4, data }) => {
       >
         {data?.map((curElem, index) => {
           return (
-            <div className="px-2">
-              <AssignmentCard elem={curElem} ref={cardRef}></AssignmentCard>
+            <div className="px-2" ref={cardRef}>
+              <AssignmentCard elem={curElem}></AssignmentCard>
             </div>
           );
         })}

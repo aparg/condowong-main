@@ -13,7 +13,7 @@ const ContactPage = ({ showAddress = true }) => {
   if (pathname == "/schedule" || pathname == "/schedule/time") return null;
   return (
     <div className="mx-24">
-      <div className="title text-5xl  my-10  text-center text-white playfair">
+      <div className="title text-5xl font-extrabold my-10 text-center text-white playfair">
         Contact CondoWong Now
       </div>
       <div className="bg-[#000] text-white flex flex-row gap-10 items-start justify-center p-3">

@@ -514,7 +514,7 @@ const MoreFilter = ({
                       return (
                         <div
                           key={index}
-                          className={`border border-secondary-subtle rounded-pill px-3 py-1 cursor-pointer ${
+                          className={`border border-secondary-subtle px-3 py-1 cursor-pointer ${
                             isActiveWashroom(washroom) ? "active-pills" : ""
                           }`}
                           onClick={() => handleClick(washroom)}
@@ -710,16 +710,16 @@ const IndividualFilterButton = ({
   };
 
   return (
-    <div className="inline-flex sm:mr-4 flex-wrap gap-y-2">
+    <div className="inline-flex sm:mr-4 flex-wrap gap-y-2 gap-x-2">
       {options.map((option, index) => {
         return (
           <div
             key={index}
-            className={`mx-[2px] px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center rounded-pill
+            className={`mx-[2px] px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center
             ${
               isActive(option)
                 ? `border-primary-red text-white bg-primary-color border-0`
-                : "border-medium-black  border-2"
+                : "border-medium-black  border-[1px]"
             }`}
             onClick={() => handleClick(name, option)}
             style={{ border: "2px solid #e5e7eb" }}
@@ -747,7 +747,7 @@ const IndividualFilterNoOptions = ({
 
   return (
     <div
-      className={`px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center rounded-pill border-2 ${
+      className={`px-3 py-1 h-[34px] cursor-pointer text-nowrap text-small h-[34px] d-flex justify-content-center align-items-center border-2 ${
         isActive
           ? "bg-primary-red text-white border-primary-red"
           : "border-medium-black"

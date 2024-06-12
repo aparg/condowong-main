@@ -1,5 +1,9 @@
+"use client";
 import Link from "next/link";
 import Contact from "./Contact";
+import { useState } from "react";
+import ContactFormSubmit from "./ContactFormSubmit";
+
 // import PreconSchema from "@/components/PreconSchema";
 // import ContactForm from "@/components/ContactForm";
 
@@ -26,36 +30,19 @@ import Contact from "./Contact";
 //   },
 //   category: "real estate",
 // };
+
 const PreconPage = () => {
+  const [credentials, setCredentials] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
+  };
   return (
     <main className="px-4 md:px-12">
-      {/* <div className="floating fixxcont2">
-        <Link
-          href="#contact"
-          className="btn bgggggggg d-flex align-items-center btn-lg text-light rounded-2 w-100 shadow align-items-center justify-content-center text-decoration-none"
-        >
-          <div className="text-center d-flex flex-column">
-            <div>
-              <span className="textvsmall">Starting from </span>
-              <span className="text-big">$590K</span>
-            </div>
-            <span>
-              Send a message{" "}
-              <img
-                src="/arrow-right.svg"
-                alt="right arrow"
-                className="img-fluid rarr"
-              />
-            </span>
-          </div>
-        </Link>
-      </div> */}
-      {/* <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(PreconSchema()),
-        }}
-      /> */}
       <div className="b-patt py-md-5 mb-14">
         <div className="shadow-m">
           <div className="row row-cols-1 row-cols-md-2 d-flex align-items-between bg-white  my-14 mx-0">
@@ -221,50 +208,79 @@ const PreconPage = () => {
         </div>
       </section>
 
-      {/* <section className="b-patt pb-5" id="plans">
-        <div className="container pt-5" id="plans">
-          <div className="my-md-5 my-3"></div>
-          <div className="pt-md-5 pt-5">
-            <h2 className="fw-bold fs-1 pb-3  ps-3 ps-md-0 d-flex justify-content-center custom-underline brand-color">
-              Empire Canals :Floor Plans
-            </h2>
-            <div>
-              <div className="row me-0 row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 me-0 d-flex justify-content-center">
-                <div className="col ">
-                  <div className="card border-0 shadow-lg rounded-mine floorbtns">
-                    <img
-                      loading="lazy"
-                      src="empire-floorplan1.gif"
-                      className="card-img-top py-4 rounded-top-mine"
-                      alt="Empire canals floorplans 1"
-                    />
-                  </div>
-                </div>
-                <div className="col ">
-                  <div className="card border-0 shadow-lg rounded-mine floorbtns">
-                    <img
-                      loading="lazy"
-                      src="empire-floorplan2.gif"
-                      className="card-img-top py-4 rounded-top-mine"
-                      alt="Empire canals floorplans 2"
-                    />
-                  </div>
-                </div>
-                <div className="col ">
-                  <div className="card border-0 shadow-lg rounded-mine floorbtns">
-                    <img
-                      loading="lazy"
-                      src="empire-floorplan3.gif"
-                      className="card-img-top py-4 rounded-top-mine"
-                      alt="Empire canals floorplans 3"
-                    />
-                  </div>
-                </div>
-              </div>
+      <section className="my-14">
+        <h2 className="fw-bold fs-1 mb-0 text-center justify-content-center text-primary-color">
+          Get Floor Plans and Pricing
+        </h2>
+        <form
+          method="POST"
+          className="mb-3 mt-10 flex flex-col items-center"
+          onSubmit={(e) => handleFormSubmit(e)}
+          id="contactForm"
+        >
+          <div className="me-0 row me-0">
+            <div className="relative bg-black-tint col-6 mb-3">
+              <input
+                type="text"
+                placeholder=""
+                name="firstName"
+                id="firstName"
+                value={credentials.firstName}
+                onChange={(e) => handleChange(e)}
+                className="fields fff w-full px-4 pb-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 peer placeholder:translate-y-1/2 placeholder:scale-100 text-black"
+              />
+              <label
+                htmlFor="firstName"
+                className="absolute left-0 px-7 text-gray-500 transition-all duration-300 peer-focus:-translate-y-[0.75] peer-focus:scale-30 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:scale-100"
+              >
+                First Name
+              </label>
+            </div>
+            <div className="relative bg-black-tint mb-3 col-6">
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder=""
+                value={credentials.lastName}
+                onChange={(e) => handleChange(e)}
+                required={true}
+                className="fields fff w-full px-4 pb-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 peer placeholder:translate-y-1/2 placeholder:scale-100 text-black"
+              />
+              <label
+                htmlFor="lastName"
+                className="absolute left-0 px-7 text-gray-500 transition-all duration-300 peer-focus:-translate-y-[0.75] peer-focus:scale-30 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:scale-100"
+              >
+                Last Name
+              </label>
+            </div>
+            <div className="relative mb-3 col-12">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder=""
+                value={credentials.email}
+                onChange={(e) => handleChange(e)}
+                required={true}
+                className="fields fff w-full px-4 pb-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 peer placeholder:translate-y-1/2 placeholder:scale-100 text-black"
+              />
+              <label
+                htmlFor="email"
+                className="absolute left-0 px-7 text-gray-500 transition-all duration-300 peer-focus:-translate-y-[0.75] peer-focus:scale-30 peer-placeholder-shown:translate-y-1/2 peer-placeholder-shown:scale-100"
+              >
+                Email
+              </label>
             </div>
           </div>
-        </div>
-      </section> */}
+          <input
+            type="submit"
+            value={"Send Now!"}
+            className="btn bg-primary-color text-white btn-md mb-3 rounded-0 text-lg fw-bold"
+            id="subbtn"
+          />
+        </form>
+      </section>
       <section id="location" className="my-14">
         <div className="container pt-md-5 pt-5" id="location">
           <div className="pt-md-5 pt-5"></div>
