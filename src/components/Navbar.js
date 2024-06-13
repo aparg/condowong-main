@@ -139,11 +139,11 @@ const Navbar = ({}) => {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`absolute z-[999] top-0 py-4 bg-black-tint shadow-md h-[100vh] w-[60vw] ${
+        className={`absolute sticky z-[999] top-0 py-4 bg-black-tint shadow-md h-[100vh] w-[60vw] ${
           hidden
             ? "transform translate-x-[500%] duration-300"
             : "transform translate-x-[60%] duration-300"
-        } lg:hidden`}
+        } lg:hidden sticky`}
       >
         <div className="flow-root">
           <div className="flex flex-col px-6 my-2 space-y-1">
