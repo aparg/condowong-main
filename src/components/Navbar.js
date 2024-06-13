@@ -186,6 +186,22 @@ const Navbar = ({}) => {
               Rental
             </Link>
             <Link
+              href="/assignments"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
+            >
+              Assignments
+            </Link>
+            <Link
+              href="/resale"
+              title=""
+              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              onClick={() => setHidden(true)}
+            >
+              Resale
+            </Link>
+            <Link
               href="/contact"
               title=""
               className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
