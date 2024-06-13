@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({}) => {
   const [hidden, setHidden] = useState(true);
   const [hideCallBtn, setHideCallBtn] = useState(false);
   const pathname = usePathname();
@@ -95,49 +95,62 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <button
-        type="button"
-        className="inline-flex p-2 text-black transition-all duration-200 rounded-md sm:hidden sm:flex-end"
-        onClick={() => setHidden(!hidden)}
-      >
-        <svg
-          className="block w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="white"
+      <div className="flex justify-between sm:hidden py-2">
+        <div className="w-36">
+          <Link href="/">
+            <img src="/logo/logo1.webp" className="w-full"></img>
+          </Link>
+        </div>
+        <button
+          type="button"
+          className="inline-flex p-2 text-black transition-all duration-200 rounded-md items-center"
+          onClick={() => setHidden(!hidden)}
         >
-          <path
-            strokeLinecap="round"
-            stroke-linejoin="round"
-            strokeWidth="2"
-            d="M4 8h16M4 16h16"
-          />
-        </svg>
-
-        <svg
-          className="hidden w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="white"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+          {/* <svg
+            className="block w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+          >
+            <path
+              strokeLinecap="round"
+              stroke-linejoin="round"
+              strokeWidth="2"
+              d="M4 8h16M4 16h16"
+            />
+          </svg> */}
+          <img src="/hamburger.svg" alt="toggle-nav" />
+          <svg
+            className="hidden w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
       {/* Mobile Navbar */}
       <nav
-        className={`py-4 bg-black-tint border border-gray-200 rounded-md shadow-md ${
-          hidden && "hidden"
+        className={`absolute z-[999] top-0 py-4 bg-black-tint shadow-md h-[100vh] w-[60vw] ${
+          hidden
+            ? "transform translate-x-[500%] duration-300"
+            : "transform translate-x-[60%] duration-300"
         } lg:hidden`}
       >
         <div className="flow-root">
-          <div className="flex flex-col px-6 -my-2 space-y-1">
+          <div className="flex flex-col px-6 my-2 space-y-1">
+            <div className="flex justify-end items-center h-10">
+              <img src="/cross.svg" onClick={() => setHidden(true)}></img>
+            </div>
+            <div></div>
             <Link
               href="/"
               title=""
