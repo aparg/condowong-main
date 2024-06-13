@@ -44,6 +44,7 @@ const SalesList = ({
   };
 
   const loadMoreSalesData = async () => {
+    console.log(offset);
     const queryParams = {
       offset,
       limit: INITIAL_LIMIT,

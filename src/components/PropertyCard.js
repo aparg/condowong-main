@@ -66,17 +66,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                   alt="property image"
                   onError={handleImageError}
                 />
-                {/* <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div> */}
               </div>
-
-              {/* <div className="absolute bottom-3 left-2 flex flex-row">
-                <div className="text-black text-[0.8rem] p-[2px] px-1 rounded-md mx-1 bg-white flex items-center">
-                  {curElem.TypeOwn1Out}{" "}
-                </div>
-                <div className="text-black text-xs p-[2px] px-1 rounded-md mx-1 bg-white flex items-center">
-                  <TimeAgo modificationTimestamp={curElem.TimestampSql} />
-                </div>
-              </div> */}
             </div>
             <div className="flex-1 px-3 sm:px-5 py-3 bg-black-tint">
               {/* {showDecreasedPrice && (

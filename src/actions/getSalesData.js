@@ -90,7 +90,7 @@ export const getFilteredRetsData = async (queryParams) => {
       `?$select=${selectQuery}&$skip=${skipQuery}&$limit=${limitQuery}&$range=${rangeQuery}&$selectOr=${selectOrQuery}`
     );
 
-    // console.log(url);
+    console.log(url);
     const options = {
       method: "GET",
       next: {

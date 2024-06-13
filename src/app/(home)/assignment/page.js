@@ -16,9 +16,13 @@ const page = () => {
         </p>
       </div>
 
-      <div className="pt-1 sm:pt-3 row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 sm:gap-y-[40px] mx-1 sm:container-fluid gy-5 mb-20">
+      <div className="pt-1 sm:pt-3 row row-cols-1 row-cols-md-3 row-cols-xs-1 row-cols-sm-1 row-cols-lg-4 sm:gap-y-[40px] mx-1 sm:px-[3rem] gy-5 mb-20">
         {assignments.map((elem) => {
-          return <AssignmentCard elem={elem} />;
+          return (
+            <div className="px-1">
+              <AssignmentCard elem={elem} />
+            </div>
+          );
         })}
       </div>
     </>
