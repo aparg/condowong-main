@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-[#222222] mt-40 w-[100dvw] py-20 flex justify-center">
+      <footer className="bg-[#222222] w-[100dvw] pb-20 flex flex-col items-center">
         {/* <div className="w-full flex flex-col">
           <div className="relative overflow-hidden bg-primary-bg w-full ">
             <div className="relative px-8 py-12 md:p-16 xl:p-24 flex flex-col justify-center">
@@ -261,7 +261,24 @@ const Footer = () => {
             </p>
           </div>
         </div> */}
-        <div className="row text-white justify-content-around items-start w-[80%]">
+        <div className="relative overflow-hidden bg-primary-bg w-full ">
+          <div className="relative px-8 py-12 md:p-16 xl:p-24 flex flex-col justify-center">
+            <div className="max-w-3xl mx-auto mt-10">
+              <h2 className="text-3xl text-center font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl playfair text-shadow">
+                Find a home that suits your lifestyle.
+              </h2>
+            </div>
+            <Link
+              href="/schedule"
+              className="flex justify-center hover:no-underline"
+            >
+              <button className="bg-white py-2 px-4 self-center mt-3 text-primary-color hover:no-underline shadow-xl">
+                Schedule Call Now
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="row text-white justify-content-around items-start w-[80%] mt-40">
           <div className="col-12  mb-6">
             <img
               src="/logo/logo1.webp"

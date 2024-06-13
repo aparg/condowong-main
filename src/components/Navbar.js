@@ -130,6 +130,7 @@ const Navbar = () => {
           />
         </svg>
       </button>
+      {/* Mobile Navbar */}
       <nav
         className={`py-4 bg-black-tint border border-gray-200 rounded-md shadow-md ${
           hidden && "hidden"
