@@ -17,7 +17,7 @@ const Navbar = ({}) => {
     }
   }, [pathname]);
   return (
-    <nav className="bg-black-tint sm:px-12 px-4 sticky top-0 z-[999] shadow-m">
+    <nav className="bg-black-tint sm:px-12 px-4 top-0 z-[999] ">
       <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
         <div className="w-40">
           <Link href="/">
