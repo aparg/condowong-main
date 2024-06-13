@@ -8,7 +8,7 @@ export const getSalesData = async (offset, limit, city, listingType) => {
     // let selectQuery = `ListBrokerage=CONDOWONG REAL ESTATE INC.,${
     //   city && `Municipality=${city || ""},`
     // }SaleLease='Sale'`;
-    let selectQuery = `ListBrokerage=CONDOWONG REAL ESTATE INC.`;
+    let selectQuery = `ListBrokerage=CONDOWONG REAL ESTATE INC.,Status=A`;
     const url = resenditial.properties.replace(
       "$query",
       `?$select=${selectQuery}&$skip=${offset}&$limit=${limit}`
@@ -36,7 +36,7 @@ export const getFilteredRetsData = async (queryParams) => {
   try {
     //all the necessary queries possible
     let selectQuery = `
-    ${`ListBrokerage=CONDOWONG REAL ESTATE INC.`},
+    ${`ListBrokerage=CONDOWONG REAL ESTATE INC.,Status=A`},
     ${queryParams.city ? `Municipality=${queryParams.city}` : ""}${
       queryParams.saleLease
         ? `${queryParams.city ? "," : ""}SaleLease=${queryParams.saleLease}`

@@ -134,7 +134,7 @@ const page = async ({ params }) => {
               <div className="row justify-center sm:justify-between w-full gx-0">
                 <div className={`col-sm-12 col-md-8 `}>
                   <PropertyPage {...{ main_data }} />
-                  <BookingDate bannerImage={imageURLs[0]} />
+                  {/* <BookingDate bannerImage={imageURLs[0]} /> */}
                   <div className="z-20 relative mt-8 sm:mt-24">
                     <h2 className="font-extrabold pb-3 text-lg sm:text-4xl">
                       Map View

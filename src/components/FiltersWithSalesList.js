@@ -133,7 +133,7 @@ const FiltersWithSalesList = ({
               isMobileView ? "pt-3" : "pt-4"
             }`}
           >
-            Check out Homes For {filterState.saleLease} across GTA
+            Check out Homes {filterState.saleLease} across GTA
           </h2>
           <p
             className="fw-light mb-5 text-gray-400 mt-2"

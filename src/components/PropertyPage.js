@@ -138,7 +138,7 @@ const PropertyPage = ({ main_data }) => {
                         {main_data.StreetAbbreviation || ""},{" "}
                         {main_data.Municipality || ""},{" "}
                         {main_data.Province || ""}, {main_data.PostalCode || ""}
-                        , {main_data.Unit || ""}
+                        , {main_data.Unit ? `Unit ${main_data.Unit}` : ""}
                       </h1>
                       <div className="rounded-0 flex items-center text-white">
                         <div className="d-flex justify-content-center align-items-center gap-1 text-lg">
