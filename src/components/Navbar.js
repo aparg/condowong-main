@@ -17,84 +17,86 @@ const Navbar = ({}) => {
     }
   }, [pathname]);
   return (
-    <nav className="bg-black-tint sm:px-12 px-4 top-0 z-[999] ">
-      <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
-        <div className="w-40">
-          <Link href="/">
-            <img src="/logo/logo1.webp" className="w-full"></img>
-          </Link>
-        </div>
-        <div className="bg-black-tint">
-          <div className="text-primary-color flex flex-row w-auto justify-end items-center">
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
-              >
-                Home
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/market-news"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
-              >
-                Market News
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/pre-construction/daniels-on-parliament"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
-              >
-                Pre construction
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/assignment"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
-              >
-                Assignment
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/resale"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
-              >
-                Resale
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/rental"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
-              >
-                Rental
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/contact"
-                className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
-              >
-                Contact
-              </Link>
-            </div>
-            <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
-              <Link
-                href="/schedule"
-                className={`justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline ${
-                  hideCallBtn ? "hidden" : "flex "
-                }`}
-              >
-                Schedule Call
-              </Link>
+    <div className="z-[999] relative">
+      <nav className="bg-black-tint sm:px-12 px-4 top-0 z-[999] sticky overflow-hiddden">
+        <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
+          <div className="w-40">
+            <Link href="/">
+              <img src="/logo/logo1.webp" className="w-full"></img>
+            </Link>
+          </div>
+          <div className="bg-black-tint">
+            <div className="text-primary-color flex flex-row w-auto justify-end items-center">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                >
+                  Home
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/market-news"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                >
+                  Market News
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/pre-construction/daniels-on-parliament"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                >
+                  Pre construction
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/assignment"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                >
+                  Assignment
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/resale"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                >
+                  Resale
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/rental"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                >
+                  Rental
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/contact"
+                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                >
+                  Contact
+                </Link>
+              </div>
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+                <Link
+                  href="/schedule"
+                  className={`justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline ${
+                    hideCallBtn ? "hidden" : "flex "
+                  }`}
+                >
+                  Schedule Call
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       <div className="flex justify-between sm:hidden py-2">
         <div className="w-36">
           <Link href="/">
@@ -139,22 +141,22 @@ const Navbar = ({}) => {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`absolute sticky z-[999] top-0 py-4 bg-black-tint shadow-md h-[100vh] w-[60vw] ${
+        className={`z-[999] py-4 bg-black-tint shadow-md w-[100vw] flex justify-center h-[100dvh] ${
           hidden
-            ? "transform translate-x-[500%] duration-300"
-            : "transform translate-x-[60%] duration-300"
-        } lg:hidden sticky`}
+            ? "transform translate-x-[500%] duration-300 hidden"
+            : "transform translate-x-[0%] duration-300 sticky top-0"
+        } lg:hidden`}
       >
-        <div className="flow-root">
-          <div className="flex flex-col px-6 my-2 space-y-1">
-            <div className="flex justify-end items-center h-10">
+        <div className="flow-root w-full">
+          <div className="flex flex-col items-center px-6 my-2 w-full">
+            <div className="flex w-full justify-end h-10">
               <img src="/cross.svg" onClick={() => setHidden(true)}></img>
             </div>
             <div></div>
             <Link
               href="/"
               title=""
-              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color `}
+              className={`text-base font-normal transition-all text-lg duration-200 py-2 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               {" "}
@@ -163,7 +165,7 @@ const Navbar = ({}) => {
             <Link
               href={`/market-news`}
               title=""
-              className={`text-base font-normal transition-all duration-200 py-2 text-white hover:text-primary-color `}
+              className={`text-base font-normal transition-all text-lg duration-200 py-2 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               {" "}
@@ -172,7 +174,7 @@ const Navbar = ({}) => {
             <Link
               href="/pre-construction/daniels-on-parliament"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Pre-constructions
@@ -180,7 +182,7 @@ const Navbar = ({}) => {
             <Link
               href="/rental"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Rental
@@ -188,7 +190,7 @@ const Navbar = ({}) => {
             <Link
               href="/assignments"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Assignments
@@ -196,7 +198,7 @@ const Navbar = ({}) => {
             <Link
               href="/resale"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Resale
@@ -204,7 +206,7 @@ const Navbar = ({}) => {
             <Link
               href="/contact"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Contact
@@ -212,7 +214,7 @@ const Navbar = ({}) => {
             <Link
               href="/schedule"
               title=""
-              className={`inline-flex py-2 text-base font-normal transition-all duration-200 text-white hover:text-primary-color `}
+              className={`inline-flex py-2 text-base font-normal transition-all text-lg duration-200 text-white hover:text-primary-color `}
               onClick={() => setHidden(true)}
             >
               Schedule a Call
@@ -220,7 +222,7 @@ const Navbar = ({}) => {
           </div>
         </div>
       </nav>
-    </nav>
+    </div>
   );
 };
 
