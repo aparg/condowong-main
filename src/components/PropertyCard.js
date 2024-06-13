@@ -86,6 +86,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                       <span className="p-4"></span>
                     )}
                   </span>
+                  <span>, Unit {curElem.Unit}</span>
                 </div>
               </div>
               <h2 className="text-black d-flex align-items-center justify-content-between">

@@ -19,8 +19,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-black mt-40 w-screen">
-        <div className="w-full flex flex-col">
+      <footer className="bg-[#222222] mt-40 w-[100dvw] py-20 flex justify-center">
+        {/* <div className="w-full flex flex-col">
           <div className="relative overflow-hidden bg-primary-bg w-full ">
             <div className="relative px-8 py-12 md:p-16 xl:p-24 flex flex-col justify-center">
               <div className="max-w-3xl mx-auto">
@@ -260,6 +260,66 @@ const Footer = () => {
               </Link>
             </p>
           </div>
+        </div> */}
+        <div className="row text-white justify-content-around items-start w-[80%]">
+          <div className="col-12  mb-6">
+            <img
+              src="/logo/logo1.webp"
+              className="w-[173px]"
+              alt="condowong-logo"
+            ></img>
+          </div>
+          <div className="col-12 col-md-4 flex flex-col items-start">
+            <div className="flex flex-col sm:mt-0 mt-5">
+              <span className="my-1">
+                328 Hwy 7 E, Unit 20 Richmmond Hill, ON L4B 3P7
+              </span>
+              <span className="my-1">admin@condowong.ca</span>
+              <span className="my-1">905.882.6882</span>
+            </div>
+          </div>
+          <div className="col-12 col-md-5 flex flex-col sm:items-center items-start mt-8 sm:mt-0">
+            <div className="mb-1">
+              &copy; Copyright 2023, All Rights Reserved by CondoWong
+            </div>
+            <div className="h-7"></div>
+            <div className="my-1">
+              Website designed by{" "}
+              <Link href="sixdesign.ca">
+                <strong>SixDesign</strong>
+              </Link>
+            </div>
+          </div>
+          <div className="flex flex-row col-12 col-md-2 mt-8 sm:mt-1">
+            <Link target="_blank" href="https://www.facebook.com/condowong">
+              <img
+                className="w-3 mx-3"
+                src="/footer-icons/facebook.svg"
+                alt="facebook"
+              ></img>
+            </Link>
+
+            <Link target="_blank" href="https://www.instagram.com/condowong">
+              <img
+                className="w-4 mx-3"
+                src="/footer-icons/instagram.svg"
+                alt="instagram"
+              ></img>
+            </Link>
+
+            <Link
+              target="_blank"
+              href="https://www.youtube.com/c/CondoWongRealEstateIncBrokerage/"
+            >
+              <img
+                className="w-4 mx-3"
+                src="/footer-icons/youtube.svg"
+                alt="youtube"
+              ></img>
+            </Link>
+          </div>
+          <img></img>
+          <div></div>
         </div>
       </footer>
     </>
