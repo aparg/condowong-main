@@ -78,9 +78,9 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 <div className=" truncate text-ellipsis bg-black-tint">
                   <span className="text-white font-medium text-lg bva">
                     {curElem.StreetName ? (
-                      `${curElem.Street} ${curElem.StreetName}${" "}
-                    ${curElem.StreetAbbreviation} ${
-                        curElem.Municipality
+                      `${curElem.Street || ""} ${curElem.StreetName || ""}${" "}
+                    ${curElem.StreetAbbreviation || ""} ${
+                        curElem.Municipality || ""
                       }, Ontario`
                     ) : (
                       <span className="p-4"></span>
@@ -147,34 +147,6 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                   {curElem.ListBrokerage}
                 </div>
               </div>
-              {/* <div className="inline-flex justify-center items-center mt-2">
-                <div
-                  className={`min-w-[50px] inline-flex item-center justify-center bg-[#3a88ef]/[0.08] hover:bg-[#3a88ef]/[0.2] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <Image
-                    className="pr-1 w-5"
-                    src="/mailOutline.svg"
-                    alt="Email"
-                  />
-                  Email
-                </div>
-                <div
-                  className={`min-w-[70px] inline-flex item-center justify-center bg-[#ffedea]/[0.5] hover:bg-[#ffdad4]/[0.8] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <Image className="pr-1 w-5" src="/phone.svg" alt="Phone" />
-                  Phone
-                </div>
-                <div
-                  className={`min-w-[70px] inline-flex item-center justify-center bg-[#43bb3f]/[0.1] hover:bg-[#43bb3f]/[0.2] rounded-md leading-7 py-[4px] px-[8px] text-xs mx-1`}
-                >
-                  <Image
-                    className="pr-1 w-5"
-                    src="/whatsapp.svg"
-                    alt="whatsapp"
-                  />
-                  Whatsapp
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
