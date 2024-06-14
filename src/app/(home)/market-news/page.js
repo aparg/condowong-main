@@ -3,6 +3,7 @@ import Image from "next/image";
 import BlogCard from "@/components/BlogCard";
 import { fetchAllBlogPosts } from "@/api/blogs";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 const Blogs = async () => {
   const blogPosts = await fetchAllBlogPosts();
@@ -51,17 +52,29 @@ const Blogs = async () => {
           </p>
         </div>
       )} */}
+      <Link href={"/"} className="d-flex justify-center">
+        <img
+          src="/youtube.webp"
+          alt="youtube image"
+          className="text-center w-12"
+        />
+      </Link>
 
-      <h2 className={`d-flex text-capitalize pt-4 fs-3 mb-2 font-extrabold`}>
-        Make an informed decision with the help of CondoWong's latest market
-        news
+      <h2
+        className={` text-capitalize pt-4 fs-3 mb-2 font-extrabold text-center`}
+      >
+        Exclusive Toronto Real Estate News
       </h2>
-      <p className="fw-light mb-5 text-sm text-gray-400">
-        Stay up to date with the latest news and trends in the Canadian Real
-        Estate Market.
-      </p>
+      <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
+        <Link
+          href="/schedule"
+          className="justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline"
+        >
+          Subscribe Now
+        </Link>
+      </div>
 
-      <div className={`row gy-3`}>
+      <div className={`row gy-3 mt-10 mb-40`}>
         {blogPosts.length > 0 ? (
           <>
             {blogPosts.map((blog, index) => {

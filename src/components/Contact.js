@@ -29,11 +29,7 @@ const Contact = ({ showAddress = true }) => {
     } else if (pathname.startsWith("/rental")) {
       return "Request for the showing";
     } else {
-      return (
-        <>
-          Contact <br /> CondoWong Now
-        </>
-      );
+      return <>Get in Touch</>;
     }
   };
   return (

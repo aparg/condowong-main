@@ -25,17 +25,17 @@ export default async function Home() {
     <div>
       <main className="">
         <section>
-          <div className="w-full h-[500px] relative">
+          <div className="w-full h-[700px] relative">
             <video
               autoPlay
               width="100%"
               // height="200px"
               src="/home-video/home-video.mp4"
               muted
-              className="object-cover max-h-[500px]"
+              className="object-cover max-h-[700px]"
               loop
             ></video>
-            <div className="absolute w-full bottom-[2rem] flex flex-col items-center">
+            <div className="absolute w-full bottom-[5rem] flex flex-col items-center">
               <h1 className="text-5xl md:text-[4rem] font-bold text-center playfair mx-5">
                 Build Wealth with Toronto Real Estate
               </h1>
@@ -43,7 +43,7 @@ export default async function Home() {
                 Every Crisis is an Opportunity
               </h3>{" "}
               <Link
-                href="/resale"
+                href="/schedule"
                 className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg"
               >
                 Schedule a Call
@@ -63,13 +63,13 @@ export default async function Home() {
           <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
-                Check out Homes For Sale from across GTA
+                Featured Resale Properties
               </h3>
               <Link
                 href="/resale"
                 className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center"
               >
-                Explore All
+                View More
               </Link>
             </div>
             <PropertySlider data={residentialData} />
@@ -77,42 +77,43 @@ export default async function Home() {
           <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
-                Check out Leases from across GTA
-              </h3>
-              <Link
-                href="/rental"
-                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center"
-              >
-                Explore All
-              </Link>
-            </div>
-            <PropertySlider data={rentalData} />
-          </div>
-          <div className="sm:mt-40 mt-24">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-3">
-              <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
-                Check out Assignments for Sale from across GTA
+                Featured Assignment Properties
               </h3>
               <Link
                 href="/assignment"
                 className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center"
               >
-                Explore All
+                View More
               </Link>
             </div>
 
             <AssignmentSlider data={assignments} />
           </div>
+          <div className="sm:mt-40 mt-24">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-3">
+              <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
+                Featured Rental Properties
+              </h3>
+              <Link
+                href="/rental"
+                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center"
+              >
+                View More
+              </Link>
+            </div>
+            <PropertySlider data={rentalData} />
+          </div>
+
           <div className="sm:mt-40 mt-24 mb-14">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-center text-4xl text-white mb-4">
-                Upcoming and Hot Preconstruction Project
+                Featured Pre-Construction Projects
               </h3>
               {/* <Link
                 href="/rental"
                 className="bg-primary-color text-white px-3 hover:no-underline flex items-center"
               >
-                Explore All
+                View More
               </Link> */}
             </div>
             <PreconPropertySlider data={preconData} />

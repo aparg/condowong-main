@@ -43,7 +43,7 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
           />
         </div>
         <div className="card-body d-flex flex-column text-white">
-          <h3 className="card-title fs-4 font-weight-bold text-white title-container mb-4 playfair text-wrap">
+          <h3 className="card-title fs-5 font-weight-bold text-white title-container mb-4 text-wrap">
             {blog.news_title}
           </h3>
 

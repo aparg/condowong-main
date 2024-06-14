@@ -129,19 +129,21 @@ const FiltersWithSalesList = ({
             <Filters {...{ filterState, setFilterState, fetchFilteredData }} />
           </div> */}
           <h2
-            className={`fs-3 font-bold d-flex text-capitalize ${
+            className={`fs-3 font-bold d-flex text-capitalize mb-4 ${
               isMobileView ? "pt-3" : "pt-4"
             }`}
           >
-            Check out Homes {filterState.saleLease} across GTA
+            Featured{" "}
+            {filterState.saleLease === "Lease" ? " Rental " : " Resale "}{" "}
+            Properties
           </h2>
-          <p
+          {/* <p
             className="fw-light mb-5 text-gray-400 mt-2"
             style={isMobileView ? { fontSize: "0.9rem" } : {}}
           >
             Check out Detached, Semi-detached, Townhomes and 1 Bedroom 2
             Bedrooms & 3 Bedrooms+ Condo units for sale across GTA
-          </p>
+          </p> */}
 
           <div
             className={`${

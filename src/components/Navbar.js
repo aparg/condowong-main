@@ -18,72 +18,72 @@ const Navbar = ({}) => {
   }, [pathname]);
   return (
     <div className="z-[999] relative">
-      <nav className="bg-black-tint sm:px-12 px-4 top-0 z-[999] sticky overflow-hiddden">
-        <div className="justify-between items-center bg-black-tint h-20 hidden sm:flex">
+      <nav className="bg-[#000] sm:px-12 px-4 top-0 z-[999] sticky overflow-hiddden">
+        <div className="justify-between items-center bg-[#000] h-20 hidden sm:flex">
           <div className="w-40">
             <Link href="/">
               <img src="/logo/logo1.webp" className="w-full"></img>
             </Link>
           </div>
-          <div className="bg-black-tint">
+          <div className="bg-[#000]">
             <div className="text-primary-color flex flex-row w-auto justify-end items-center">
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
                   Home
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/market-news"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
                   Market News
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/pre-construction/daniels-on-parliament"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
-                  Pre construction
+                  Pre-Construction
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/assignment"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 "
                 >
                   Assignment
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/resale"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
                   Resale
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/rental"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
                   Rental
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/contact"
-                  className="hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2 text-white"
+                  className="text-primary-color hover:text-primary-color hover:no-underline	hover:border-b-primary-color hover:border-b-2"
                 >
                   Contact
                 </Link>
               </div>
-              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-black-tint text-[#fff]">
+              <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
                 <Link
                   href="/schedule"
                   className={`justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline ${
@@ -141,7 +141,7 @@ const Navbar = ({}) => {
       </div>
       {/* Mobile Navbar */}
       <nav
-        className={`z-[999] py-4 bg-black-tint shadow-md w-[100vw] flex justify-center h-[100dvh] ${
+        className={`z-[999] py-4 bg-[#000] shadow-md w-[100vw] flex justify-center h-[100dvh] ${
           hidden
             ? "transform translate-x-[500%] duration-300 hidden"
             : "transform translate-x-[0%] duration-300 sticky top-0"
