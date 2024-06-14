@@ -5,6 +5,7 @@ import { Datepicker } from "flowbite-react";
 import { inputLead, labelLead } from "./Contact";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { gapi } from "gapi-script";
 
 const ScheduleTime = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -40,6 +41,10 @@ const ScheduleTime = () => {
     selectedTime: "",
   });
 
+  const calendarID = process.env.NEXT_PUBLIC_REACT_APP_CALENDAR_ID;
+  const apiKey = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_API_KEY;
+  const accessToken = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_ACCESS_TOKEN;
+
   const handleInputChange = (event) => {
     setFormValues({
       ...formValues,
@@ -63,21 +68,74 @@ const ScheduleTime = () => {
     });
   };
 
+  // const handleSubmit = () => {
+  //   alert(
+  //     `Full Name: ${formValues.fullName}\nEmail: ${formValues.email}\nPhone: ${
+  //       formValues.phone
+  //     }\nMessage: ${formValues.message}\nDate: ${
+  //       formValues.selectedDate &&
+  //       formValues.selectedDate.toLocaleDateString("en-US", {
+  //         weekday: "long",
+  //         month: "long",
+  //         day: "numeric",
+  //       })
+  //     }\nTime: ${formValues.selectedTime}`
+  //   );
+
+   
+  // };
+  const addEvent = (event) => {
+    function initiate() {
+        gapi.client
+            .request({
+                path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+                method: 'POST',
+                body: event,
+                headers: {
+                    'Content-type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            })
+            .then(
+                (response) => {
+                    return [true, response]
+                },
+                function (err) {
+                    console.log(err)
+                    return [false, err]
+                }
+            )
+    }
+    gapi.load('client', initiate)
+}
   const handleSubmit = () => {
-    alert(
-      `Full Name: ${formValues.fullName}\nEmail: ${formValues.email}\nPhone: ${
-        formValues.phone
-      }\nMessage: ${formValues.message}\nDate: ${
-        formValues.selectedDate &&
-        formValues.selectedDate.toLocaleDateString("en-US", {
-          weekday: "long",
-          month: "long",
-          day: "numeric",
-        })
-      }\nTime: ${formValues.selectedTime}`
-    );
+    var event = {
+      summary: 'Hello World',
+      location: '',
+      start: {
+          dateTime: '2024-06-15T09:00:00-07:00',
+          timeZone: 'America/Los_Angeles',
+      },
+      end: {
+          dateTime: '2024-06-15T17:00:00-07:00',
+          timeZone: 'America/Los_Angeles',
+      },
+      recurrence: ['RRULE:FREQ=DAILY;COUNT=2'],
+      attendees: [],
+      reminders: {
+          useDefault: false,
+          overrides: [
+              { method: 'email', minutes: 24 * 60 },
+              { method: 'popup', minutes: 10 },
+          ],
+      },
+  }
+    addEvent(event);
   };
 
+
+  
+  
   console.log(formValues, "formValues");
 
   return (
@@ -458,10 +516,14 @@ const ScheduleTime = () => {
             <>
               <button
                 className="no-underline"
-                onClick={() => setNextButton(true)}
+                onClick={() => {
+                  handleSubmit();
+                  setNextButton(true)
+
+                }}
               >
                 <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
-                  <div className="title text-xl  my-1">Next</div>
+                  <div className="title text-xl  my-1" >Next</div>
                 </div>
               </button>
             </>
