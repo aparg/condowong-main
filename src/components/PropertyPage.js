@@ -140,8 +140,8 @@ const PropertyPage = ({ main_data }) => {
                         {main_data.Municipality || ""},{" "}
                         {main_data.Province || ""}, {main_data.PostalCode || ""}
                       </h1>
-                      <div className="rounded-0 flex items-center text-white">
-                        <div className="d-flex justify-content-center align-items-center gap-1 text-lg">
+                      <div className="rounded-0 items-center text-white hidden sm:flex">
+                        <div className="d-flex align-items-center gap-1 text-lg justify-end">
                           <img
                             src="/bedrooms.svg"
                             alt="bedrooms"
@@ -149,8 +149,8 @@ const PropertyPage = ({ main_data }) => {
                           />{" "}
                           {main_data.Bedrooms} Bedroom
                         </div>
-                        <span className="text-lg mx-1">|</span>
-                        <div className="d-flex justify-content-center align-items-center gap-1 text-lg">
+                        <span className="text-lg mx-1 hidden sm:inline">|</span>
+                        <div className="d-flex align-items-center gap-1 text-lg justify-end">
                           <img
                             src="/bathrooms.svg"
                             alt="washrooms"
@@ -158,10 +158,73 @@ const PropertyPage = ({ main_data }) => {
                           />{" "}
                           {main_data.Washrooms} Bathroom
                         </div>
+                        {main_data.ApproxSquareFootage && (
+                          <>
+                            <span className="text-lg mx-1 hidden sm:inline">
+                              |
+                            </span>
+                            <div className="d-flex justify-content-center align-items-center gap-1 text-lg ">
+                              <img
+                                src="/approxArea.svg"
+                                alt="garages"
+                                className="w-3"
+                              />{" "}
+                              {main_data.ApproxSquareFootage} Sq. Ft.{" "}
+                            </div>
+                          </>
+                        )}
                         {main_data.GarageSpaces && (
                           <>
-                            <span className="text-lg">|</span>
+                            <span className="text-lg hidden sm:inline">|</span>
                             <div className="d-flex justify-content-center align-items-center gap-1 text-lg ">
+                              <img
+                                src="/garage.svg"
+                                alt="garages"
+                                className="w-3"
+                              />{" "}
+                              {Math.trunc(main_data.GarageSpaces)} Garage
+                            </div>
+                          </>
+                        )}
+                      </div>
+                      {/* Mobile Version */}
+                      <div className="row sm:hidden">
+                        <div className="col-6 flex align-items-center gap-1 text-lg justify-start">
+                          <img
+                            src="/bedrooms.svg"
+                            alt="bedrooms"
+                            className="w-4"
+                          />{" "}
+                          {main_data.Bedrooms} Bedroom
+                        </div>
+                        <span className="text-lg mx-1 hidden sm:inline">|</span>
+                        <div className="col-6 flex align-items-center gap-1 text-lg justify-end">
+                          <img
+                            src="/bathrooms.svg"
+                            alt="washrooms"
+                            className="w-4"
+                          />{" "}
+                          {main_data.Washrooms} Bathroom
+                        </div>
+                        {main_data.ApproxSquareFootage && (
+                          <>
+                            <span className="text-lg mx-1 hidden sm:inline">
+                              |
+                            </span>
+                            <div className="col-6 flex justify-content-end align-items-center text-lg ">
+                              <img
+                                src="/approxArea.svg"
+                                alt="garages"
+                                className="w-[15px]"
+                              />{" "}
+                              {main_data.ApproxSquareFootage} Sq. Ft.{" "}
+                            </div>
+                          </>
+                        )}
+                        {main_data.GarageSpaces && (
+                          <>
+                            <span className="text-lg hidden sm:inline">|</span>
+                            <div className="col-6 flex justify-content-end align-items-center text-lg ">
                               <img
                                 src="/garage.svg"
                                 alt="garages"

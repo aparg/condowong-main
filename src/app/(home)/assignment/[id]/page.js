@@ -7,7 +7,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Contact from "@/components/Contact";
 
 const page = ({ params }) => {
-  console.log(params.id);
   const assignment = assignments.find(
     (obj) => obj.project === decodeURIComponent(params.id).replaceAll("-", " ")
   );

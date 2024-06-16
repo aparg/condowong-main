@@ -4,7 +4,7 @@ const assignments = [
     details: [
       "Suite Type - 1 + Den",
       "Size (sq.ft.)-569",
-      "Floor Plan-See P.1",
+      // "Floor Plan-See P.1",
       "Floor - 7/F, Legal Level 6",
       "Locker-No",
       "Parking-No",
@@ -35,7 +35,7 @@ const assignments = [
     details: [
       "Suite Type - 1 + Den, 2 Bath",
       "Size (sq.ft.) - 736",
-      "Floor Plan - See P.1",
+      // "Floor Plan - See P.1",
       "Floor - 2/F. Legal Level 2",
       "Locker - One Locker included",
       "Parking - One Parking Included",
@@ -68,7 +68,7 @@ const assignments = [
     details: [
       "Suite Type - Studio",
       "Size (sq.ft.) - 736",
-      "Floor Plan - See P.1",
+      // "Floor Plan - See P.1",
       "Floor - 7/F. Legal Level 6",
       "Locker - No",
       "Parking - No",
@@ -99,7 +99,7 @@ const assignments = [
     details: [
       "Suite Type - Studio | 1 Bath",
       "Size (sq.ft.) - 455",
-      "Floor Plan - See P.1",
+      // "Floor Plan - See P.1",
       "Floor - 11/F",
       "Locker - No",
       "Parking - Yes",
