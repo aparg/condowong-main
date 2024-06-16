@@ -6,12 +6,28 @@ import { inputLead, labelLead } from "./Contact";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { gapi } from "gapi-script";
+import { useSearchParams } from "next/navigation";
+import { scheduleData } from "@/constant/data";
+import { generateTimeSlots } from "@/helpers/generateTimeSlots";
 
 const ScheduleTime = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState("");
   const [nextButton, setNextButton] = useState(false);
   const Router = useRouter();
+  const searchParams = useSearchParams();
+  const dataId = searchParams.get("id");
+
+  const scheduleItem = scheduleData.find(
+    (item) => item.id === parseInt(dataId)
+  );
+
+  if (!scheduleItem) {
+    return <div>Schedule item not found.</div>;
+  }
+
+  const timeSlots = generateTimeSlots("10:00", scheduleItem.duration); // assuming start time is 9:00 AM
+
   // const [formValues, setFormValues] = useState({
   //   fullName: "",
   //   email: "",
@@ -82,60 +98,96 @@ const ScheduleTime = () => {
   //     }\nTime: ${formValues.selectedTime}`
   //   );
 
-   
   // };
   const addEvent = (event) => {
     function initiate() {
-        gapi.client
-            .request({
-                path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-                method: 'POST',
-                body: event,
-                headers: {
-                    'Content-type': 'application/json',
-                    Authorization: `Bearer ${accessToken}`,
-                },
-            })
-            .then(
-                (response) => {
-                    return [true, response]
-                },
-                function (err) {
-                    console.log(err)
-                    return [false, err]
-                }
-            )
+      gapi.client
+        .request({
+          path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+          method: "POST",
+          body: event,
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
+        .then(
+          (response) => {
+            return [true, response];
+          },
+          function (err) {
+            console.log(err);
+            return [false, err];
+          }
+        );
     }
-    gapi.load('client', initiate)
-}
+    gapi.load("client", initiate);
+  };
+
+  function toLocalISOString(date) {
+    var tzo = -date.getTimezoneOffset(),
+      dif = tzo >= 0 ? "+" : "-",
+      pad = function (num) {
+        var norm = Math.floor(Math.abs(num));
+        return (norm < 10 ? "0" : "") + norm;
+      };
+    return (
+      date.getFullYear() +
+      "-" +
+      pad(date.getMonth() + 1) +
+      "-" +
+      pad(date.getDate()) +
+      "T" +
+      pad(date.getHours()) +
+      ":" +
+      pad(date.getMinutes()) +
+      ":" +
+      pad(date.getSeconds()) +
+      dif +
+      pad(tzo / 60) +
+      ":" +
+      pad(tzo % 60)
+    );
+  }
+
   const handleSubmit = () => {
+    if (!formValues.selectedDate || !formValues.selectedTime) {
+      alert("Please select both date and time.");
+      // event.
+    }
+    // Parse the time
+    const timeParts = formValues.selectedTime.split(/[: ]/);
+
+    // Create a new Date object from selectedDate
+    const dateTime = new Date(formValues.selectedDate);
+
+    // Set the hours and minutes from selectedTime
+    dateTime.setHours((timeParts[0] % 12) + (timeParts[2] === "PM" ? 12 : 0));
+    dateTime.setMinutes(timeParts[1]);
     var event = {
-      summary: 'Hello World',
-      location: '',
+      summary: "Meeting Name",
+      location: "",
       start: {
-          dateTime: '2024-06-15T09:00:00-07:00',
-          timeZone: 'America/Los_Angeles',
+        dateTime: dateTime,
+        timeZone: "Asia/Kathmandu",
       },
       end: {
-          dateTime: '2024-06-15T17:00:00-07:00',
-          timeZone: 'America/Los_Angeles',
+        dateTime: toLocalISOString(new Date(dateTime.getTime() +  parseInt(scheduleItem.duration) * 60000)),
+        timeZone: "Asia/Kathmandu",
       },
-      recurrence: ['RRULE:FREQ=DAILY;COUNT=2'],
+      recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
       attendees: [],
       reminders: {
-          useDefault: false,
-          overrides: [
-              { method: 'email', minutes: 24 * 60 },
-              { method: 'popup', minutes: 10 },
-          ],
+        useDefault: false,
+        overrides: [
+          { method: "email", minutes: 24 * 60 },
+          { method: "popup", minutes: 10 },
+        ],
       },
-  }
+    };
     addEvent(event);
   };
 
-
-  
-  
   console.log(formValues, "formValues");
 
   return (
@@ -377,7 +429,7 @@ const ScheduleTime = () => {
                     },
                   }}
                 />
-                <div className=" min-w-44">
+                <div className=" min-w-52">
                   {/* here in first div i want to put dynamic date that i come from the DatePicker that's it */}
                   <div className="time-slot py-2 m-2">
                     {selectedDate &&
@@ -388,87 +440,28 @@ const ScheduleTime = () => {
                       })}
                   </div>
 
-                  <ul id="timetable" class="grid w-full grid-cols-1 gap-2 mt-5">
-                    <li>
-                      <input
-                        type="radio"
-                        id="10-am"
-                        value="10:00 AM"
-                        class="hidden peer"
-                        name="timetable"
-                        onChange={handleTimeChange}
-                      />
-                      <label
-                        for="10-am"
-                        class="time-slot border px-10 p-2 m-1 cursor-pointer"
-                      >
-                        10:00 AM
-                      </label>
-                    </li>
-                    <li>
-                      <input
-                        type="radio"
-                        id="10-30-am"
-                        value="10:30 AM"
-                        class="hidden peer"
-                        name="timetable"
-                        onChange={handleTimeChange}
-                      />
-                      <label
-                        for="10-30-am"
-                        class="time-slot border px-10 p-2 m-1 cursor-pointer"
-                      >
-                        10:30 AM
-                      </label>
-                    </li>
-                    <li>
-                      <input
-                        type="radio"
-                        id="11-am"
-                        value="11:00 AM"
-                        class="hidden peer"
-                        name="timetable"
-                        onChange={handleTimeChange}
-                      />
-                      <label
-                        for="11-am"
-                        class="time-slot border px-10 p-2 m-1 cursor-pointer"
-                      >
-                        11:00 AM
-                      </label>
-                    </li>
-                    <li>
-                      <input
-                        type="radio"
-                        id="11-30-am"
-                        value="11:30 AM"
-                        class="hidden peer"
-                        name="timetable"
-                        onChange={handleTimeChange}
-                      />
-                      <label
-                        for="11-30-am"
-                        class="time-slot border px-10 p-2 m-1 cursor-pointer"
-                      >
-                        11:30 AM
-                      </label>
-                    </li>
-                    <li>
-                      <input
-                        type="radio"
-                        id="12-am"
-                        value="12:00 AM"
-                        class="hidden peer"
-                        name="timetable"
-                        onChange={handleTimeChange}
-                      />
-                      <label
-                        for="12-am"
-                        class="time-slot border px-10 p-2 m-1 cursor-pointer"
-                      >
-                        12:00 AM
-                      </label>
-                    </li>
+                  <ul
+                    id="timetable"
+                    className="grid w-full grid-cols-2 gap-1 mt-5 "
+                  >
+                    {timeSlots.map((timeSlot, index) => (
+                      <li key={index}>
+                        <input
+                          type="radio"
+                          id={`time-${index}`}
+                          value={timeSlot}
+                          className="hidden peer "
+                          name="timetable"
+                          onChange={handleTimeChange}
+                        />
+                        <label
+                          htmlFor={`time-${index}`}
+                          className="time-slot border px-8 p-3 m-1 cursor-pointer hover:text-[#CC9900] hover:border-[#CC9900] peer-checked:text-[#CC9900] peer-checked:border-[#CC9900]"
+                        >
+                          {timeSlot}
+                        </label>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -479,10 +472,10 @@ const ScheduleTime = () => {
         {/* right part form */}
         <div className="right-part flex flex-col w-[35%]">
           <div className="title text-2xl playfair font-medium">
-            Resale / Assignment with Michael Ho
+            {scheduleItem.title}
           </div>
           <div className="duration text-lg font-light">
-            30 minutes phone call
+            {scheduleItem.duration} minutes phone call
           </div>
           <div className="time font-light text-lg">
             {" "}
@@ -518,12 +511,11 @@ const ScheduleTime = () => {
                 className="no-underline"
                 onClick={() => {
                   handleSubmit();
-                  setNextButton(true)
-
+                  setNextButton(true);
                 }}
               >
                 <div className="flex flex-row items-center bg-[#CC9900] mt-1  justify-center py-1  text-white">
-                  <div className="title text-xl  my-1" >Next</div>
+                  <div className="title text-xl  my-1">Next</div>
                 </div>
               </button>
             </>
