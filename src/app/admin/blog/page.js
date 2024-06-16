@@ -255,6 +255,15 @@ export default function UploadBlog() {
     });
   };
 
+  const handleCaty2Change = (e) => {
+    setNewsData((prevState) => ({
+      ...prevState,
+      ["news_category"]: {
+        name: e.target.value,
+      },
+    }));
+  };
+
   return (
     <>
       {modalcategory && (
@@ -397,7 +406,7 @@ export default function UploadBlog() {
                         className="form-select"
                         id="news_category"
                         value={newsdata.news_category.name}
-                        onChange={(e) => handleChange(e)}
+                        onChange={(e) => handleCaty2Change(e)}
                       >
                         {newscategories &&
                           newscategories.map((category) => (
