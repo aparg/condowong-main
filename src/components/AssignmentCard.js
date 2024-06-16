@@ -27,23 +27,23 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
                 />
               </div>
             </div>
-            <div className="flex-1 px-3 sm:px-5 py-3 bg-black-tint">
-              <div className="flex flex-row justify-between bg-black-tint">
-                <div className=" truncate text-ellipsis bg-black-tint">
-                  <span className="text-white font-medium text-lg bva">
+            <div className="flex-1 px-3 sm:px-5 py-3 bg-white">
+              <div className="flex flex-row justify-between bg-white">
+                <div className=" truncate text-ellipsis bg-white">
+                  <span className="text-black font-medium text-lg bva">
                     {elem.project}
                   </span>
                 </div>
               </div>
               <h2 className="text-black d-flex align-items-center justify-content-between">
-                <span className="flex flex-row items-center font-bold text-white text-lg">
+                <span className="flex flex-row items-center font-bold text-black text-lg">
                   {elem.price}
                 </span>
               </h2>
-              <div className="border-b-neutral-700 bg-black-tint py-2 border-b-2"></div>
-              <div className="bg-black-tint text-white font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
+              <div className="border-b-neutral-700 bg-white py-2 border-b-2"></div>
+              <div className="bg-white text-black font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
                 <img src="/logo/logo1.webp" className="w-14"></img>
-                <div className="bg-black-tint ml-2">
+                <div className="bg-white ml-2 text-black">
                   CONDOWONG REAL ESTATE INC.
                 </div>
               </div>

@@ -68,15 +68,15 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 />
               </div>
             </div>
-            <div className="flex-1 px-3 sm:px-5 py-3 bg-black-tint">
+            <div className="flex-1 px-3 sm:px-5 py-3 bg-white">
               {/* {showDecreasedPrice && (
                 <span className="text-gray-600">
                   <s>${curElem.MaxListPrice}</s>
                 </span>
               )} */}
-              <div className="flex flex-row justify-between bg-black-tint">
-                <div className=" truncate text-ellipsis bg-black-tint">
-                  <span className="text-white font-medium text-lg bva">
+              <div className="flex flex-row justify-between bg-white text-black">
+                <div className=" truncate text-ellipsis bg-white text-black">
+                  <span className=" font-medium text-lg bva">
                     {curElem.StreetName ? (
                       `${curElem.Street || ""} ${curElem.StreetName || ""}${" "}
                     ${curElem.StreetAbbreviation || ""} ${
@@ -90,7 +90,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 </div>
               </div>
               <h2 className="text-black d-flex align-items-center justify-content-between">
-                <span className="flex flex-row items-center font-bold text-white text-lg">
+                <span className="flex flex-row items-center font-bold  text-lg">
                   {price}
                   {curElem.SaleLease === saleLease.lease.value && (
                     <span> /mo</span>
@@ -98,9 +98,9 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                 </span>
               </h2>
               <span className={`text-black text-xs ${small && "hidden"}`}>
-                <div className="flex flex-row justify-start card-feature bg-black-tint mt-3 md:mt-1">
+                <div className="flex flex-row justify-start card-feature bg-white text-black mt-3 md:mt-1">
                   {curElem.Bedrooms && (
-                    <div className="flex items-center mr-2">
+                    <div className="flex items-center mr-2 text-black">
                       {/* <Image
                         src="/bedrooms.svg"
                         className="w-3 mr-[2px] inline"
@@ -110,7 +110,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                     </div>
                   )}
                   {curElem.Washrooms && (
-                    <div className="flex items-center mr-2 card-feature bg-black-tint">
+                    <div className="flex items-center mr-2 card-feature bg-white text-black">
                       {/* <Image
                         src="/bathrooms.svg"
                         className="w-3 mr-[2px] inline"
@@ -120,7 +120,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                     </div>
                   )}
                   {curElem.GarageSpaces && (
-                    <div className="flex items-center mr-2 card-feature">
+                    <div className="flex items-center mr-2 text-black card-feature">
                       {/* <Image
                         src="/garage.svg"
                         className="w-3 mr-[2px] inline"
@@ -130,7 +130,7 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                     </div>
                   )}
                   {curElem.ApproxSquareFootage && (
-                    <div className="flex items-center mr-2 card-feature">
+                    <div className="flex items-center mr-2 card-feature text-black">
                       {/* <Image
                         src="/ruler.svg"
                         className="w-3 mr-[2px] inline"
@@ -141,10 +141,10 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
                   )}
                 </div>
               </span>
-              <div className="border-b-neutral-700 bg-black-tint py-2 border-b-2"></div>
-              <div className="bg-black-tint text-white font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
+              <div className="border-b-neutral-700 bg-white text-black py-2 border-b-2"></div>
+              <div className="bg-white text-black font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
                 <img src="/logo/logo1.webp" className="w-14"></img>
-                <div className="bg-black-tint ml-2">
+                <div className="bg-white text-black ml-2">
                   {curElem.ListBrokerage}
                 </div>
               </div>
