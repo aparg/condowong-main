@@ -14,13 +14,37 @@ export default function UploadBlog() {
     news_description: "",
     news_link: "#",
     news_thumbnail: null,
+    news_category: {
+      name: "No Category",
+    },
   };
 
   const [isEdit, setIsEdit] = useState(false);
   const [refetch, setRefetcch] = useState(true);
   const [newsdata, setNewsData] = useState(stat);
+  const [newscategories, setNewsCategories] = useState([]);
   const [modalnews, setModalNews] = useState(false);
+  const [modalcategory, setModalCategory] = useState(false);
+  const [catdata, setCatData] = useState({
+    id: 1,
+    name: "",
+  });
   const [news, setNews] = useState([]);
+
+  const handleCreateCategory = (e) => {
+    e.preventDefault();
+    console.log(catdata);
+    axios
+      .post("https://wong.condomonk.ca/api/news-category/", catdata)
+      .then((res) => {
+        setRefetcch(!refetch);
+        setCatData({
+          id: 1,
+          name: "",
+        });
+        setModalCategory(false);
+      });
+  };
 
   const handleCreateNews = (e) => {
     e.preventDefault();
@@ -171,9 +195,18 @@ export default function UploadBlog() {
       });
 
     axios
-      .get("https://wong.condomonk.ca/api/city/")
+      .get("https://wong.condomonk.ca/api/news-category/")
       .then((res) => {
-        setCities(res.data.results);
+        setNewsCategories(res.data.results);
+        let stat2 = {
+          id: 1,
+          news_title: "",
+          news_description: "",
+          news_link: "#",
+          news_thumbnail: null,
+          news_category: res.data.results[0],
+        };
+        setNewsData(stat2);
       })
       .catch((err) => {
         console.log(err.data);
@@ -215,10 +248,77 @@ export default function UploadBlog() {
     }));
   };
 
+  const handleCatyChange = (e) => {
+    setCatData({
+      id: 1,
+      name: e.target.value,
+    });
+  };
+
   return (
     <>
+      {modalcategory && (
+        <div className="modal" style={{ zIndex: 1001 }}>
+          <div className="modal-dialog modal-md modal-dialog-scrollable">
+            <div className="modal-content">
+              <div className="modal-header ps-5 flex justify-between">
+                <h1
+                  className="modal-title fs-5 text-dark"
+                  id="staticBackdropLabel"
+                >
+                  Add New Category
+                </h1>
+                <button
+                  className="btn bg-white btn-outline-danger p-1 py-0"
+                  onClick={() => setModalCategory(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#ff0000"
+                    className="bi bi-x"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                  </svg>
+                </button>
+              </div>
+              <div className="modal-body px-5">
+                <div className="row row-cols-1 gy-4">
+                  <div className="col-12">
+                    <div className=" w-100">
+                      <label
+                        htmlFor="news_title"
+                        className="form-label text-dark"
+                      >
+                        Category Name <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="category_name"
+                        value={catdata.name}
+                        onChange={(e) => handleCatyChange(e)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="modal-footer px-5">
+                <button
+                  className="btn btn-success d-flex justify-content-center w-100 btn-lg"
+                  onClick={(e) => handleCreateCategory(e)}
+                >
+                  Create Category
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {modalnews && (
-        <div className="modal" style={{ zIndex: 1000 }}>
+        <div className="modal" style={{ zIndex: 1000, height: "100%" }}>
           <div className="modal-dialog modal-xl modal-dialog-scrollable">
             <div className="modal-content">
               <div className="modal-header ps-5 flex justify-between">
@@ -285,27 +385,59 @@ export default function UploadBlog() {
                       />
                     </div>
                   </div>
-                </div>
-
-                <div className="w-100 thumbnail mt-4">
-                  {isEdit && (
-                    <img
-                      src={newsdata.news_thumbnail}
-                      alt=""
-                      className="img-fluid"
-                    />
-                  )}
-                  <label htmlFor="image" className="form-label text-dark">
-                    Blog Thumbnail <span className="text-danger">*</span>
-                  </label>
-                  <input
-                    type="file"
-                    className="form-control bg-light rounded-xl py-3"
-                    id="news_thumbnail"
-                    onChange={(e) => {
-                      handleImageChange(e);
-                    }}
-                  />
+                  <div className="col-6">
+                    <div className=" w-100">
+                      <label
+                        htmlFor="news_category"
+                        className="form-label text-dark"
+                      >
+                        Blog Category <span className="text-danger">*</span>
+                      </label>
+                      <select
+                        className="form-select"
+                        id="news_category"
+                        value={newsdata.news_category.name}
+                        onChange={(e) => handleChange(e)}
+                      >
+                        {newscategories &&
+                          newscategories.map((category) => (
+                            <option key={category.id} value={category.name}>
+                              {category.name}
+                            </option>
+                          ))}
+                      </select>
+                    </div>
+                    <div className="col-md-12 d-flex justify-content-end">
+                      <button
+                        className="btn btn-outline-dark btn-sm"
+                        onClick={() => setModalCategory(true)}
+                      >
+                        Add New Category
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="w-100 thumbnail mt-4">
+                      {isEdit && (
+                        <img
+                          src={newsdata.news_thumbnail}
+                          alt=""
+                          className="img-fluid"
+                        />
+                      )}
+                      <label htmlFor="image" className="form-label text-dark">
+                        Blog Thumbnail <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        type="file"
+                        className="form-control bg-light rounded-xl py-3"
+                        id="news_thumbnail"
+                        onChange={(e) => {
+                          handleImageChange(e);
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="blogs-detail mt-4 text-dark">
