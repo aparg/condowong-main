@@ -197,7 +197,7 @@ const Contact = ({ showAddress = true }) => {
                 id="message"
                 rows="10"
                 cols={"20"}
-                className={`border-[1px] border-gray-800 pt-4  w-full  block px-4 placeholder-gray-500 rounded-sm focus:outline-none sm:text-sm mt-1 peer  placeholder:text-gray-500 bg-[#121212] shadow-none `}
+                className={`border-[1px] border-gray-800 pt-5  w-full  block px-4 placeholder-gray-500 rounded-sm focus:outline-none sm:text-sm mt-1 peer  placeholder:text-gray-500 bg-[#121212] shadow-none `}
               />
             </div>
 

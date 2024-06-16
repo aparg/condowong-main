@@ -99,30 +99,62 @@ const ScheduleTime = () => {
   //   );
 
   // };
+
+
+  // const addEvent = (event) => {
+  //   function initiate() {
+  //     gapi.client
+  //       .request({
+  //         path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+  //         method: "POST",
+  //         body: event,
+  //         headers: {
+  //           "Content-type": "application/json",
+  //           Authorization: `Bearer ${accessToken}`,
+  //         },
+  //       })
+  //       .then(
+  //         (response) => {
+  //           return [true, response];
+  //         },
+  //         function (err) {
+  //           console.log(err);
+  //           return [false, err];
+  //         }
+  //       );
+  //   }
+  //   gapi.load("client", initiate);
+  // };
   const addEvent = (event) => {
     function initiate() {
-      gapi.client
-        .request({
-          path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-          method: "POST",
-          body: event,
-          headers: {
-            "Content-type": "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-        })
-        .then(
-          (response) => {
-            return [true, response];
-          },
-          function (err) {
-            console.log(err);
-            return [false, err];
-          }
-        );
+      if (typeof window !== "undefined") {
+        gapi.client
+          .request({
+            path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+            method: "POST",
+            body: event,
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          })
+          .then(
+            (response) => {
+              return [true, response];
+            },
+            function (err) {
+              console.log(err);
+              return [false, err];
+            }
+          );
+      }
     }
-    gapi.load("client", initiate);
+    if (typeof window !== "undefined") {
+      gapi.load("client", initiate);
+    }
   };
+  
+  
 
   function toLocalISOString(date) {
     var tzo = -date.getTimezoneOffset(),
