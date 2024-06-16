@@ -301,7 +301,7 @@ body {
   padding: 20px 0 15px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #00a1ff;
+  color: black;
 }
 
 .card-title span {
@@ -1680,9 +1680,6 @@ label {
 #make-img-responsive iframe {
   max-width: 100% !important;
 }
-
-
-
 
 .top-text {
   letter-spacing: 0.05rem;

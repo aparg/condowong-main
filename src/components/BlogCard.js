@@ -28,11 +28,15 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
   });
   return (
     <div
-      className="card  border-0  bg-black-tint my-3 my-md-0 blog-container shadow-lg position-relative"
+      className="card  border-0  bg-white text-black my-3 my-md-0 blog-container shadow-lg position-relative"
       ref={ref}
     >
       {/* Wrap the card in the Link component */}
-      <Link href={`/market-news/${blog.slug}`} passHref className="h-100">
+      <Link
+        href={`/market-news/${blog.slug}`}
+        passHref
+        className="h-100 visited:text-black"
+      >
         <div className="image-container w-100 position-relative">
           <img
             loading="lazy"
@@ -42,12 +46,12 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
             style={{ filter: "brightness(0.8)" }}
           />
         </div>
-        <div className="card-body d-flex flex-column text-white">
-          <h3 className="card-title fs-5 font-weight-bold text-white title-container mb-4 text-wrap">
+        <div className="card-body d-flex flex-column">
+          <h3 className="card-title fs-5 font-weight-bold title-container mb-4 text-wrap">
             {blog.news_title}
           </h3>
 
-          <div className="text-[#ff8] position-absolute bottom-0 mb-3">
+          <div className="text-primary-color position-absolute bottom-0 mb-3">
             Posted {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
           </div>
         </div>
