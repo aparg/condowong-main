@@ -134,7 +134,9 @@ const FiltersWithSalesList = ({
             }`}
           >
             Featured{" "}
-            {filterState.saleLease === "Lease" ? " Rental " : " Resale "}{" "}
+            {capitalizeFirstLetter(saleLeaseVal) === "lease"
+              ? " Rental "
+              : " Resale "}{" "}
             Properties
           </h2>
           {/* <p

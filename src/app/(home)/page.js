@@ -35,7 +35,7 @@ export default async function Home() {
               className="object-cover max-h-[700px]"
               loop
             ></video>
-            <div className="absolute w-full bottom-[5rem] flex flex-col items-center">
+            <div className="absolute left-0 right-0 bottom-[40%] m-auto flex flex-col items-center">
               <h1 className="text-5xl md:text-[4rem] font-bold text-center playfair mx-5">
                 Build Wealth with Toronto Real Estate
               </h1>
