@@ -31,7 +31,7 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
               <div className="flex flex-row justify-between bg-white">
                 <div className=" truncate text-ellipsis bg-white">
                   <span className="text-black font-medium text-lg bva">
-                    {elem.project}
+                    {elem.unitNumber} - {elem.project}
                   </span>
                 </div>
               </div>

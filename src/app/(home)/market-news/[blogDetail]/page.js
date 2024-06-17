@@ -85,7 +85,8 @@ const BlogDetails = async ({ params }) => {
                 <div className="blog__author-detail col-sm-12 col-md-9 ">
                   <div className="fw-bold">The CondoWong Content Team</div>
                   <div className="text-secondary">
-                    Posted {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
+                    Posted on{" "}
+                    {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
                   </div>
                 </div>
               </div>

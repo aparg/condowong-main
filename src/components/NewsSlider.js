@@ -6,11 +6,13 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import BlogCard from "./BlogCard";
 import { fetchAllBlogPosts } from "@/api/blogs";
 import NewsCard from "./NewsCard";
+import useDeviceView from "@/helpers/useDeviceView";
 
 const NewsSlider = ({ numberOfCards = 4 }) => {
   const [cardData, setCardData] = useState();
   const scrollRef = useRef(null); //used to hold scroll value
   const cardRef = useRef(null); //used to hold card width value
+  const { isMobileView } = useDeviceView();
 
   useEffect(() => {
     fetchAllBlogPosts().then((cardData) => setCardData(cardData));
@@ -19,14 +21,24 @@ const NewsSlider = ({ numberOfCards = 4 }) => {
   const slideLeft = () => {
     const scrollContainer = scrollRef.current;
     const cardWidth = cardRef.current.offsetWidth;
-    const scrollAmount = cardWidth * 3; // Adjust the scroll amount as needed
+    let scrollAmount;
+    if (!isMobileView) {
+      scrollAmount = cardWidth * 3;
+    } else {
+      scrollAmount = cardWidth * 1;
+    } // Adjust the scroll amount as needed
     scrollContainer.scrollLeft -= scrollAmount;
   };
 
   const slideRight = () => {
     const scrollContainer = scrollRef.current;
     const cardWidth = cardRef.current.offsetWidth;
-    const scrollAmount = cardWidth * 3; // Adjust the scroll amount as needed
+    let scrollAmount;
+    if (!isMobileView) {
+      scrollAmount = cardWidth * 3;
+    } else {
+      scrollAmount = cardWidth * 1;
+    }
     scrollContainer.scrollLeft += scrollAmount;
   };
 

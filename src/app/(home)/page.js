@@ -53,7 +53,7 @@ export default async function Home() {
         </section>
         <section className="mx-10">
           <div className="mt-16">
-            <div className="flex justify-between mb-3">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
                 Market News
               </h3>

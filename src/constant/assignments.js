@@ -1,6 +1,8 @@
 const assignments = [
   {
-    project: "8 Widmer, Encore at Theatre District",
+    project: "8 Widmer St, Toronto, Ontario",
+    postalCode: "M5V2E7",
+    unitNumber: "701",
     details: [
       "Suite Type - 1 + Den",
       "Size (sq.ft.)-569",
@@ -31,7 +33,9 @@ const assignments = [
     ],
   },
   {
-    project: "8188 Yonge",
+    project: "8188 Yonge St, Thornhill, Ontario",
+    postalCode: "L4J 1W5",
+    unitNumber: "208",
     details: [
       "Suite Type - 1 + Den, 2 Bath",
       "Size (sq.ft.) - 736",
@@ -64,7 +68,9 @@ const assignments = [
     ],
   },
   {
-    project: "252 Church",
+    project: "252 Church St, Toronto, Ontario",
+    postalCode: "M5B 0E6",
+    unitNumber: "707",
     details: [
       "Suite Type - Studio",
       "Size (sq.ft.) - 736",
@@ -95,7 +101,9 @@ const assignments = [
     ],
   },
   {
-    project: "UC Tower 2",
+    project: "UC Tower 2, Oshawa, Ontario",
+    postalCode: " L1L 0G4",
+    unitNumber: "1109",
     details: [
       "Suite Type - Studio | 1 Bath",
       "Size (sq.ft.) - 455",
