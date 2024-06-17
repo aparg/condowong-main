@@ -25,17 +25,17 @@ export default async function Home() {
     <div>
       <main className="">
         <section>
-          <div className="w-full h-[700px] relative">
+          <div className="w-full h-[700px] h-[500px] relative">
             <video
               autoPlay
               width="100%"
               // height="200px"
               src="/home-video/home-video.mp4"
               muted
-              className="object-cover max-h-[700px]"
+              className="object-cover sm:max-h-[700px] h-full"
               loop
             ></video>
-            <div className="absolute left-0 right-0 bottom-[40%] m-auto flex flex-col items-center">
+            <div className="absolute left-0 right-0 sm:bottom-[40%] bottom-[30%]  m-auto flex flex-col items-center">
               <h1 className="text-5xl md:text-[4rem] font-bold text-center playfair mx-5">
                 Build Wealth with Toronto Real Estate
               </h1>
