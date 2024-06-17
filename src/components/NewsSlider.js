@@ -49,17 +49,18 @@ const NewsSlider = ({ numberOfCards = 4 }) => {
         </button>
       </div>
       <div
-        className={`row row-cols-lg-${numberOfCards} row-cols-md-3 row-cols-1 gap-x-4 py-2`}
+        className={`row row-cols-lg-${numberOfCards} row-cols-md-5 row-cols-1 py-2`}
         id="slider"
         ref={scrollRef}
       >
         {cardData?.map((card, index) => {
           return (
-            <BlogCard
-              blog={card}
-              // miniTitle={card.miniTitle}
-              ref={cardRef}
-            />
+            <div ref={cardRef}>
+              <BlogCard
+                blog={card}
+                // miniTitle={card.miniTitle}
+              />
+            </div>
           );
         })}
       </div>

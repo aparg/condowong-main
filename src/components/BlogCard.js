@@ -37,7 +37,7 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
         passHref
         className="h-[25rem] visited:text-black"
       >
-        <div className="image-container w-100 position-relative">
+        <div className="image-container w-100 h-[15rem] position-relative">
           <img
             loading="lazy"
             className="card-img-top object-cover"
@@ -46,8 +46,8 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
             style={{ filter: "brightness(0.8)" }}
           />
         </div>
-        <div className="card-body d-flex flex-column">
-          <h3 className="card-title fs-5 font-weight-bold title-container mb-4 text-wrap">
+        <div className="card-body d-flex flex-column h-[10rem] truncate text-ellipsis">
+          <h3 className="card-title fs-5 font-weight-bold title-container mb-4 text-wrap truncate text-ellipsis ">
             {blog.news_title}
           </h3>
 

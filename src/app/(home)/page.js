@@ -57,6 +57,12 @@ export default async function Home() {
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
                 Market News
               </h3>
+              <Link
+                href="/market-news"
+                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center"
+              >
+                View More
+              </Link>
             </div>
             <NewsSlider />
           </div>
