@@ -67,8 +67,9 @@ const Blogs = async () => {
       </h2>
       <div className="flex items-center h-full justify-center px-6 py-1 font-normal text-sm bg-[#000] text-primary-color">
         <Link
-          href="/schedule"
+          href="https://www.youtube.com/channel/UCbd2igYSbv2xR9xJ-h4aCig?sub_confirmation=1"
           className="justify-between align-center bg-primary-color text-white rounded-0 py-2 px-4 font-normal hover:bg-[#B88A00] no-underline hover:no-underline"
+          target="_blank"
         >
           Subscribe Now
         </Link>
