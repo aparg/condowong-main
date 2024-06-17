@@ -59,7 +59,7 @@ const ScheduleTime = () => {
 
   const calendarID = scheduleItem.calendarId;
   const apiKey = scheduleItem.apiKey;
-  const accessToken = scheduleItem.accessToken;
+  let accessToken = scheduleItem.accessToken;
 
   const handleInputChange = (event) => {
     setFormValues({
@@ -97,7 +97,6 @@ const ScheduleTime = () => {
   //       })
   //     }\nTime: ${formValues.selectedTime}`
   //   );
-
   // };
 
 
@@ -125,35 +124,77 @@ const ScheduleTime = () => {
   //   }
   //   gapi.load("client", initiate);
   // };
+
+
+  // const addEvent = (event) => {
+  //   function initiate() {
+  //     if (typeof window !== "undefined") {
+  //       gapi.client
+  //         .request({
+  //           path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+  //           method: "POST",
+  //           body: event,
+  //           headers: {
+  //             "Content-type": "application/json",
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         })
+  //         .then(
+  //           (response) => {
+  //             return [true, response];
+  //           },
+  //           function (err) {
+  //             console.log(err);
+  //             return [false, err];
+  //           }
+  //         );
+  //     }
+  //   }
+  //   if (typeof window !== "undefined") {
+  //     gapi.load("client", initiate);
+  //   }
+  // };
+  
+
+  const refreshAccessToken = () => {
+    return gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse().then(authResponse => {
+      accessToken = authResponse.access_token;
+      return accessToken;
+    });
+  };
+
   const addEvent = (event) => {
-    function initiate() {
-      if (typeof window !== "undefined") {
-        gapi.client
-          .request({
-            path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-            method: "POST",
-            body: event,
-            headers: {
-              "Content-type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-          })
-          .then(
-            (response) => {
-              return [true, response];
-            },
-            function (err) {
-              console.log(err);
-              return [false, err];
-            }
-          );
-      }
-    }
+    const makeRequest = (token) => {
+      gapi.client.request({
+        path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+        method: "POST",
+        body: event,
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }).then(
+        (response) => {
+          console.log('Event added:', response);
+        },
+        async (err) => {
+          if (err.status === 401) { // Unauthorized error
+            const newToken = await refreshAccessToken();
+            console.log(newToken,"new token")
+            makeRequest(newToken);
+          } else {
+            console.error('Error adding event:', err);
+          }
+        }
+      );
+    };
+    
+
     if (typeof window !== "undefined") {
-      gapi.load("client", initiate);
+      gapi.load("client", () => makeRequest(accessToken));
     }
   };
-  
+
   
 
   function toLocalISOString(date) {
@@ -182,21 +223,58 @@ const ScheduleTime = () => {
     );
   }
 
+  // const handleSubmit = () => {
+  //   if (!formValues.selectedDate || !formValues.selectedTime) {
+  //     alert("Please select both date and time.");
+  //     // event.
+  //   }
+  //   // Parse the time
+  //   const timeParts = formValues.selectedTime.split(/[: ]/);
+
+  //   // Create a new Date object from selectedDate
+  //   const dateTime = new Date(formValues.selectedDate);
+
+  //   // Set the hours and minutes from selectedTime
+  //   dateTime.setHours((timeParts[0] % 12) + (timeParts[2] === "PM" ? 12 : 0));
+  //   dateTime.setMinutes(timeParts[1]);
+  //   var event = {
+  //     summary: "Meeting Name",
+  //     location: "",
+  //     start: {
+  //       dateTime: dateTime,
+  //       timeZone: "Asia/Kathmandu",
+  //     },
+  //     end: {
+  //       dateTime: toLocalISOString(new Date(dateTime.getTime() +  parseInt(scheduleItem.duration) * 60000)),
+  //       timeZone: "Asia/Kathmandu",
+  //     },
+  //     recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
+  //     attendees: [],
+  //     reminders: {
+  //       useDefault: false,
+  //       overrides: [
+  //         { method: "email", minutes: 24 * 60 },
+  //         { method: "popup", minutes: 10 },
+  //       ],
+  //     },
+  //   };
+  //   addEvent(event);
+  // };
+
+
+
   const handleSubmit = () => {
     if (!formValues.selectedDate || !formValues.selectedTime) {
       alert("Please select both date and time.");
-      // event.
+      return;
     }
-    // Parse the time
+
     const timeParts = formValues.selectedTime.split(/[: ]/);
-
-    // Create a new Date object from selectedDate
     const dateTime = new Date(formValues.selectedDate);
-
-    // Set the hours and minutes from selectedTime
     dateTime.setHours((timeParts[0] % 12) + (timeParts[2] === "PM" ? 12 : 0));
     dateTime.setMinutes(timeParts[1]);
-    var event = {
+
+    const event = {
       summary: "Meeting Name",
       location: "",
       start: {
@@ -204,7 +282,7 @@ const ScheduleTime = () => {
         timeZone: "Asia/Kathmandu",
       },
       end: {
-        dateTime: toLocalISOString(new Date(dateTime.getTime() +  parseInt(scheduleItem.duration) * 60000)),
+        dateTime: toLocalISOString(new Date(dateTime.getTime() + parseInt(scheduleItem.duration) * 60000)),
         timeZone: "Asia/Kathmandu",
       },
       recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
@@ -217,10 +295,9 @@ const ScheduleTime = () => {
         ],
       },
     };
+
     addEvent(event);
   };
-
-  console.log(formValues, "formValues");
 
   return (
     <div className="mb-24">
@@ -418,7 +495,7 @@ const ScheduleTime = () => {
                         items: {
                           base: "grid w-96 grid-cols-7",
                           item: {
-                            base: "block flex-1 cursor-pointer font-light border-0 text-center text-lg leading-9 text-gray-100  ",
+                            base: "block flex-1 cursor-pointer font-light border-0 text-center text-lg leading-9 text-gray-100 hover:bg-gray-900 dark:text-white dark:hover:bg-gray-600",
                             selected:
                               "bg-primary-color rounded-full  text-white hover:bg-primary-color",
                             disabled: "text-gray-500",
