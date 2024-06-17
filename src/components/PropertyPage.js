@@ -104,25 +104,20 @@ const PropertyPage = ({ main_data }) => {
           }`}
         >
           <div className="w-full">
-            <div
-              className={`flex flex-col flex-wrap${
-                isMobileView ? "gap-3" : "gap-0"
-              }`}
-            >
-              <div className="flex items-center">
-                <div className="flex flex-col">
-                  <div className="flex flex-col items-start">
-                    <div className="flex flex-row items-center">
-                      <h3 className="main-title fs-1 text-primary-color mt-3">
-                        C{price}
-                      </h3>
-                      <div className="flex items-center">
-                        {/* <Image
-                          className="w-4 h-4 mx-1"
+            <div className="flex items-center w-full">
+              <div className="flex flex-col w-full">
+                <div className="flex flex-col items-start w-full">
+                  <div className="flex flex-row items-center">
+                    <h3 className="main-title fs-1 text-primary-color mt-3">
+                      C{price}
+                    </h3>
+                    <div className="flex items-center">
+                      {/* <Image
+                          className="w-5 h-4 mx-1"
                           src="/price-reduced.png"
                           alt="reduced"
                         ></Image> */}
-                        {/* <span className=" text-green-700 text-lg font-medium">
+                      {/* <span className=" text-green-700 text-lg font-medium">
                           C$
                           {priceDecreased &&
                             priceFormatter(
@@ -130,145 +125,139 @@ const PropertyPage = ({ main_data }) => {
                                 parseFloat(main_data.ListPrice)
                             )}
                         </span> */}
-                      </div>
                     </div>
-                    <div>
-                      <h1 className="fs-6 mb-2 cardd-subtitle text-lg text-white mt-2">
-                        {main_data.AptUnit ? `${main_data.AptUnit} - ` : ""}
-                        {main_data.Street || ""} {main_data.StreetName || ""}{" "}
-                        {main_data.StreetAbbreviation || ""},{" "}
-                        {main_data.Municipality || ""},{" "}
-                        {main_data.Province || ""}, {main_data.PostalCode || ""}
-                      </h1>
-                      <div className="rounded-0 items-center text-white hidden sm:flex">
-                        <div className="d-flex align-items-center gap-1 text-lg justify-end">
-                          <img
-                            src="/bedrooms.svg"
-                            alt="bedrooms"
-                            className="w-4"
-                          />{" "}
-                          {main_data.Bedrooms} Bedroom
-                        </div>
-                        <span className="text-lg mx-1 hidden sm:inline">|</span>
-                        <div className="d-flex align-items-center gap-1 text-lg justify-end">
-                          <img
-                            src="/bathrooms.svg"
-                            alt="washrooms"
-                            className="w-4"
-                          />{" "}
-                          {main_data.Washrooms} Bathroom
-                        </div>
-                        {main_data.ApproxSquareFootage && (
-                          <>
-                            <span className="text-lg mx-1 hidden sm:inline">
-                              |
-                            </span>
-                            <div className="d-flex justify-content-center align-items-center gap-1 text-lg ">
-                              <img
-                                src="/approxArea.svg"
-                                alt="garages"
-                                className="w-3"
-                              />{" "}
-                              {main_data.ApproxSquareFootage} Sq. Ft.{" "}
-                            </div>
-                          </>
-                        )}
-                        {main_data.GarageSpaces && (
-                          <>
-                            <span className="text-lg hidden sm:inline">|</span>
-                            <div className="d-flex justify-content-center align-items-center gap-1 text-lg ">
-                              <img
-                                src="/garage.svg"
-                                alt="garages"
-                                className="w-3"
-                              />{" "}
-                              {Math.trunc(main_data.GarageSpaces)} Garage
-                            </div>
-                          </>
-                        )}
+                  </div>
+                  <div className="w-full">
+                    <h1 className="fs-6 cardd-subtitle text-xl text-white mt-0 font-bold">
+                      {main_data.AptUnit ? `${main_data.AptUnit} - ` : ""}
+                      {main_data.Street || ""} {main_data.StreetName || ""}{" "}
+                      {main_data.StreetAbbreviation || ""}{" "}
+                    </h1>
+                    <h1 className="fs-6 cardd-subtitle text-lg text-white mt-0 font-medium">
+                      {main_data.Municipality || ""}, {main_data.Province || ""}
+                      , {main_data.PostalCode || ""}
+                    </h1>
+                    <div className="rounded-0 items-center text-white my-1 hidden sm:flex sm:justify-between sm:w-[60%]">
+                      <div className="d-flex align-items-center gap-1 text-[1rem] justify-end">
+                        <img
+                          src="/bedrooms.svg"
+                          alt="bedrooms"
+                          className="w-5"
+                        />{" "}
+                        {main_data.Bedrooms} Bedroom
                       </div>
-                      {/* Mobile Version */}
-                      <div className="row sm:hidden">
-                        <div className="col-6 flex align-items-center gap-1 text-lg justify-start">
-                          <img
-                            src="/bedrooms.svg"
-                            alt="bedrooms"
-                            className="w-4"
-                          />{" "}
-                          {main_data.Bedrooms} Bedroom
-                        </div>
-                        <span className="text-lg mx-1 hidden sm:inline">|</span>
-                        <div className="col-6 flex align-items-center gap-1 text-lg justify-end">
-                          <img
-                            src="/bathrooms.svg"
-                            alt="washrooms"
-                            className="w-4"
-                          />{" "}
-                          {main_data.Washrooms} Bathroom
-                        </div>
-                        {main_data.ApproxSquareFootage && (
-                          <>
-                            <span className="text-lg mx-1 hidden sm:inline">
-                              |
-                            </span>
-                            <div className="col-6 flex justify-content-end align-items-center text-lg ">
-                              <img
-                                src="/approxArea.svg"
-                                alt="garages"
-                                className="w-[15px]"
-                              />{" "}
-                              {main_data.ApproxSquareFootage} Sq. Ft.{" "}
-                            </div>
-                          </>
-                        )}
-                        {main_data.GarageSpaces && (
-                          <>
-                            <span className="text-lg hidden sm:inline">|</span>
-                            <div className="col-6 flex justify-content-end align-items-center text-lg ">
-                              <img
-                                src="/garage.svg"
-                                alt="garages"
-                                className="w-3"
-                              />{" "}
-                              {Math.trunc(main_data.GarageSpaces)} Garage
-                            </div>
-                          </>
-                        )}
+                      {/* <span className="text-lg mx-1 hidden sm:inline">|</span> */}
+                      <div className="d-flex align-items-center gap-1 text-[1rem] justify-end">
+                        <img
+                          src="/bathrooms.svg"
+                          alt="washrooms"
+                          className="w-5"
+                        />{" "}
+                        {main_data.Washrooms} Bathroom
                       </div>
+                      {main_data.ApproxSquareFootage && (
+                        <>
+                          {/* <span className="text-lg mx-1 hidden sm:inline">
+                              |
+                            </span> */}
+                          <div className="d-flex justify-content-center align-items-center gap-1 text-[1rem] ">
+                            <img
+                              src="/approxArea.svg"
+                              alt="garages"
+                              className="w-[18px] mr-1"
+                            />{" "}
+                            {main_data.ApproxSquareFootage} Sq. Ft.{" "}
+                          </div>
+                        </>
+                      )}
+                      {main_data.GarageSpaces && (
+                        <>
+                          {/* <span className="text-lg hidden sm:inline">|</span> */}
+                          <div className="d-flex justify-content-center align-items-center gap-1 text-[1rem] ">
+                            <img
+                              src="/garage.svg"
+                              alt="garages"
+                              className="w-5"
+                            />{" "}
+                            {Math.trunc(main_data.GarageSpaces)} Garage
+                          </div>
+                        </>
+                      )}
                     </div>
-                    <span className="font-bold my-2 sm:my-0 text-white">
-                      <TimeAgo modificationTimestamp={main_data.TimestampSql} />
-                    </span>
+                    {/* Mobile Version */}
+                    <div className="row sm:hidden">
+                      <div className="col-6 flex align-items-center gap-1 text-[1rem] justify-start">
+                        <img
+                          src="/bedrooms.svg"
+                          alt="bedrooms"
+                          className="w-5"
+                        />{" "}
+                        {main_data.Bedrooms} Bedroom
+                      </div>
+                      <span className="text-lg mx-1 hidden sm:inline">|</span>
+                      <div className="col-6 flex align-items-center gap-1 text-[1rem] justify-end">
+                        <img
+                          src="/bathrooms.svg"
+                          alt="washrooms"
+                          className="w-5"
+                        />{" "}
+                        {main_data.Washrooms} Bathroom
+                      </div>
+                      {main_data.ApproxSquareFootage && (
+                        <>
+                          <span className="text-lg mx-1 hidden sm:inline">
+                            |
+                          </span>
+                          <div className="col-6 flex justify-content-start align-items-center text-lg ">
+                            <img
+                              src="/approxArea.svg"
+                              alt="garages"
+                              className="w-[24px]"
+                            />{" "}
+                            {main_data.ApproxSquareFootage} Sq. Ft.{" "}
+                          </div>
+                        </>
+                      )}
+                      {main_data.GarageSpaces && (
+                        <>
+                          <span className="text-lg hidden sm:inline">|</span>
+                          <div className="col-6 flex justify-content-end align-items-center text-lg ">
+                            <img
+                              src="/garage.svg"
+                              alt="garages"
+                              className="w-3"
+                            />{" "}
+                            {Math.trunc(main_data.GarageSpaces)} Garage
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <p className="card-subtitle font-thin text-limit text-lg text-white leading-2">
+                      MLS - #{main_data.MLS}
+                    </p>
                   </div>
                 </div>
               </div>
-              {/* <CompareButton main_data={main_data} width={8} /> */}
-              {/* <div className="flex flex-col font-md mt-2 text-lg">
-                <p class className="">
-                  {main_data.Municipality}, {main_data.Province},{" "}
-                  {main_data.PostalCode}
-                </p>
-              </div> */}
             </div>
           </div>
           <div className="d-flex align-items-center flex-wrap">
-            <div className="flex">
-              <p className="card-subtitle my-0 mb-0 font-thin text-limit text-lg text-white">
-                MLS - #{main_data.MLS}
-              </p>
-            </div>
+            <span className="font-bold text-white my-1 text-xs">
+              <TimeAgo modificationTimestamp={main_data.TimestampSql} />
+            </span>
             <div className="tet-s d-flex"></div>
           </div>
-          <h1 className="vmain-title">
+          {/* <h1 className="vmain-title">
             <div className="uppercase bannerSection text-lg text-white">
-              {/* <div className="listingStatus"></div> */}
+              <div className="listingStatus"></div>
               FOR {main_data.SaleLease}
-              {/* tailwind style classname for bottom dashed border gray*/}
-              {/* <span className="border-gray-500 border-dotted border-b">
+              tailwind style classname for bottom dashed border gray
+              <span className="border-gray-500 border-dotted border-b">
                 ACTIVE
-              </span> */}
+              </span>
             </div>
-          </h1>
+          </h1> */}
         </div>
         {/* <div className="border-b border-[0.5px] border-gray-600 mt-2 sm:mt-0 sm:ml-4"></div> */}
         {/* Description */}
@@ -276,7 +265,7 @@ const PropertyPage = ({ main_data }) => {
           className={`${isMobileView ? "pt-4 mt-8" : "mt-8 pt-4"} text-black`}
         >
           <div className="border-0 rounded-0 bg-black-tint p-3 sm:p-4">
-            <h2 className="font-extrabold text-2xl sm:text-4xl text-white">
+            <h2 className="playfair font-extrabold text-2xl sm:text-4xl text-white">
               Description
             </h2>
             <p className="text-sm pty-description pt-2 pb-4 leading-6 text-gray-300">
@@ -357,7 +346,7 @@ const PropertyPage = ({ main_data }) => {
           className={`${isMobileView ? "pt-4 pb-4 mt-8" : "mt-8 pt-4 pb-4"}`}
         >
           <div className="p-4 rounded-0 rounded-0 border-0 bg-black-tint">
-            <h2 className="font-extrabold pb-3 text-2xl sm:text-4xl">
+            <h2 className="playfair font-extrabold pb-3 text-2xl sm:text-4xl">
               Home Overview
             </h2>
             <div
@@ -783,7 +772,7 @@ const PropertyPage = ({ main_data }) => {
           <div className={`${isMobileView ? "pt-4 pb-4" : "pt-4 pb-4"}`}>
             <div className="col-md-12 px-0">
               <div className="container bg-black-tint rounded-0 p-4 border-0 bg-black-tint">
-                <h2 className="fw-bold text-xl sm:text-xl">Extras</h2>
+                <h2 className="fw-bold text-xl sm:text-xl playfair">Extras</h2>
                 <div className="flex flex-row text-lg py-1 leading-8">
                   {main_data.Extras}
                 </div>

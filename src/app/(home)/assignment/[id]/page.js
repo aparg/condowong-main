@@ -48,7 +48,9 @@ const page = ({ params }) => {
           />
         </div>
         <Gallery data={assignment.imgURLs} />
-        <h1 className="text-[4rem] playfair mt-5">{assignment.price}</h1>
+        <h1 className="text-[4rem] playfair mt-5 text-primary-color">
+          {assignment.price}
+        </h1>
         <h1 className="text-[2rem]">{assignment.project}</h1>
         <div className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4">
           {assignment.details.map((key, idx) => (

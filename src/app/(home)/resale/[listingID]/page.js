@@ -136,7 +136,7 @@ const page = async ({ params }) => {
                   <PropertyPage {...{ main_data }} />
                   {/* <BookingDate bannerImage={imageURLs[0]} /> */}
                   <div className="z-20 relative mt-8 sm:mt-24">
-                    <h2 className="font-extrabold pb-3 text-lg sm:text-4xl">
+                    <h2 className="font-extrabold pb-3 text-lg sm:text-4xl playfair">
                       Map View
                     </h2>
                     <Map main_data={main_data} />

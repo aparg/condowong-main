@@ -17,7 +17,7 @@ const NewsCard = React.forwardRef(({ title, imageSrc }, ref) => {
           alt="news thumbnail"
         />
       </div>
-      <p className="mt-2 mb-2 text-xl font-bold text-[#000] px-2 tet-black">
+      <p className="mt-2 mb-2 text-xl font-bold text-[#000] px-2 tet-black text-wrap">
         {title}
       </p>
     </div>

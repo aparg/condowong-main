@@ -35,12 +35,12 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
       <Link
         href={`/market-news/${blog.slug}`}
         passHref
-        className="h-100 visited:text-black"
+        className="h-[25rem] visited:text-black"
       >
         <div className="image-container w-100 position-relative">
           <img
             loading="lazy"
-            className="card-img-top"
+            className="card-img-top object-cover"
             src={imageUrl}
             alt={blog.news_title.slice(0, 10)}
             style={{ filter: "brightness(0.8)" }}

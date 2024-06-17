@@ -78,7 +78,7 @@ export default function MortgageCalculator(props) {
 
   return (
     <div id="mortgageCalculator" className="mt-8 p-2 bg-black-tint rounded-md">
-      <h2 className="font-extrabold pb-3 text-2xl sm:text-4xl">
+      <h2 className="font-extrabold pb-3 text-2xl sm:text-4xl playfair">
         Mortgage Calculator
       </h2>
       <div className="row row-cols-1 rounded-mine px-2 shadow-lg mx-0 my-6">
