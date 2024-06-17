@@ -57,9 +57,9 @@ const ScheduleTime = () => {
     selectedTime: "",
   });
 
-  const calendarID = process.env.NEXT_PUBLIC_REACT_APP_CALENDAR_ID;
-  const apiKey = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_API_KEY;
-  const accessToken = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_ACCESS_TOKEN;
+  const calendarID = scheduleItem.calendarId;
+  const apiKey = scheduleItem.apiKey;
+  const accessToken = scheduleItem.accessToken;
 
   const handleInputChange = (event) => {
     setFormValues({
@@ -488,7 +488,7 @@ const ScheduleTime = () => {
                         />
                         <label
                           htmlFor={`time-${index}`}
-                          className="time-slot border px-8 p-3 m-1 cursor-pointer hover:text-[#CC9900] hover:border-[#CC9900] peer-checked:text-[#CC9900] peer-checked:border-[#CC9900]"
+                          className="time-slot border px-8 p-3 m-1 cursor-pointer hover:text-[#CC9900] hover:border-[#CC9900] peer-checked:text-[#CC9900] peer-checked:border-[#CC9900] w-36"
                         >
                           {timeSlot}
                         </label>
