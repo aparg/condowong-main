@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
 
         <Navbar />
         {children}
-        <section className="my-14 mt-48 sm:mt-8">
+        <section className="mt-24 sm:mt-40">
           <Contact showAddress={false} />
         </section>
         <Footer />

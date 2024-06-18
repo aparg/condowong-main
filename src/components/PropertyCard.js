@@ -51,7 +51,10 @@ const PropertyCard = React.forwardRef(({ curElem, small = false }, ref) => {
   return (
     <section className="text-black" ref={ref}>
       <Link
-        href={generateURL({ listingIDVal: streetAndMLS })}
+        href={generateURL({
+          listingIDVal: streetAndMLS,
+          pageType: curElem.SaleLease === "Lease" ? "rental" : "resale",
+        })}
         className="text-black hover:no-underline w-full"
       >
         <div className="lg:px-0 h-full">

@@ -5,6 +5,7 @@ export const generateURL = ({
   houseTypeVal = null,
   saleLeaseVal = null,
   listingIDVal = null,
+  pageType = null,
 } = {}) => {
   const city = cityVal?.toLowerCase() || null;
   const houseType = houseTypeVal || null;
@@ -14,7 +15,6 @@ export const generateURL = ({
       .find((key) => saleLease[key].value == saleLeaseVal)
       ?.toLowerCase() ||
     null;
-  if (listingIDVal) return `/resale/${listingIDVal}`;
-
+  if (listingIDVal) return `/${pageType}/${listingIDVal}`;
   return `/`;
 };

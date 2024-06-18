@@ -44,7 +44,7 @@ export default async function Home() {
               </h3>{" "}
               <Link
                 href="/schedule"
-                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg"
+                className="bg-primary-color text-white px-5 py-3 hover:no-underline flex items-center mt-5 shadow-lg font-bold text-xl"
               >
                 Schedule a Call
               </Link>
@@ -110,7 +110,7 @@ export default async function Home() {
             <PropertySlider data={rentalData} />
           </div>
 
-          <div className="sm:mt-40 mt-24 mb-14">
+          <div className="sm:mt-40 mt-24">
             <div className="flex justify-between mb-3">
               <h3 className="main-title font-extrabold text-center text-4xl text-white mb-4">
                 Featured Pre-Construction Projects

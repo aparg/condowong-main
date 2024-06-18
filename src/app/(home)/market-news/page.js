@@ -24,7 +24,7 @@ const Blogs = async () => {
     }
   };
   return (
-    <div className="w-full h-full  text-white mt-10 px-5 md:px-0">
+    <div className="w-full h-full text-white mt-10 px-5 md:px-0">
       {/* {blogPosts.length > 0 ? (
         <div className="flex flex-col md:flex-row gap-0 items-center justify-between bg-[#121212] lg:h-[600px] border-1 border-primary-color">
           <div className="textpart w-full md:w-[45%] flex flex-col items-start justify-center px-20 min-h-[216px]">

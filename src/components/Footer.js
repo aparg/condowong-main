@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-black-tint w-[100dvw] pb-20 flex flex-col items-center">
+      <footer className="bg-black-tint w-[100dvw] pb-20 flex flex-col items-center mt-24 sm:mt-40">
         <div className="row text-primary-color justify-content-around items-start w-[80%] mt-20">
           <div className="col-12  mb-6 order-1">
             <img

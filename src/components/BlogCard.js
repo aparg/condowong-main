@@ -27,31 +27,24 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
     setImageUrl(getThumbnailURL(blog.news_link));
   });
   return (
-    <div
-      className="card  border-0  bg-white text-black my-3 my-md-0 blog-container shadow-lg position-relative"
-      ref={ref}
-    >
-      {/* Wrap the card in the Link component */}
+    <div className="rounded-md overflow-hidden relative" ref={ref}>
       <Link
         href={`/market-news/${blog.slug}`}
         passHref
-        className="h-[400px] visited:text-black"
+        className="h-[340px] visited:text-black rounded-md border-0"
       >
-        <div className="image-container w-100 h-[250px] position-relative">
+        <div className="image-container h-[180px] position-relative rounded-t-md overflow-hidden">
           <img
             loading="lazy"
-            className="card-img-top object-cover w-full h-full"
+            className="card-img-top object-cover w-full h-full rounded-t-md"
             src={imageUrl}
             alt={blog.news_title.slice(0, 10)}
             style={{ filter: "brightness(0.8)" }}
           />
         </div>
-        <div className="mt-1 card-body d-flex flex-column truncate text-ellipsis">
-          <h3 className="card-title fs-5 font-weight-bold title-container mb-4 text-wrap truncate text-ellipsis ">
-            {blog.news_title}
-          </h3>
-
-          <div className="text-primary-color position-absolute bottom-0 mb-3">
+        <div class="card-body flex flex-col h-40 bg-white pt-3">
+          <h3 class="card-title text-lg line-clamp-3">{blog.news_title}</h3>
+          <div className="text-primary-color bottom-0 mb-2 absolute">
             Posted on {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
           </div>
         </div>

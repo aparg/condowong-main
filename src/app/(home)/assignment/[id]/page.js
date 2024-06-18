@@ -70,8 +70,10 @@ const page = ({ params }) => {
           <section className="my-8">
             <h1 className="playfair mb-1 text-[2rem]">Pricing Information</h1>
             <ul className="list-disc ml-4 text-white font-medium">
-              {assignment.pricingInformation.map((point) => (
-                <li className="my-2">{point}</li>
+              {assignment.pricingInformation.map((point, idx) => (
+                <li className="my-2" key={idx}>
+                  {point}
+                </li>
               ))}
             </ul>
           </section>

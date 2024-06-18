@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import getEmail from "@/helpers/getEmail";
+import { sendEmail } from "@/actions/resend";
 
 // css
 export const inputLead =
@@ -10,12 +12,28 @@ export const labelLead =
 
 const Contact = ({ showAddress = true }) => {
   const pathname = usePathname();
+  const [page, setPage] = useState();
+  const [formData, setFormdata] = useState({});
   if (
     pathname == "/schedule" ||
     pathname == "/schedule/time" ||
     pathname == "/contact"
   )
     return null;
+
+  useEffect(() => {
+    if (pathname.includes("/rental")) {
+      setPage("rental");
+    } else if (pathname.includes("/resale")) {
+      setPage("resale");
+    } else if (pathname.includes("/pre-construction")) {
+      setPage("preconstruction");
+    } else if (pathname.endsWith("/")) {
+      setPage("home");
+    } else {
+      setPage("home");
+    }
+  }, []);
 
   const titlegenerate = () => {
     /* {pathname == "/pre-construction/daniels-on-parliament" &&
@@ -31,6 +49,25 @@ const Contact = ({ showAddress = true }) => {
     } else {
       return <>Get in Touch</>;
     }
+  };
+
+  const changeFormData = (e) => {
+    console.log(formData);
+    const { name, value } = e.target;
+    setFormdata((prevData) => {
+      return {
+        ...prevData,
+        [name]: value,
+      };
+    });
+  };
+
+  const getArrayFromObj = (obj) => {
+    let arr = [];
+    for (const [key, value] of Object.entries(obj)) {
+      arr.push(`${key}: ${value}`);
+    }
+    return arr;
   };
   return (
     <div className="mx-4 md:mx-24">
@@ -132,14 +169,14 @@ const Contact = ({ showAddress = true }) => {
 
             {/* scheldule a call button  */}
             <div className="flex flex-row items-center border-[#CC9900] mt-1 border-2 justify-center py-1  text-white">
-              <div className="title text-xl  my-1 ">Schedule a Call</div>
+              <button className="title text-xl  my-1 ">Schedule a Call</button>
             </div>
           </div>
         </div>
 
         {/* right part */}
         <div className="right-part w-[100%] md:w-[60%]">
-          <div className="flex flex-col gap-y-6">
+          <form className="flex flex-col gap-y-6">
             {/* full name input section */}
             <div className="relative border-none">
               <label htmlFor="fullName" className={labelLead}>
@@ -148,10 +185,13 @@ const Contact = ({ showAddress = true }) => {
               <input
                 type="text"
                 id="fullName"
+                name="name"
+                value={formData.name}
                 style={{
                   WebkitBoxShadow: "0 0 0px 1000px #121212 inset",
                   WebkitTextFillColor: "white",
                 }}
+                onChange={changeFormData}
                 className={`border-[1px] border-gray-800 pt-3  focus:outline-none w-full , ${inputLead}`}
               />
             </div>
@@ -164,6 +204,9 @@ const Contact = ({ showAddress = true }) => {
               <input
                 type="email"
                 id="email"
+                name="email"
+                value={formData.emil}
+                onChange={changeFormData}
                 style={{
                   WebkitBoxShadow: "0 0 0px 1000px #121212 inset",
                   WebkitTextFillColor: "white",
@@ -180,6 +223,9 @@ const Contact = ({ showAddress = true }) => {
               <input
                 type="text"
                 id="subject"
+                name="subject"
+                value={formData.phone}
+                onChange={changeFormData}
                 style={{
                   WebkitBoxShadow: "0 0 0px 1000px #121212 inset !important",
                   WebkitTextFillColor: "white",
@@ -197,17 +243,26 @@ const Contact = ({ showAddress = true }) => {
                 id="message"
                 rows="10"
                 cols={"20"}
+                name="message"
+                value={formData.message}
+                onChange={changeFormData}
                 className={`border-[1px] border-gray-800 pt-5  w-full  block px-4 placeholder-gray-500 rounded-sm focus:outline-none sm:text-sm mt-1 peer  placeholder:text-gray-500 bg-[#121212] shadow-none `}
               />
             </div>
 
             {/* submit button */}
-            <div className="flex flex-row items-center bg-[#CC9900] justify-center py-1  text-white">
-              <div className="title text-xl my-1 text-shadow-sm">
+            <div className="bg-[#CC9900] justify-center py-1  text-white">
+              <button
+                type="submit"
+                className="w-full text-center title text-xl my-1 text-shadow-sm"
+                onClick={() =>
+                  sendEmail({ content: getArrayFromObj(formData), page })
+                }
+              >
                 Send Message
-              </div>
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
