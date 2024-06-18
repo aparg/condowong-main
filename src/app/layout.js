@@ -5,7 +5,7 @@ import Script from "next/script";
 import Contact from "@/components/Contact";
 
 export const metadata = {
-  title: "CondoWong - Toronto Real Estate",
+  title: "Toronto Real Estate | CondoWong Real Estate Inc., Brokerage ",
   description:
     "CondoWong is a Toronto-based real estate agency that specializes in pre-construction, resale, and rental properties.",
   icons: {
