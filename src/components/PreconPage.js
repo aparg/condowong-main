@@ -103,7 +103,7 @@ const PreconPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col px-0">
+            <div className="col px-0 min-h-[400px] sm:min-h-auto">
               {/* <video
                 src="/empire_canals_desktop.mp4"
                 type="video/mp4"
