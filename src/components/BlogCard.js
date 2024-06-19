@@ -43,7 +43,9 @@ const BlogCard = React.forwardRef(({ blog }, ref) => {
           />
         </div>
         <div class="card-body flex flex-col h-40 bg-white pt-3">
-          <h3 class="card-title text-lg line-clamp-3">{blog.news_title}</h3>
+          <h3 class="card-title text-lg text-wrap line-clamp-3">
+            {blog.news_title}
+          </h3>
           <div className="text-primary-color bottom-0 mb-2 absolute">
             Posted on {dayjs(blog?.date_of_upload).format("MMMM DD, YYYY")}
           </div>
