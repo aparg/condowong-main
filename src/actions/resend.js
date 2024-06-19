@@ -8,10 +8,10 @@ export const sendEmail = async ({ content, page, title = null }) => {
   const { data, error } = await resend.emails.send({
     from: "Acme <onboarding@resend.dev>",
     to: [getEmail(page)],
-    subject: "New Listing",
-    html: `<h1>${
-      title || `Client Message from ${page} page`
-    }</h1><br/><ul>${content.map((val) => `<li>${val}</li>`).join("")}</ul>`,
+    subject: "Inquiry from Condowong Website",
+    html: `<h1>${title || `Inquiry from ${page} page`}</h1><br/><ul>${content
+      .map((val) => `<li>${val}</li>`)
+      .join("")}</ul>`,
   });
   if (error) console.log(error.message);
 };

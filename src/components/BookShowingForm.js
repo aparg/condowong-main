@@ -20,7 +20,7 @@ export default function BookShowingForm(props) {
     phone: "",
     email: "",
     message: props.defaultmessage,
-    proj_name: props.proj_name,
+    "project name": props.proj_name,
     city: props.city,
     realtor: "",
     domainEmail: "",
