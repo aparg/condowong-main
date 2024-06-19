@@ -85,11 +85,14 @@ const SalesList = ({
       {salesData?.length > 0 ? (
         <>
           {salesData.map((curElem, index) => {
-            return (
-              <div className="px-1" key={index}>
-                <PropertyCard curElem={curElem} />
-              </div>
-            );
+            if (curElem.MLS !== "C8446018" && curElem.MLS !== "C8450446") {
+              //manual removal, to be removed later
+              return (
+                <div className="px-1" key={index}>
+                  <PropertyCard curElem={curElem} />
+                </div>
+              );
+            }
             // }
             // return null
           })}
