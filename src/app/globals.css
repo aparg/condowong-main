@@ -4013,3 +4013,8 @@ div.dynamic {
 .title {
   line-height: 1.11;
 }
+
+.ql-video {
+  width: 100%;
+  height: 500px;
+}

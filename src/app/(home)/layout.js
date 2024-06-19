@@ -4,6 +4,17 @@ import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import Contact from "@/components/Contact";
 
+export const metadata = {
+  title: "CondoWong - Toronto Real Estate",
+  description:
+    "CondoWong is a Toronto-based real estate agency that specializes in pre-construction, resale, and rental properties.",
+  icons: {
+    icon: "/favicon-nobg.svg",
+    // shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+};
+
 export default async function RootLayout({ children }) {
   return (
     <>
