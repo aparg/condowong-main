@@ -32,7 +32,7 @@ const AssignmentSlider = ({ numberOfCards = 4, data }) => {
     } else {
       scrollAmount = cardWidth * 1;
     }
-    scrollContainer.scrollLeft += scrollAmount + 10;
+    scrollContainer.scrollLeft += scrollAmount;
   };
 
   return (
