@@ -1,13 +1,20 @@
+"use client";
 import React from "react";
 import assignments from "@/constant/assignments";
 import PropertyCard from "@/components/PropertyCard";
 import AssignmentCard from "@/components/AssignmentCard";
 import Contact from "@/components/Contact";
+import useDeviceView from "@/helpers/useDeviceView";
 const page = () => {
+  const isMobileView = useDeviceView();
   return (
     <>
       <div className="container-fluid mt-7">
-        <h2 className="city-headline d-flex text-capitalize mb-5">
+        <h2
+          className={`fs-3 font-bold d-flex text-capitalize mb-4 ${
+            isMobileView ? "pt-3" : "pt-4"
+          }`}
+        >
           Featured Assignment Properties
         </h2>
         {/* <p className="fw-light mb-5 text-gray-400 mt-2">
