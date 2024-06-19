@@ -59,11 +59,14 @@ const PropertySlider = ({ numberOfCards = 4, data }) => {
         ref={scrollRef}
       >
         {data?.map((curElem, index) => {
-          return (
-            <div className="px-2" ref={cardRef}>
-              <PropertyCard curElem={curElem} key={index}></PropertyCard>
-            </div>
-          );
+          if (curElem.MLS !== "C8446018" && curElem.MLS !== "C8450446") {
+            //manual removal, to be removed later
+            return (
+              <div className="px-2" ref={cardRef}>
+                <PropertyCard curElem={curElem} key={index}></PropertyCard>
+              </div>
+            );
+          }
         })}
       </div>
     </div>
