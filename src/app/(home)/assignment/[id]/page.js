@@ -27,7 +27,6 @@ const page = ({ params }) => {
           homeElement={"Home"}
           separator={
             <span>
-              {" "}
               <svg
                 className="svg minearr"
                 viewBox="0 0 32 32"
@@ -55,9 +54,9 @@ const page = ({ params }) => {
           {assignment.unitNumber} - {assignment.project} {assignment.postalCode}
         </h1>
         <section className="my-12">
-          <section className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4 w-full gx-0 sm:gx-auto">
+          <section className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4 gx-0 sm:gx-auto">
             {assignment.details.map((key, idx) => (
-              <div className="w-full flex flex-col" key={idx}>
+              <div className="flex flex-col" key={idx}>
                 <span className="text-primary-color font-bold">
                   {getKeyValue(key)[0]}
                 </span>

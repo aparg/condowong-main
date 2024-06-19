@@ -9,6 +9,9 @@ import { gapi } from "gapi-script";
 import { useSearchParams } from "next/navigation";
 import { scheduleData } from "@/constant/data";
 import { generateTimeSlots } from "@/helpers/generateTimeSlots";
+import { sendEmail } from "@/actions/resend";
+import getArrayFromObj from "@/helpers/getArrayFromObj";
+import getEmail from "@/helpers/getEmail";
 
 const ScheduleTime = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -17,6 +20,7 @@ const ScheduleTime = () => {
   const Router = useRouter();
   const searchParams = useSearchParams();
   const dataId = searchParams.get("id");
+  const recepient = searchParams.get("recepient");
 
   const scheduleItem = scheduleData.find(
     (item) => item.id === parseInt(dataId)
@@ -99,7 +103,6 @@ const ScheduleTime = () => {
   //   );
   // };
 
-
   // const addEvent = (event) => {
   //   function initiate() {
   //     gapi.client
@@ -124,7 +127,6 @@ const ScheduleTime = () => {
   //   }
   //   gapi.load("client", initiate);
   // };
-
 
   // const addEvent = (event) => {
   //   function initiate() {
@@ -154,48 +156,51 @@ const ScheduleTime = () => {
   //     gapi.load("client", initiate);
   //   }
   // };
-  
 
   const refreshAccessToken = () => {
-    return gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse().then(authResponse => {
-      accessToken = authResponse.access_token;
-      return accessToken;
-    });
+    return gapi.auth2
+      .getAuthInstance()
+      .currentUser.get()
+      .reloadAuthResponse()
+      .then((authResponse) => {
+        accessToken = authResponse.access_token;
+        return accessToken;
+      });
   };
 
   const addEvent = (event) => {
     const makeRequest = (token) => {
-      gapi.client.request({
-        path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
-        method: "POST",
-        body: event,
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }).then(
-        (response) => {
-          console.log('Event added:', response);
-        },
-        async (err) => {
-          if (err.status === 401) { // Unauthorized error
-            const newToken = await refreshAccessToken();
-            console.log(newToken,"new token")
-            makeRequest(newToken);
-          } else {
-            console.error('Error adding event:', err);
+      gapi.client
+        .request({
+          path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+          method: "POST",
+          body: event,
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then(
+          (response) => {
+            console.log("Event added:", response);
+          },
+          async (err) => {
+            if (err.status === 401) {
+              // Unauthorized error
+              const newToken = await refreshAccessToken();
+              console.log(newToken, "new token");
+              makeRequest(newToken);
+            } else {
+              console.error("Error adding event:", err);
+            }
           }
-        }
-      );
+        );
     };
-    
 
     if (typeof window !== "undefined") {
       gapi.load("client", () => makeRequest(accessToken));
     }
   };
-
-  
 
   function toLocalISOString(date) {
     var tzo = -date.getTimezoneOffset(),
@@ -261,8 +266,6 @@ const ScheduleTime = () => {
   //   addEvent(event);
   // };
 
-
-
   const handleSubmit = () => {
     if (!formValues.selectedDate || !formValues.selectedTime) {
       alert("Please select both date and time.");
@@ -282,7 +285,9 @@ const ScheduleTime = () => {
         timeZone: "Asia/Kathmandu",
       },
       end: {
-        dateTime: toLocalISOString(new Date(dateTime.getTime() + parseInt(scheduleItem.duration) * 60000)),
+        dateTime: toLocalISOString(
+          new Date(dateTime.getTime() + parseInt(scheduleItem.duration) * 60000)
+        ),
         timeZone: "Asia/Kathmandu",
       },
       recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
@@ -295,8 +300,8 @@ const ScheduleTime = () => {
         ],
       },
     };
-
-    addEvent(event);
+    sendEmail({ content: getArrayFromObj(content), page: getEmail(recepient) });
+    // addEvent(event);
   };
 
   return (
