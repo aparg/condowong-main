@@ -41,9 +41,12 @@ const AssignmentCard = React.forwardRef(({ elem, small = false }, ref) => {
                 </span>
               </h2>
               <div className="border-b-neutral-300 bg-white py-2 border-b-[1px]"></div>
-              <div className="bg-white text-black font-bold truncate text-ellipsis text-xs mt-2 flex justify-between">
-                <img src="/logo/logo1.webp" className="w-14"></img>
-                <div className="bg-white ml-2 text-black">
+              <div className="bg-white text-black font-bold truncate text-ellipsis text-xs mt-2 flex justify-between items-center">
+                <img
+                  src="/logo/log.jpg"
+                  className="w-[92px] sm:w-[100px]"
+                ></img>
+                <div className="bg-white ml-2 text-black sm:text-[0.7rem] text-[0.65rem] font-thin ">
                   CONDOWONG REAL ESTATE INC.
                 </div>
               </div>

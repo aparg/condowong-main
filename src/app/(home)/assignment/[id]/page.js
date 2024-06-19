@@ -22,51 +22,51 @@ const page = ({ params }) => {
 
   return (
     <div className="row bg-[#000] mx-2 md:mx-20">
-      <div className="col-md-8">
-        <div className="my-3">
-          <Breadcrumb
-            homeElement={"Home"}
-            separator={
-              <span>
-                {" "}
-                <svg
-                  className="svg minearr"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
-                    fill={"#869099"}
-                  ></path>
-                </svg>{" "}
-              </span>
-            }
-            activeClasses="text-dark "
-            containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
-            listClasses="mx-1"
-            capitalizeLinks
-          />
-        </div>
-        <Gallery data={assignment.imgURLs} />
+      <div className="my-3">
+        <Breadcrumb
+          homeElement={"Home"}
+          separator={
+            <span>
+              {" "}
+              <svg
+                className="svg minearr"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z"
+                  fill={"#869099"}
+                ></path>
+              </svg>{" "}
+            </span>
+          }
+          activeClasses="text-dark "
+          containerClasses="d-flex align-items-center p-0 m-0 pt-4 breadcrumb"
+          listClasses="mx-1"
+          capitalizeLinks
+        />
+      </div>
+      <Gallery data={assignment.imgURLs} />
+      <div className="col-md-8 px-0">
         <h1 className="text-[4rem] playfair mt-5 text-primary-color">
           {assignment.price}
         </h1>
         <h1 className="text-[2rem]">
           {assignment.unitNumber} - {assignment.project} {assignment.postalCode}
         </h1>
-        <div className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4">
-          {assignment.details.map((key, idx) => (
-            <div className="flex flex-col" key={idx}>
-              <div className="text-primary-color font-bold">
-                {getKeyValue(key)[0]}
-              </div>
-              <div className="text-white font-medium">
-                {getKeyValue(key)[1]}
-              </div>
-            </div>
-          ))}
-        </div>
         <section className="my-12">
+          <section className="row row-cols-md-4 gap-y-4 my-4 bg-black-tint p-4 w-full gx-0 sm:gx-auto">
+            {assignment.details.map((key, idx) => (
+              <div className="w-full flex flex-col" key={idx}>
+                <span className="text-primary-color font-bold">
+                  {getKeyValue(key)[0]}
+                </span>
+                <span className="text-white font-medium">
+                  {getKeyValue(key)[1]}
+                </span>
+              </div>
+            ))}
+          </section>
           <section className="my-8">
             <h1 className="playfair mb-1 text-[2rem]">Pricing Information</h1>
             <ul className="list-disc ml-4 text-white font-medium">

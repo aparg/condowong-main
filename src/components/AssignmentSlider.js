@@ -39,14 +39,14 @@ const AssignmentSlider = ({ numberOfCards = 4, data }) => {
     <div className="relative">
       <div className="btns flex justify-between">
         <button
-          className="scroll-left absolute start-0"
+          className="scroll-left absolute start-0 pr-1"
           title="scroll left"
           onClick={slideLeft}
         >
           <SlArrowLeft size={16} color="black" />
         </button>
         <button
-          className="scroll-right absolute end-0"
+          className="scroll-right absolute end-0 pl-1"
           title="scroll right"
           onClick={slideRight}
         >
@@ -60,7 +60,7 @@ const AssignmentSlider = ({ numberOfCards = 4, data }) => {
       >
         {data?.map((curElem, index) => {
           return (
-            <div className="px-2" ref={cardRef}>
+            <div className="sm:px-2 px-0" ref={cardRef}>
               <AssignmentCard elem={curElem}></AssignmentCard>
             </div>
           );

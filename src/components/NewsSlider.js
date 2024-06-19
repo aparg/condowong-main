@@ -46,14 +46,14 @@ const NewsSlider = ({ numberOfCards = 4 }) => {
     <div className="relative">
       <div className="btns flex justify-between">
         <button
-          className="scroll-left absolute start-0"
+          className="scroll-left absolute start-0 pr-1"
           title="scroll left"
           onClick={slideLeft}
         >
           <SlArrowLeft size={16} color="black" />
         </button>
         <button
-          className="scroll-right absolute end-0"
+          className="scroll-right absolute end-0 pl-1"
           title="scroll right"
           onClick={slideRight}
         >

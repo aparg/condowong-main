@@ -26,7 +26,7 @@ const Gallery = ({ data }) => {
           onInit={onInit}
           speed={500}
           plugins={[lgThumbnail, lgZoom]}
-          elementClassNames="lg-container__custom overflow-auto gap-2"
+          elementClassNames="lg-container__custom overflow-auto"
         >
           <>
             {data.length > 0 ? (
