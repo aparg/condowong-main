@@ -1,4 +1,5 @@
 const getEmail = (page) => {
+  return "apargtm@gmail.com";
   switch (page) {
     case "rental":
       return "rental@condowong.ca";

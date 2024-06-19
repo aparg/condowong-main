@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 // import { Checkbox } from "@nextui-org/react";
 import Checkbox from "./Checkbox";
 import Link from "next/link";
+import { sendEmail } from "@/actions/resend";
+import getArrayFromObj from "@/helpers/getArrayFromObj";
 
 export default function BookShowingForm(props) {
   const pathname = usePathname();
@@ -32,7 +34,8 @@ export default function BookShowingForm(props) {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
+    // ContactFormSubmit(credentials, setSubmitbtn, setCredentials);
+    sendEmail({ content: getArrayFromObj(credentials), page: props.proj_name });
   };
 
   const getSchedulePage = () => {

@@ -133,6 +133,7 @@ const page = ({ params }) => {
         <BookShowingForm
           defaultmessage={`Please book a showing for this property "${assignment.project}"`}
           city=""
+          proj_name={assignment.project}
         ></BookShowingForm>
       </div>
     </div>

@@ -62,13 +62,6 @@ const Contact = ({ showAddress = true }) => {
     });
   };
 
-  const getArrayFromObj = (obj) => {
-    let arr = [];
-    for (const [key, value] of Object.entries(obj)) {
-      arr.push(`${key}: ${value}`);
-    }
-    return arr;
-  };
   return (
     <div className="mx-4 md:mx-24">
       <div className="title text-4xl font-extrabold mb-3 sm:mb-10 sm:mt-10 text-white playfair text-center">

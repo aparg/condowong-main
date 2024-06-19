@@ -153,6 +153,7 @@ const page = async ({ params }) => {
                   <BookShowingForm
                     defaultmessage={`Please book a showing for this property "${address}"`}
                     city={main_data.Municipality}
+                    proj_name={address}
                   ></BookShowingForm>
                 </div>
                 <div className="mt-24 col-sm-12">

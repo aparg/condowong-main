@@ -11,7 +11,7 @@ export const sendEmail = async ({ content, page, title = null }) => {
     subject: "New Listing",
     html: `<h1>${
       title || `Client Message from ${page} page`
-    }</h1><br/><ul>${content.map((val) => `<li>${val}</li>`)}</ul>`,
+    }</h1><br/><ul>${content.map((val) => `<li>${val}</li>`).join("")}</ul>`,
   });
   if (error) console.log(error.message);
 };
