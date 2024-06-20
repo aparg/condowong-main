@@ -13,10 +13,10 @@ const assignments = [
       "Occupancy-Now Occupied",
     ],
     op: "$483,500",
-    price: "$967,000",
+    price: "$550,000",
     developerDeposit: "$101,535",
     pricingInformation: [
-      "Assignment Price(AP): $967,000",
+      "Assignment Price(AP): $550,000",
       "Original Purchase Price: $483,500",
       "Deposit Paid to Developer by Seller: $101,535",
     ],
