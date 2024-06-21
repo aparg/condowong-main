@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <div>
       <main className="">
-        <section>
+        {/* <section>
           <div className="w-full h-[700px] h-[500px] relative">
             <video
               autoPlay
@@ -50,9 +50,9 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="mx-10">
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-4xl text-white playfair">
                 Market News
@@ -65,7 +65,7 @@ export default async function Home() {
               </Link>
             </div>
             <NewsSlider />
-          </div>
+          </div> */}
           <div className="sm:mt-40 mt-24">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
               <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
