@@ -54,7 +54,7 @@ const PropertySlider = ({ numberOfCards = 4, data }) => {
         </button>
       </div>
       <div
-        className={`row row-cols-lg-${numberOfCards} row-cols-md-3 row-cols-1 py-2`}
+        className={`w-full row row-cols-lg-${numberOfCards} row-cols-md-3 row-cols-1 py-2`}
         id="slider"
         ref={scrollRef}
       >
