@@ -30,12 +30,12 @@ export default async function RootLayout({ children }) {
           shadow="0 0 10px #cd922b,0 0 5px #cd922b"
         />
 
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <section className="mt-24 sm:mt-40">
           <Contact showAddress={false} />
         </section>
-        <Footer />
+        {/* <Footer /> */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
