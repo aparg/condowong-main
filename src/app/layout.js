@@ -1,8 +1,10 @@
+"use client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
 import Contact from "@/components/Contact";
+import { useEffect } from "react";
 
 export const metadata = {
   title: "Toronto Real Estate | CondoWong Real Estate Inc., Brokerage ",
@@ -14,6 +16,20 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
+
+useEffect(() => {
+  const sendHeight = () => {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage(height, "*");
+  };
+
+  sendHeight(); // Send height on component mount
+  window.addEventListener("resize", sendHeight); // Send height on window resize
+
+  return () => {
+    window.removeEventListener("resize", sendHeight);
+  };
+}, []);
 
 export default function RootLayout({ children }) {
   return (
