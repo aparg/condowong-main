@@ -10,7 +10,7 @@ const page = () => {
     },
   ];
   return (
-    <div className="sm:mt-40 mt-24">
+    <div className="sm:pt-40 pt-24 bg-black">
       <div className="flex flex-col md:flex-row justify-between items-center mb-3">
         <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
           Featured Rental Properties
