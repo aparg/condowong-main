@@ -1,3 +1,4 @@
+import PreconPropertySlider from "@/components/PreconPropertySlider";
 import React from "react";
 
 const page = () => {
@@ -8,7 +9,16 @@ const page = () => {
       imgSrc: "/pre-constructions/daniel-on-parliament/1.png",
     },
   ];
-  return <PreconPropertySlider data={preconData} />;
+  return (
+    <div className="sm:mt-40 mt-24">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-3">
+        <h3 className="main-title font-extrabold text-[2rem] md:text-4xl text-white playfair text-center md:text-start mb-4">
+          Featured Rental Properties
+        </h3>
+      </div>
+      <PreconPropertySlider data={preconData} />
+    </div>
+  );
 };
 
 export default page;
