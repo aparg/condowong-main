@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <div>
       <main className="">
-        {/* <section>
+        <section>
           <div className="w-full h-[700px] h-[500px] relative">
             <video
               autoPlay
@@ -50,7 +50,7 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-        </section> */}
+        </section>
         <section className="mx-10">
           {/* <div className="mt-16">
             <div className="flex flex-col md:flex-row justify-between items-center mb-3">
