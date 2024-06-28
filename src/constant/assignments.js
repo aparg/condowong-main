@@ -15,6 +15,8 @@ const assignments = [
     op: "$483,500",
     price: "$550,000",
     developerDeposit: "$101,535",
+    totalBuyerSum: "$168,035",
+    totalPayment: "",
     pricingInformation: [
       "Assignment Price(AP): $550,000",
       "Original Purchase Price: $483,500",
@@ -48,6 +50,7 @@ const assignments = [
     price: "$898000",
     op: "$750400",
     developerDeposit: "$112,580",
+    totalBuyerSum: "$260,160",
     pricingInformation: [
       "Assignment Price(AP): $898000",
       "Price/Sq.ft.: 1221",
@@ -81,6 +84,8 @@ const assignments = [
       "Occupancy - Early 2025",
     ],
     developerDeposit: "$107,600",
+    totalBuyerSum: "$17,600",
+    totalPayment: "",
     price: "$448,000",
     op: "$538,000",
     pricingInformation: [
@@ -102,7 +107,7 @@ const assignments = [
   },
   {
     project: "UC Tower 2, Oshawa, Ontario",
-    postalCode: " L1L 0G4",
+    postalCode: "L1L 0G4",
     unitNumber: "1109",
     details: [
       "Suite Type - Studio | 1 Bath",
@@ -116,6 +121,7 @@ const assignments = [
     price: "$445,200",
     op: "$422,540",
     developerDeposit: "$82,531",
+    totalBuyerSum: "$105,191",
     pricingInformation: [
       "Assignment Price(AP): $445,200",
       "Price/Sq.ft.: $979",
